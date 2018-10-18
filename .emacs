@@ -42,7 +42,7 @@
 
 
 ;; nav
-(add-to-list 'load-path "C:/Users/richa/AppData/Roaming/.emacs.d/emacs-nav")
+(add-to-list 'load-path "~/.emacs.d/emacs-nav")
 (require 'nav)
 (nav-disable-overeager-window-splitting)
 (global-set-key (kbd "C-n") 'nav-toggle)
