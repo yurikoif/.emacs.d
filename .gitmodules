@@ -1,0 +1,3 @@
+[submodule ".emacs.d/emacs-nav"]
+	path = .emacs.d/emacs-nav
+	url = https://github.com/ancane/emacs-nav.git
