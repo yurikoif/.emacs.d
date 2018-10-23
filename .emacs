@@ -113,6 +113,7 @@
 (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-f") 'search-forward)
+(global-set-key (kbd "C-S-f") 'list-matching-lines)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-c 1") 'comment-region)
 (global-set-key (kbd "C-c 2") 'uncomment-region)
