@@ -77,7 +77,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (csharp-mode auto-complete-c-headers ac-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
