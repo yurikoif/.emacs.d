@@ -77,7 +77,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (csharp-mode auto-complete-c-headers ac-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
@@ -191,7 +191,7 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
   )
 
 (ac-config-default)
