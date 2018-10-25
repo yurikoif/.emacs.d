@@ -1,7 +1,3 @@
 [submodule ".emacs.d/emacs-nav"]
 	path = .emacs.d/emacs-nav
 	url = https://github.com/ancane/emacs-nav.git
-[submodule "csharp-mode"]
-	path = .emacs.d/csharp-mode
-	url = https://github.com/josteink/csharp-mode.git
-	branch = master
