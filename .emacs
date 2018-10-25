@@ -14,15 +14,15 @@
 
 ;; ebrowse
 (defun my-start-ebrowse()
-  (if (not (file-exists-p "./BROWSE"))
-      (shell-command "ebrowse *.h *.c *.cpp *.java")
+  (if (not (file-exists-p "./.BROWSE"))
+      (shell-command "ebrowse *.h *.c *.cpp --output-file=./.BROWSE")
     )
-  (find-file-noselect "./BROWSE")
+  (find-file-noselect "./.BROWSE")
   )
 
 (defun my-end-ebrowse()
-  (if (file-exists-p "./BROWSE")
-      (delete-file "./BROWSE")
+  (if (file-exists-p "./.BROWSE")
+      (delete-file "./.BROWSE")
     )
   )
 
@@ -223,4 +223,4 @@
 ;; initialize auto-complete-mode
 ;; (global-auto-complete-mode t)
 ;; (setq ac-auto-start nil)
-;; (ac-set-trigger-key "TAB")
+(ac-set-trigger-key "TAB")
