@@ -25,6 +25,7 @@
   )
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
+(add-hook 'csharp-mode-hook 'my-cc-style)
 
 ;; ebrowse
 (defun my-start-ebrowse()
