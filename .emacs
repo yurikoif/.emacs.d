@@ -11,6 +11,20 @@
 (add-hook 'lisp-mode-hook 'my-script-indent)
 (add-hook 'emacs-lisp-mode-hook 'my-script-indent)
 
+(defun my-cc-style()
+  (c-set-style "linux")
+  (c-set-offset 'innamespace '0)
+  (c-set-offset 'inextern-lang '0)
+  (c-set-offset 'inline-open '0)
+  (c-set-offset 'label '*)
+  (c-set-offset 'case-label '*)
+  (c-set-offset 'access-label '/)
+  (setq c-basic-offset 4)
+  (setq tab-width 4)
+  (setq indent-tabs-mode t)
+  )
+
+(add-hook 'c-mode-common-hook 'my-cc-style)
 
 ;; ebrowse
 (defun my-start-ebrowse()
