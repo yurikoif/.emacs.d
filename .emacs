@@ -1,11 +1,10 @@
 ;; indent
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
-(add-to-list 'load-path "~/.emacs.d/Highlight-Indentation-for-Emacs")
-(require 'highlight-indentation)
-(setq highlight-indentation-mode t)
-(set-face-background 'highlight-indentation-face "#e3e3d3")
-(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+(add-to-list 'load-path "~/.emacs.d/highlight-indent-guides")
+(require 'highlight-indent-guides)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'fill)
 
 (defun my-script-indent ()
   (setq tab-width 4)
