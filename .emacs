@@ -1,6 +1,12 @@
 ;; indent
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
+(add-to-list 'load-path "~/.emacs.d/Highlight-Indentation-for-Emacs")
+(require 'highlight-indentation)
+(setq highlight-indentation-mode t)
+(set-face-background 'highlight-indentation-face "#e3e3d3")
+(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+
 (defun my-script-indent ()
   (setq tab-width 4)
   (setq indent-tabs-mode nil)
@@ -104,7 +110,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 120 :width normal))))
+ '(highlight-indentation-face ((t (:inherit fringe)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
