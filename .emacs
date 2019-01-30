@@ -11,6 +11,8 @@
   (setq indent-tabs-mode nil)
   )
 
+(setq scroll-step 1)
+
 (defun my-working-indent ()
   (setq c-basic-offset 2)
   (setq tab-width 2)
