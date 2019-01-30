@@ -11,6 +11,12 @@
   (setq indent-tabs-mode nil)
   )
 
+(defun my-working-indent ()
+  (setq c-basic-offset 2)
+  (setq tab-width 2)
+  (setq indent-tabs-mode nil)
+  )
+
 (add-hook 'makefile-mode-hook 'my-script-indent)
 (add-hook 'python-mode-hook 'my-script-indent)
 (add-hook 'lisp-mode-hook 'my-script-indent)
@@ -24,9 +30,10 @@
   (c-set-offset 'label '*)
   (c-set-offset 'case-label '*)
   (c-set-offset 'access-label '/)
-  (setq c-basic-offset 4)
-  (setq tab-width 4)
-  (setq indent-tabs-mode t)
+  (my-working-indent)
+  ;(setq c-basic-offset 4)
+  ;(setq tab-width 4)
+  ;(setq indent-tabs-mode t)
   )
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
@@ -109,7 +116,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 120 :width normal))))
+ '(default ((t (:family "Courier 10 Pitch" :foundry "bitstream" :slant normal :weight normal :height 113 :width normal))))
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
 
@@ -132,6 +139,7 @@
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-w") 'kill-buffer)
+(global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-S-q") 'replace-regexp)
 (global-set-key (kbd "C-f") 'search-forward)
