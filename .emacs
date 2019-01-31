@@ -118,7 +118,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier 10 Pitch" :foundry "bitstream" :slant normal :weight normal :height 113 :width normal))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 113 :width normal))))
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
 
@@ -135,19 +135,11 @@
 (set-foreground-color "wheat")
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(defun my-isearch (beg end)
-  "search for selected text"
-  (interactive "r")
-  (if (region-active-p)
-      (let ((selection (buffer-substring-no-properties beg end))
-            )
-        (deactivate-mark)
-        (isearch-mode t nil nil nil)
-        (isearch-yank-string selection)
-        )
-    )
-  (funcall 'isearch-forward)
-  )
+(defun my-grep-find ()
+  (interactive)
+  (grep-find (format "find . -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
+                (read-string "Grep find string: ")))
+ )
 
 ;; key binding
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -157,12 +149,12 @@
 (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
-(global-set-key (kbd "C-S-q") 'replace-regexp)
-(global-set-key (kbd "C-f") 'my-isearch)
-(global-set-key (kbd "C-n") 'isearch-repeat-forward)
-(global-set-key (kbd "C-p") 'isearch-repeat-backward)
+(global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "C-.") 'isearch-repeat-forward)
+(global-set-key (kbd "C-,") 'isearch-repeat-backward)
+(global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 ;(global-set-key (kbd "C-m") 'isearch-occur)
-(global-set-key (kbd "C-g") 'grep-find)
+(global-set-key (kbd "C-g") 'my-grep-find)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-c 1") 'comment-region)
 (global-set-key (kbd "C-c 2") 'uncomment-region)
