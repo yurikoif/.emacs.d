@@ -135,6 +135,20 @@
 (set-foreground-color "wheat")
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(defun my-isearch (beg end)
+  "search for selected text"
+  (interactive "r")
+  (if (region-active-p)
+      (let ((selection (buffer-substring-no-properties beg end))
+            )
+        (deactivate-mark)
+        (isearch-mode t nil nil nil)
+        (isearch-yank-string selection)
+        )
+    )
+  (funcall 'isearch-forward)
+  )
+
 ;; key binding
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-s") 'save-buffer)
@@ -144,7 +158,7 @@
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-S-q") 'replace-regexp)
-(global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "C-f") 'my-isearch)
 (global-set-key (kbd "C-n") 'isearch-repeat-forward)
 (global-set-key (kbd "C-p") 'isearch-repeat-backward)
 ;(global-set-key (kbd "C-m") 'isearch-occur)
