@@ -29,9 +29,9 @@
   (c-set-offset 'innamespace '0)
   (c-set-offset 'inextern-lang '0)
   (c-set-offset 'inline-open '0)
-  (c-set-offset 'label '*)
-  (c-set-offset 'case-label '*)
-  (c-set-offset 'access-label '/)
+  (c-set-offset 'label '0)
+  (c-set-offset 'case-label '0)
+  (c-set-offset 'access-label '-)
   (my-working-indent)
   ;(setq c-basic-offset 4)
   ;(setq tab-width 4)
@@ -65,16 +65,16 @@
     )
   )
 
-(add-hook 'c-mode-common-hook 'my-start-ebrowse)
-(add-hook 'kill-emacs-hook 'my-end-ebrowse)
-(global-set-key [f12] 'my-look-up-into)
+;(add-hook 'c-mode-common-hook 'my-start-ebrowse)
+;(add-hook 'kill-emacs-hook 'my-end-ebrowse)
+;(global-set-key [f12] 'my-look-up-into)
 
 
 ;; nav
-(add-to-list 'load-path "~/.emacs.d/emacs-nav")
-(require 'nav)
-(nav-disable-overeager-window-splitting)
-(global-set-key (kbd "C-n") 'nav-toggle)
+;(add-to-list 'load-path "~/.emacs.d/emacs-nav")
+;(require 'nav)
+;(nav-disable-overeager-window-splitting)
+;(global-set-key (kbd "C-p") 'nav-toggle)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -144,9 +144,11 @@
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-S-q") 'replace-regexp)
-(global-set-key (kbd "C-f") 'search-forward)
+(global-set-key (kbd "C-f") 'isearch-complete)
+(global-set-key (kbd "C-n") 'isearch-repeat-forward)
 (global-set-key (kbd "C-S-f") 'search-forward-regexp)
 (global-set-key (kbd "C-S-M-f") 'list-matching-lines)
+(global-set-key (kbd "C-g") 'grep-find)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-c 1") 'comment-region)
 (global-set-key (kbd "C-c 2") 'uncomment-region)
