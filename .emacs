@@ -138,7 +138,7 @@
 (defun my-grep-find ()
   (interactive)
   (grep-find (format "find . -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
-                (read-string "Grep find string: ")))
+                     (read-string "Grep find string: ")))
  )
 
 ;; key binding
@@ -160,6 +160,8 @@
 (global-set-key (kbd "C-c 2") 'uncomment-region)
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-S-iso-lefttab] 'other-window-minus-1)
+(global-set-key (kbd "C-<prior>") 'previous-buffer)
+(global-set-key (kbd "C-<next>") 'next-buffer)
 (global-set-key [M-f4] 'kill-emacs)
 (global-set-key [f7] 'gdb)
 (global-set-key [C-f7] 'jdb)
