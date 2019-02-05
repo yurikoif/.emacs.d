@@ -1,5 +1,5 @@
 ;; indent
-(add-to-list 'write-file-functions 'delete-trailing-whitespace)
+;;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
 (add-to-list 'load-path "~/.emacs.d/highlight-indent-guides")
 (require 'highlight-indent-guides)
@@ -37,6 +37,13 @@
   ;(setq tab-width 4)
   ;(setq indent-tabs-mode t)
   )
+
+(defun my-c-lineup-arglist-lambda (langelem)
+  "Line up lambda."
+  (save-excursion
+    (back-to-indentation)
+    (when (looking-at "{")
+      '+)))
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
 (add-hook 'csharp-mode-hook 'my-cc-style)
@@ -142,6 +149,7 @@
  )
 
 ;; key binding
+;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
@@ -156,8 +164,8 @@
 ;(global-set-key (kbd "C-m") 'isearch-occur)
 (global-set-key (kbd "C-g") 'my-grep-find)
 (global-set-key (kbd "C-l") 'goto-line)
-(global-set-key (kbd "C-c 1") 'comment-region)
-(global-set-key (kbd "C-c 2") 'uncomment-region)
+;(global-set-key (kbd "C-c 1") 'comment-region)
+;(global-set-key (kbd "C-c 2") 'uncomment-region)
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-S-iso-lefttab] 'other-window-minus-1)
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
