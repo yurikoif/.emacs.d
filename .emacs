@@ -26,6 +26,7 @@
 
 (defun my-cc-style()
   (c-set-style "linux")
+  (c-set-offset 'inlambda '0)
   (c-set-offset 'innamespace '0)
   (c-set-offset 'inextern-lang '0)
   (c-set-offset 'inline-open '0)
@@ -37,13 +38,6 @@
   ;(setq tab-width 4)
   ;(setq indent-tabs-mode t)
   )
-
-(defun my-c-lineup-arglist-lambda (langelem)
-  "Line up lambda."
-  (save-excursion
-    (back-to-indentation)
-    (when (looking-at "{")
-      '+)))
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
 (add-hook 'csharp-mode-hook 'my-cc-style)
