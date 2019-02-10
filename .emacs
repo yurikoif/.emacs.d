@@ -1,3 +1,9 @@
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'control)
+  (setq mac-option-modifier 'meta)
+  (global-set-key (kbd "<home>") 'beginning-of-line)
+  (global-set-key (kbd "<end>") 'end-of-line))
+
 ;; indent
 ;;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
@@ -122,10 +128,9 @@
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; If you edit it by hand, you could mess it up, so be careful.3
  ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 113 :width normal))))
+ ;; If there is more than one, they won't work right.)
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
 
