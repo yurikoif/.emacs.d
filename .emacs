@@ -149,7 +149,7 @@
 
 ;; key binding
 ;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
-(global-set-key (kbd "C-i") 'read-only-mode)
+;(global-set-key (kbd "C-i") 'read-only-mode)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
