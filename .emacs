@@ -143,8 +143,11 @@
 
 (defun my-grep-find ()
   (interactive)
-  (grep-find (format "find . -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
-                     (read-string "Grep find string: ")))
+  (setq what-to-grep (read-string "What to Grep: "))
+  (setq where-to-grep (read-string "Where to Grep (default .): "))
+  (when (string= adr "") (setq adr "."))
+  (grep-find (format "find %s -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
+                     where-to-grep what-to-grep))
  )
 
 ;; key binding
