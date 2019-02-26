@@ -145,7 +145,7 @@
   (interactive)
   (setq what-to-grep (read-string "What to Grep: "))
   (setq where-to-grep (read-string "Where to Grep (default .): "))
-  (when (string= adr "") (setq adr "."))
+  (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
  )
