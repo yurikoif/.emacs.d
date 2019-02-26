@@ -1,8 +1,16 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'control)
-  (setq mac-option-modifier 'meta)
+  ;(setq mac-option-modifier 'meta)
+  (define-key key-translation-map (kbd "M-<left>") (kbd "<home>"))
+  (define-key key-translation-map (kbd "M-<right>") (kbd "<end>"))
+  (define-key key-translation-map (kbd "M-<up>") (kbd "<prior>"))
+  (define-key key-translation-map (kbd "M-<down>") (kbd "<next>"))
   (global-set-key (kbd "<home>") 'beginning-of-line)
-  (global-set-key (kbd "<end>") 'end-of-line))
+  (global-set-key (kbd "<end>") 'end-of-line)
+  (global-set-key (kbd "C-M-<up>") 'previous-buffer)
+  (global-set-key (kbd "C-M-<down>") 'next-buffer)
+  (global-set-key (kbd "M-<backspace>") 'delete-forward-char)
+  )
 
 ;; indent
 ;;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
