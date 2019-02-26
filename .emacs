@@ -40,6 +40,7 @@
 
 (defun my-cc-style()
   (c-set-style "linux")
+  (c-set-offset 'inlambda '0)
   (c-set-offset 'innamespace '0)
   (c-set-offset 'inextern-lang '0)
   (c-set-offset 'inline-open '0)
@@ -51,13 +52,6 @@
   ;(setq tab-width 4)
   ;(setq indent-tabs-mode t)
   )
-
-(defun my-c-lineup-arglist-lambda (langelem)
-  "Line up lambda."
-  (save-excursion
-    (back-to-indentation)
-    (when (looking-at "{")
-      '+)))
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
 (add-hook 'csharp-mode-hook 'my-cc-style)
@@ -157,12 +151,16 @@
 
 (defun my-grep-find ()
   (interactive)
-  (grep-find (format "find . -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
-                     (read-string "Grep find string: ")))
+  (setq what-to-grep (read-string "What to Grep: "))
+  (setq where-to-grep (read-string "Where to Grep (default .): "))
+  (when (string= adr "") (setq adr "."))
+  (grep-find (format "find %s -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
+                     where-to-grep what-to-grep))
  )
 
 ;; key binding
 ;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
+;(global-set-key (kbd "C-i") 'read-only-mode)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
