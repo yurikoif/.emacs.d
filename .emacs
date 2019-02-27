@@ -1,5 +1,5 @@
 (when (eq system-type 'darwin)
-  (setq mac-command-modifier 'control)
+  (setq mac-command-modifier 'meta)
   ;(setq mac-option-modifier 'meta)
   (define-key key-translation-map (kbd "M-<left>") (kbd "<home>"))
   (define-key key-translation-map (kbd "M-<right>") (kbd "<end>"))
