@@ -123,7 +123,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (dash flx-ido csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(projectile-mode nil nil (projectile))
  '(select-enable-clipboard t)
  '(show-paren-mode t)
