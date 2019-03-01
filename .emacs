@@ -123,7 +123,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (projectile csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
@@ -132,9 +132,9 @@
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.3
+ ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.)
+ ;; If there is more than one, they won't work right.
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
 
