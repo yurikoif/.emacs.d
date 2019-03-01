@@ -155,7 +155,7 @@
 (defun my-grep-find ()
   (interactive)
   (setq what-to-grep (read-string "What to Grep: "))
-  (setq where-to-grep (read-string "Where to Grep (default .): "))
+  (setq where-to-grep (read-string "Grep (default .): "))
   (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
@@ -164,7 +164,7 @@
   "setting up grep-command using current word under cursor as a search string"
   (interactive)
   (setq what-to-grep (symbol-at-point))
-  (setq where-to-grep (read-string "Where to Grep (default .): "))
+  (setq where-to-grep (read-string "Grep (default .): "))
   (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
@@ -180,7 +180,7 @@
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "C-F") 'my-grep-find)
+(global-set-key (kbd "C-S-f") 'my-grep-find)
 (global-set-key (kbd "C-.") 'isearch-repeat-forward)
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
