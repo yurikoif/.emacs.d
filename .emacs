@@ -157,10 +157,18 @@
   (setq what-to-grep (read-string "What to Grep: "))
   (setq where-to-grep (read-string "Where to Grep (default .): "))
   (when (string= where-to-grep "") (setq where-to-grep "."))
-  (grep-find (format "find %s -type f -exec grep --color -nH --null -e \"%s\" \{\} +"
+  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
  )
-
+(defun my-grep-find-at-point ()
+  "setting up grep-command using current word under cursor as a search string"
+  (interactive)
+  (setq what-to-grep (symbol-at-point))
+  (setq where-to-grep (read-string "Where to Grep (default .): "))
+  (when (string= where-to-grep "") (setq where-to-grep "."))
+  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
+                     where-to-grep what-to-grep))
+  )
 ;; key binding
 ;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
 ;(global-set-key (kbd "C-i") 'read-only-mode)
@@ -172,11 +180,12 @@
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "C-F") 'my-grep-find)
 (global-set-key (kbd "C-.") 'isearch-repeat-forward)
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
+(global-set-key (kbd "C-?") 'my-grep-find-at-point)
 ;(global-set-key (kbd "C-m") 'isearch-occur)
-(global-set-key (kbd "C-g") 'my-grep-find)
 (global-set-key (kbd "C-l") 'goto-line)
 ;(global-set-key (kbd "C-c 1") 'comment-region)
 ;(global-set-key (kbd "C-c 2") 'uncomment-region)
