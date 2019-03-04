@@ -124,7 +124,6 @@
  '(package-selected-packages
    (quote
     (csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
- '(projectile-mode nil nil (projectile))
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
@@ -154,8 +153,8 @@
 
 (defun my-grep-find ()
   (interactive)
-  (setq what-to-grep (read-string "What to Grep: "))
-  (setq where-to-grep (read-string "Grep (default .): "))
+  (setq what-to-grep (read-string "Grep: "))
+  (setq where-to-grep (read-directory-name "Grep in (default .): " default-directory))
   (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
@@ -164,7 +163,8 @@
   "setting up grep-command using current word under cursor as a search string"
   (interactive)
   (setq what-to-grep (symbol-at-point))
-  (setq where-to-grep (read-string "Grep (default .): "))
+  (setq where-to-grep (read-directory-name "Grep in (default .): " default-directory))
+  ;(setq where-to-grep (read-string "Grep (default .): "))
   (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
