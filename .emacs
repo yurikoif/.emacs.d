@@ -151,24 +151,6 @@
 (set-foreground-color "wheat")
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(defun my-grep-find ()
-  (interactive)
-  (setq what-to-grep (read-string "Grep: "))
-  (setq where-to-grep (read-directory-name "Grep in: " default-directory))
-  (when (string= where-to-grep "") (setq where-to-grep "."))
-  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
-                     where-to-grep what-to-grep))
- )
-(defun my-grep-find-at-point ()
-  "setting up grep-command using current word under cursor as a search string"
-  (interactive)
-  (setq what-to-grep (symbol-at-point))
-  (setq where-to-grep (read-directory-name "Grep in: " default-directory))
-  (when (string= where-to-grep "") (setq where-to-grep "."))
-  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
-                     where-to-grep what-to-grep))
-  )
-
 ;; key binding
 ;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
 ;(global-set-key (kbd "C-i") 'read-only-mode)
@@ -180,17 +162,16 @@
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "C-S-f") 'my-grep-find)
 (global-set-key (kbd "C-.") 'isearch-repeat-forward)
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
+(global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
-;(global-set-key (kbd "C-m") 'isearch-occur)
 (global-set-key (kbd "C-l") 'goto-line)
 ;(global-set-key (kbd "C-c 1") 'comment-region)
 ;(global-set-key (kbd "C-c 2") 'uncomment-region)
 (global-set-key [C-tab] 'other-window)
-(global-set-key [C-S-iso-lefttab] 'other-window-minus-1)
+(global-set-key [C-S-iso-lefttab] 'other-window---1)
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
 (global-set-key [M-f4] 'kill-emacs)
@@ -200,6 +181,27 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
+(defun my-grep-find (what-to-grep)
+  (interactive)
+  (setq where-to-grep (read-directory-name "Grep in: " default-directory))
+  (when (string= where-to-grep "") (setq where-to-grep "."))
+  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
+                     where-to-grep what-to-grep))
+  )
+(defun my-grep-find-read-from-minibuffer ()
+  "setting up grep-command using sentence read from minibuffer"
+  (interactive)
+  (my-grep-find (read-string "Grep: ")))
+(defun my-grep-find-at-point ()
+  "setting up grep-command using current word under cursor as a search string"
+  (interactive)
+  (my-grep-find (symbol-at-point))
+  )
+
+(defun other-window---1 ()
+  (interactive)
+  (other-window -1))
+
 (defun my-compile ()
   "Function for compiling source files."
   (interactive)
