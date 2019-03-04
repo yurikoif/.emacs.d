@@ -154,7 +154,7 @@
 (defun my-grep-find ()
   (interactive)
   (setq what-to-grep (read-string "Grep: "))
-  (setq where-to-grep (read-directory-name "Grep in (default .): " default-directory))
+  (setq where-to-grep (read-directory-name "Grep in: " default-directory))
   (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
@@ -163,12 +163,13 @@
   "setting up grep-command using current word under cursor as a search string"
   (interactive)
   (setq what-to-grep (symbol-at-point))
-  (setq where-to-grep (read-directory-name "Grep in (default .): " default-directory))
+  (setq where-to-grep (read-directory-name "Grep in: " default-directory))
   ;(setq where-to-grep (read-string "Grep (default .): "))
   (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
   )
+
 ;; key binding
 ;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
 ;(global-set-key (kbd "C-i") 'read-only-mode)
