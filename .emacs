@@ -168,6 +168,8 @@
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-l") 'goto-line)
+(global-set-key (kbd "C-;") 'comment-line)
+;(global-set-key (kbd "C-;") 'my-toggle-comment)
 ;(global-set-key (kbd "C-c 1") 'comment-region)
 ;(global-set-key (kbd "C-c 2") 'uncomment-region)
 (global-set-key [C-tab] 'other-window)
@@ -181,6 +183,10 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
+(defun my-toggle-comment ()
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
 (defun my-grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-directory-name "Grep in: " default-directory))
