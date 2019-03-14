@@ -158,6 +158,7 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-S-o") 'find-name-dired)
 (global-set-key (kbd "C-w") 'kill-buffer)
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
@@ -190,14 +191,14 @@
 (defun my-grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-directory-name "Grep in: " default-directory))
-  (when (string= where-to-grep "") (setq where-to-grep "."))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep))
   )
 (defun my-grep-find-read-from-minibuffer ()
   "setting up grep-command using sentence read from minibuffer"
   (interactive)
-  (my-grep-find (read-string "Grep: ")))
+  (my-grep-find (read-string "Grep: "))
+  )
 (defun my-grep-find-at-point ()
   "setting up grep-command using current word under cursor as a search string"
   (interactive)
