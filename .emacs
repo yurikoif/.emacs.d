@@ -285,7 +285,7 @@
       (setq comm (concat "python " full))
       )
      ((not (string= pref full))
-      (setq comm (concat "" pref))
+      (setq comm (concat "./" pref))
       )
      (t (setq comm nil))
      )
