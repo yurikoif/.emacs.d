@@ -123,7 +123,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (tabbar csharp-mode auto-complete-c-headers ac-emoji ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
@@ -170,6 +170,7 @@
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-;") 'comment-line)
+(global-set-key (kbd "C-b") 'buffer-menu)
 ;(global-set-key (kbd "C-;") 'my-toggle-comment)
 ;(global-set-key (kbd "C-c 1") 'comment-region)
 ;(global-set-key (kbd "C-c 2") 'uncomment-region)
