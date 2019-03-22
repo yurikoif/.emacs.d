@@ -34,6 +34,7 @@
  '(show-paren-mode t)
  '(tab-always-indent t)
  '(tab-width 4)
+ '(tags-table-list (quote ("~/Desktop/")))
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -116,6 +117,23 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
+;; (defun create-tags (dir-name)
+;;   "Create tags file."
+;;   (interactive "DDirectory: ")
+;;   (eshell-command 
+;;    (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags -" dir-name)
+;;    )
+;;   )
+(defun create-tags ()
+  "Create tags file."
+  (interactive)
+  (cl-loop for dir-name in tags-table-list
+           do (eshell-command 
+               (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags -" dir-name)
+               )
+           )
+  )
+
 (defun my-script-indent ()
   (setq tab-width 4)
   (setq indent-tabs-mode nil)
