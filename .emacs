@@ -1,3 +1,76 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ac-auto-show-menu 0.1)
+ '(ac-trigger-key nil)
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(c-basic-offset 4)
+ '(c-default-style "linux")
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (wombat)))
+ '(default-frame-alist
+    (quote
+     ((tool-bar-lines . 0)
+      (menu-bar-lines . 1)
+      (alpha . 90))))
+ '(global-auto-revert-mode t)
+ '(global-linum-mode t)
+ '(highlight-indent-guides-auto-character-face-perc 25)
+ '(highlight-indent-guides-method (quote character))
+ '(indent-tabs-mode t)
+ '(inhibit-startup-screen t)
+ '(make-backup-files nil)
+ '(nav-width 25)
+ '(org-support-shift-select (quote always))
+ '(package-selected-packages
+   (quote
+    (highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+ '(prog-mode-hook (quote (auto-complete-mode highlight-indent-guides-mode)))
+ '(scroll-step 1)
+ '(select-enable-clipboard t)
+ '(show-paren-mode t)
+ '(tab-always-indent t)
+ '(tab-width 4)
+ '(tool-bar-mode nil))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(highlight-indentation-face ((t (:inherit fringe)))))
+
+;(ac-config-default)
+;; initialize auto-complete-mode
+;(global-auto-complete-mode t)
+;(setq ac-auto-start nil)
+;(ac-set-trigger-key "TAB")
+
+;; custom surface
+(set-background-color "gray9")
+(set-foreground-color "wheat")
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(add-hook 'c-mode-common-hook 'my-cc-style)
+(add-hook 'csharp-mode-hook 'my-cc-style)
+;; set haskell indentation
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+;; indent
+(add-hook 'makefile-mode-hook 'my-script-indent)
+(add-hook 'python-mode-hook 'my-script-indent)
+(add-hook 'lisp-mode-hook 'my-script-indent)
+(add-hook 'emacs-lisp-mode-hook 'my-script-indent)
+;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
+
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  )
+
 (when (eq system-type 'darwin)
   ;(setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'control)
@@ -14,147 +87,7 @@
   (global-set-key (kbd "M-<backspace>") 'delete-forward-char)
   )
 
-;; indent
-;;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
-
-(add-to-list 'load-path "~/.emacs.d/highlight-indent-guides")
-(require 'highlight-indent-guides)
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'fill)
-
-(defun my-script-indent ()
-  (setq tab-width 4)
-  (setq indent-tabs-mode nil)
-  )
-
-(setq scroll-step 1)
-
-(defun my-working-indent ()
-  (setq c-basic-offset 2)
-  (setq tab-width 2)
-  (setq indent-tabs-mode nil)
-  )
-
-(add-hook 'makefile-mode-hook 'my-script-indent)
-(add-hook 'python-mode-hook 'my-script-indent)
-(add-hook 'lisp-mode-hook 'my-script-indent)
-(add-hook 'emacs-lisp-mode-hook 'my-script-indent)
-
-(defun my-cc-style()
-  (c-set-style "linux")
-  (c-set-offset 'inlambda '0)
-  (c-set-offset 'innamespace '0)
-  (c-set-offset 'inextern-lang '0)
-  (c-set-offset 'inline-open '0)
-  (c-set-offset 'label '0)
-  (c-set-offset 'case-label '0)
-  (c-set-offset 'access-label '-)
-  (my-working-indent)
-  ;(setq c-basic-offset 4)
-  ;(setq tab-width 4)
-  ;(setq indent-tabs-mode t)
-  )
-
-(add-hook 'c-mode-common-hook 'my-cc-style)
-(add-hook 'csharp-mode-hook 'my-cc-style)
-
-;; ebrowse
-(defun my-start-ebrowse()
-  (if (not (file-exists-p "./.BROWSE"))
-      (shell-command "ebrowse *.h *.c *.cpp --output-file=./.BROWSE")
-    )
-  (find-file-noselect "./.BROWSE")
-  )
-
-(defun my-end-ebrowse()
-  (if (file-exists-p "./.BROWSE")
-      (delete-file "./.BROWSE")
-    )
-  )
-
-(defun my-look-up-into()
-  (interactive)
-  (if (string= "#include"
-               (substring (thing-at-point 'line t) 0 8)
-               )
-      (ff-find-other-file)
-    (ebrowse-tags-view-definition)
-    )
-  )
-
-;(add-hook 'c-mode-common-hook 'my-start-ebrowse)
-;(add-hook 'kill-emacs-hook 'my-end-ebrowse)
-;(global-set-key [f12] 'my-look-up-into)
-
-
-;; nav
-;(add-to-list 'load-path "~/.emacs.d/emacs-nav")
-;(require 'nav)
-;(nav-disable-overeager-window-splitting)
-;(global-set-key (kbd "C-p") 'nav-toggle)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;; ENVIRONMENT ;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ac-auto-show-menu 0.1)
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(c-basic-offset 4)
- '(c-default-style "linux")
- '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (wombat)))
- '(default-frame-alist
-    (quote
-     ((tool-bar-lines . 0)
-      (menu-bar-lines . 1)
-      (alpha . 90))))
- '(global-auto-revert-mode t)
- '(global-linum-mode t)
- '(indent-tabs-mode t)
- '(inhibit-startup-screen t)
- '(make-backup-files nil)
- '(nav-width 25)
- '(org-support-shift-select (quote always))
- '(package-selected-packages
-   (quote
-    (csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
- '(select-enable-clipboard t)
- '(show-paren-mode t)
- '(tab-always-indent t)
- '(tab-width 4)
- '(tool-bar-mode nil))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight-indentation-face ((t (:inherit fringe)))))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;   SHORTCUTS    ;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; set haskell indentation
-(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
-
-;; custom surface
-;;(setq-default c-basic-offset 4)
-(set-background-color "gray9")
-(set-foreground-color "wheat")
-(fset 'yes-or-no-p 'y-or-n-p)
-
 ;; key binding
-;(global-set-key (kbd "C-<del>") 'delete-trailing-whitespace)
-;(global-set-key (kbd "C-i") 'read-only-mode)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
@@ -172,9 +105,6 @@
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-;") 'comment-line)
 (global-set-key (kbd "C-b") 'buffer-menu)
-;(global-set-key (kbd "C-;") 'my-toggle-comment)
-;(global-set-key (kbd "C-c 1") 'comment-region)
-;(global-set-key (kbd "C-c 2") 'uncomment-region)
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-S-iso-lefttab] 'other-window---1)
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
@@ -186,6 +116,32 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
+(defun my-script-indent ()
+  (setq tab-width 4)
+  (setq indent-tabs-mode nil)
+  )
+
+(defun my-working-indent ()
+  (setq c-basic-offset 2)
+  (setq tab-width 2)
+  (setq indent-tabs-mode nil)
+  )
+
+(defun my-cc-style()
+  (c-set-style "linux")
+  (c-set-offset 'inlambda '0)
+  (c-set-offset 'innamespace '0)
+  (c-set-offset 'inextern-lang '0)
+  (c-set-offset 'inline-open '0)
+  (c-set-offset 'label '0)
+  (c-set-offset 'case-label '0)
+  (c-set-offset 'access-label '-)
+  (my-working-indent)
+  ;(setq c-basic-offset 4)
+  ;(setq tab-width 4)
+  ;(setq indent-tabs-mode t)
+  )
+
 (defun my-toggle-comment ()
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
@@ -297,15 +253,3 @@
       )
     )
   )
-
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-  )
-
-(ac-config-default)
-;; initialize auto-complete-mode
-;; (global-auto-complete-mode t)
-;; (setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
