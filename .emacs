@@ -120,7 +120,7 @@
 ;; custom functions
 (defun my-create-tags (dir-name)
   "Create tags file."
-  (interactive "DCreate TAGS file from directory: ")
+  (interactive "DCreate TAGS file from: ")
   (let ((save-dir-name
          (completing-read "Save TAGS file to: "
                           tags-table-list nil t (car tags-table-list))
