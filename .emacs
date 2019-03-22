@@ -34,7 +34,7 @@
  '(show-paren-mode t)
  '(tab-always-indent t)
  '(tab-width 4)
- '(tags-table-list (quote ("~/.")))
+ '(tags-table-list (quote ("~/")))
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -49,7 +49,7 @@
 ;(global-auto-complete-mode t)
 ;(setq ac-auto-start nil)
 ;(ac-set-trigger-key "TAB")
-
+(toggle-frame-maximized)
 ;; custom surface
 (set-background-color "gray9")
 (set-foreground-color "wheat")
@@ -106,6 +106,7 @@
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-;") 'comment-line)
 (global-set-key (kbd "C-b") 'buffer-menu)
+(global-set-key (kbd "C-t") 'my-create-tags)
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-S-iso-lefttab] 'other-window---1)
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
@@ -117,21 +118,20 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
-;; (defun create-tags (dir-name)
-;;   "Create tags file."
-;;   (interactive "DDirectory: ")
-;;   (eshell-command 
-;;    (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags -" dir-name)
-;;    )
-;;   )
-(defun create-tags ()
+(defun my-create-tags (dir-name)
   "Create tags file."
-  (interactive)
-  (cl-loop for dir-name in tags-table-list
-           do (eshell-command 
-               (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags -" dir-name)
-               )
-           )
+  (interactive "DCreate TAGS file from directory: ")
+  (let ((save-dir-name
+         (completing-read "Save TAGS file to: "
+                          tags-table-list nil t (car tags-table-list))
+         )
+        )
+    (eshell-command (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags - &&
+                             mv ./TAGS %s"
+                            dir-name
+                            save-dir-name)
+                    )
+    )
   )
 
 (defun my-script-indent ()
