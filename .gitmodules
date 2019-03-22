@@ -1,6 +1,0 @@
-[submodule ".emacs.d/emacs-nav"]
-	path = .emacs.d/emacs-nav
-	url = https://github.com/ancane/emacs-nav.git
-[submodule ".emacs.d/highlight-indent-guides"]
-	path = .emacs.d/highlight-indent-guides
-	url = https://github.com/DarthFennec/highlight-indent-guides.git
