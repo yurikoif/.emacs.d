@@ -34,7 +34,7 @@
  '(show-paren-mode t)
  '(tab-always-indent t)
  '(tab-width 4)
- '(tags-table-list (quote ("~/Desktop/")))
+ '(tags-table-list (quote ("~/.")))
  '(tool-bar-mode nil))
 
 (custom-set-faces
