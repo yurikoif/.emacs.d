@@ -23,7 +23,6 @@
  '(indent-tabs-mode t)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(nav-width 25)
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
