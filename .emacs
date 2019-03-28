@@ -100,6 +100,7 @@
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-.") 'isearch-repeat-forward)
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
+(global-set-key (kbd "C->") 'xref-find-definitions-other-frame)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
