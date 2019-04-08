@@ -13,6 +13,15 @@ imap <C-x>2 <ESC>:split<CR>
 nmap <C-x>3 :vsplit<CR>
 imap <C-x>3 <ESC>:vsplit<CR>
 
+nmap <silent> <C-x><Up> :wincmd k<CR>
+nmap <silent> <C-x><Down> :wincmd j<CR>
+nmap <silent> <C-x><Left> :wincmd h<CR>
+nmap <silent> <C-x><Right> :wincmd l<CR>
+nmap <silent> <C-x><Up> <ESC>:wincmd k<CR>
+nmap <silent> <C-x><Down> <ESC>:wincmd j<CR>
+nmap <silent> <C-x><Left> <ESC>:wincmd h<CR>
+nmap <silent> <C-x><Right> <ESC>:wincmd l<CR>
+
 nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
