@@ -1,3 +1,5 @@
+" EMACS style VI/VIM environment
+
 set number
 syntax on
 
