@@ -17,8 +17,8 @@ nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
 
-nmap <C-o> :edit<SPACE>
-imap <C-o> <ESC>:edit<SPACE>
+nmap <C-o> :edit<Space>
+imap <C-o> <ESC>:edit<Space>i
 
 nmap <C-w> :q<CR>
 imap <C-w> <ESC>:q<CR>
@@ -35,10 +35,27 @@ map <C-v> pi
 imap <C-v> <ESC>pi
 imap <C-z> <ESC>ui
 
+nmap <C-Up> {
+imap <C-Up> <ESC>{i
+nmap <C-Down> }
+imap <C-Down> <ESC>}i
 nmap <PageUp> 32k
 imap <PageUp> <ESC>32k
 nmap <PageDown> 32j
 imap <PageDown> <ESC>32j
+
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+vmap <C-S-Up> {
+vmap <C-S-Down> }
+vmap <C-S-Left> <C-Left>
+vmap <C-S-Right> <C-Right>
+vmap <S-Home> <Home>
+vmap <S-End> <End>
+vmap <S-PageUp> 32k
+vmap <S-PageDown> 32j
 
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
@@ -48,21 +65,20 @@ nmap <C-S-Up> v<C-Up>
 nmap <C-S-Down> v<C-Down>
 nmap <C-S-Left> v<C-Left>
 nmap <C-S-Right> v<C-Right>
+nmap <S-Home> v<Home>
+nmap <S-End> v<End>
+nmap <S-PageUp> v<PageUp>
+nmap <S-PageDown> v<PageDown>
 
-vmap <S-Up> <Up>
-vmap <S-Down> <Down>
-vmap <S-Left> <Left>
-vmap <S-Right> <Right>
-vmap <C-S-Up> <C-Up>
-vmap <C-S-Down> <C-Down>
-vmap <C-S-Left> <C-Left>
-vmap <C-S-Right> <C-Right>
-
-imap <S-Up> <Esc>v<Up>
-imap <S-Down> <Esc>v<Down>
-imap <S-Left> <Esc>v<Left>
-imap <S-Right> <Esc>v<Right>
-imap <C-S-Up> <Esc>v<C-Up>
-imap <C-S-Down> <Esc>v<C-Down>
-imap <C-S-Left> <Esc>v<C-Left>
-imap <C-S-Right> <Esc>v<C-Right>
+imap <S-Up> <ESC>v<Up>
+imap <S-Down> <ESC>v<Down>
+imap <S-Left> <ESC>v<Left>
+imap <S-Right> <ESC>v<Right>
+imap <C-S-Up> <ESC>v<C-Up>
+imap <C-S-Down> <ESC>v<C-Down>
+imap <C-S-Left> <ESC>v<C-Left>
+imap <C-S-Right> <ESC>v<C-Right>
+imap <S-Home> <ESC>v<Home>
+imap <S-End> <ESC>v<End>
+imap <C-S-PageUp> <ESC>v<PageUp>
+imap <C-S-PageDown> <ESC>v<PageDown>
