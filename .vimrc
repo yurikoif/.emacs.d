@@ -17,10 +17,10 @@ nmap <silent> <C-x><Up> :wincmd k<CR>
 nmap <silent> <C-x><Down> :wincmd j<CR>
 nmap <silent> <C-x><Left> :wincmd h<CR>
 nmap <silent> <C-x><Right> :wincmd l<CR>
-nmap <silent> <C-x><Up> <ESC>:wincmd k<CR>
-nmap <silent> <C-x><Down> <ESC>:wincmd j<CR>
-nmap <silent> <C-x><Left> <ESC>:wincmd h<CR>
-nmap <silent> <C-x><Right> <ESC>:wincmd l<CR>
+imap <silent> <C-x><Up> <ESC>:wincmd k<CR>
+imap <silent> <C-x><Down> <ESC>:wincmd j<CR>
+imap <silent> <C-x><Left> <ESC>:wincmd h<CR>
+imap <silent> <C-x><Right> <ESC>:wincmd l<CR>
 
 nmap <C-f> /
 imap <C-f> <ESC>/
