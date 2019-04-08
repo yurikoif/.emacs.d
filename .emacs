@@ -124,7 +124,8 @@
   (interactive "DCreate TAGS file from: ")
   (let ((save-dir-name
          (completing-read "Save TAGS file to: "
-                          tags-table-list nil t (car tags-table-list))
+                          tags-table-list nil t (car tags-table-list)
+                          )
          )
         )
     (eshell-command (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags - &&
