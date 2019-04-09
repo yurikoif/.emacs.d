@@ -4,25 +4,25 @@ set number
 syntax on
 
 nmap <C-x>0 :hide<CR>
-imap <C-x>0 <ESC>:hide<CR>
+imap <C-x>0 <ESC>:hide<CR>i
 
 nmap <C-x>1 :only<CR>
-imap <C-x>1 <ESC>:only<CR>
+imap <C-x>1 <ESC>:only<CR>i
 
 nmap <C-x>2 :split<CR>
-imap <C-x>2 <ESC>:split<CR>
+imap <C-x>2 <ESC>:split<CR>i
 
 nmap <C-x>3 :vsplit<CR>
-imap <C-x>3 <ESC>:vsplit<CR>
+imap <C-x>3 <ESC>:vsplit<CR>i
 
 nmap <silent> <C-x><Up> :wincmd k<CR>
 nmap <silent> <C-x><Down> :wincmd j<CR>
 nmap <silent> <C-x><Left> :wincmd h<CR>
 nmap <silent> <C-x><Right> :wincmd l<CR>
-imap <silent> <C-x><Up> <ESC>:wincmd k<CR>
-imap <silent> <C-x><Down> <ESC>:wincmd j<CR>
-imap <silent> <C-x><Left> <ESC>:wincmd h<CR>
-imap <silent> <C-x><Right> <ESC>:wincmd l<CR>
+imap <silent> <C-x><Up> <ESC>:wincmd k<CR>i
+imap <silent> <C-x><Down> <ESC>:wincmd j<CR>i
+imap <silent> <C-x><Left> <ESC>:wincmd h<CR>i
+imap <silent> <C-x><Right> <ESC>:wincmd l<CR>i
 
 nmap <C-f> /
 imap <C-f> <ESC>/
@@ -35,7 +35,7 @@ nmap <C-w> :q<CR>
 imap <C-w> <ESC>:q<CR>
 
 nmap <C-s> :update<CR>
-imap <C-s> <ESC>:update<CR>
+imap <C-s> <ESC>:update<CR>i
 
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
@@ -51,9 +51,9 @@ imap <C-Up> <ESC>{i
 nmap <C-Down> }
 imap <C-Down> <ESC>}i
 nmap <PageUp> 32k
-imap <PageUp> <ESC>32k
+imap <PageUp> <ESC>32ki
 nmap <PageDown> 32j
-imap <PageDown> <ESC>32j
+imap <PageDown> <ESC>32ji
 
 vmap <S-Up> <Up>
 vmap <S-Down> <Down>
