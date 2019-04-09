@@ -10,6 +10,8 @@ set autoindent
 set smartindent
 set cindent
 
+imap <C-l> <ESC>:
+
 nmap <TAB> =
 vmap <TAB> =i
 
