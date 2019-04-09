@@ -54,7 +54,7 @@ nmap <C-w> :q<CR>
 imap <C-w> <ESC>:q<CR>
 
 nmap <C-s> :update<CR>
-imap <C-s> <ESC>:update<CR>i
+imap <C-s> <ESC>:update<CR>li
 
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
