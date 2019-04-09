@@ -10,6 +10,8 @@ set autoindent
 set smartindent
 set cindent
 
+imap <C-x><C-o> <C-x><C-o>
+
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
 
@@ -56,6 +58,8 @@ imap <C-s> <ESC>:update<CR>i
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
 
+vmap <BS> "_di
+vmap <DEL> "_di
 vmap <C-c> y<ESC>i
 vmap <C-x> d<ESC>i
 map <C-v> pi
