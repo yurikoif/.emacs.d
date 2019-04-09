@@ -78,7 +78,7 @@ imap <C-z> <ESC>ui
 nmap <C-Left> ge
 imap <C-Left> <ESC>gei
 nmap <C-Right> e
-imap <C-Right> <ESC>ei
+imap <C-Right> <ESC>lei
 nmap <C-Up> {
 imap <C-Up> <ESC>{i
 nmap <C-Down> }
