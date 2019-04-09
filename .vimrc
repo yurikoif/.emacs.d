@@ -56,6 +56,14 @@ imap <C-s> <ESC>:update<CR>i
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
 
+nmap <C-z> :undo<CR>
+imap <C-z> <ESC>:undo<CR>i
+vmap <C-z> <ESC>:undo<CR>i
+
+nmap <C-y> :redo<CR>
+imap <C-y> <ESC>:redo<CR>i
+vmap <C-y> <ESC>:redo<CR>i
+
 vmap <BS> "_di
 vmap <DEL> "_di
 vmap <C-c> y<ESC>i
