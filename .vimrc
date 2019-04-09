@@ -3,6 +3,13 @@
 set number
 syntax on
 
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set autoindent
+set smartindent
+set cindent
+
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
 
@@ -28,8 +35,17 @@ nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
 
-nmap <C-o> :edit<Space>
-imap <C-o> <ESC>:edit<Space>i
+nmap <C-o> :tabnew<Space>
+imap <C-o> <ESC>:tabnew<Space>
+
+nmap <C-n> :tabnew<CR>i
+imap <C-n> <ESC>:tabnew<CR>i
+
+nmap <C-Home> :tabprevious<CR>
+imap <C-Home> <ESC>:tabprevious<CR>i
+
+nmap <C-End> :tabnext<CR>
+imap <C-End> <ESC>:tabnext<CR>i
 
 nmap <C-w> :q<CR>
 imap <C-w> <ESC>:q<CR>
@@ -93,3 +109,4 @@ imap <S-Home> <ESC>v<Home>
 imap <S-End> <ESC>v<End>
 imap <C-S-PageUp> <ESC>v<PageUp>
 imap <C-S-PageDown> <ESC>v<PageDown>
+
