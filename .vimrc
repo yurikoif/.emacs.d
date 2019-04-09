@@ -11,7 +11,6 @@ set smartindent
 set cindent
 
 nmap <TAB> =
-imap <TAB> <ESC>=i
 vmap <TAB> =i
 
 nmap <C-x>0 :hide<CR>
