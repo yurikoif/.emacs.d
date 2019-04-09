@@ -72,6 +72,10 @@ map <C-v> pi
 imap <C-v> <ESC>pi
 imap <C-z> <ESC>ui
 
+nmap <C-Left> ge
+imap <C-Left> <ESC>gei
+nmap <C-Right> e
+imap <C-Right> <ESC>ei
 nmap <C-Up> {
 imap <C-Up> <ESC>{i
 nmap <C-Down> }
