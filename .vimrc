@@ -10,6 +10,8 @@ set autoindent
 set smartindent
 set cindent
 
+set tags=~/TAGS
+
 imap <C-l> <ESC>:
 
 nmap <TAB> =
