@@ -1,7 +1,10 @@
 " EMACS style VI/VIM environment
 
 set number
-syntax on
+syntax enable
+
+hi Statement cterm=bold
+hi Type cterm=bold
 
 set tabstop=2
 set expandtab
