@@ -12,8 +12,6 @@ set cindent
 
 set tags=~/TAGS
 
-imap <C-l> <ESC>:
-
 nmap <TAB> =
 vmap <TAB> =i
 
@@ -58,7 +56,7 @@ nmap <C-w> :q<CR>
 imap <C-w> <ESC>:q<CR>
 
 nmap <C-s> :update<CR>
-imap <C-s> <ESC>:update<CR>i<Right>
+imap <C-s> <ESC>:update<CR>li
 
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
@@ -73,8 +71,8 @@ vmap <C-y> <ESC>:redo<CR>i
 
 vmap <BS> "_di
 vmap <DEL> "_di
-vmap <C-c> y<ESC>i<Right>
-vmap <C-x> d<ESC>i<Right>
+vmap <C-c> y<ESC>li
+vmap <C-x> d<ESC>li
 map <C-v> pi
 imap <C-v> <ESC>pi
 
