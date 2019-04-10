@@ -46,8 +46,8 @@ imap <C-f> <ESC>/
 nmap <C-o> :tabnew<Space>
 imap <C-o> <ESC>:tabnew<Space>
 
-nmap <C-n> :tabnew<CR>i
-imap <C-n> <ESC>:tabnew<CR>i
+nmap <C-n> :vsplit<Space>
+imap <C-n> <ESC>:vsplit<Space>
 
 nmap <C-Home> :tabprevious<CR>
 imap <C-Home> <ESC>:tabprevious<CR>i
