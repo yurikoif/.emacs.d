@@ -71,22 +71,27 @@ vmap <C-y> <ESC>:redo<CR>i
 
 vmap <BS> "_di
 vmap <DEL> "_di
-vmap <C-c> y<ESC>i
-vmap <C-x> d<ESC>i
+vmap <C-c> y<ESC>i<Right>
+vmap <C-x> d<ESC>i<Right>
 map <C-v> pi
 imap <C-v> <ESC>pi
-imap <C-z> <ESC>ui
 
+vmap <C-Left> ge
 nmap <C-Left> ge
 imap <C-Left> <ESC>gei
+vmap <C-Right> e
 nmap <C-Right> e
 imap <C-Right> <ESC>lei
+vmap <C-Up> {
 nmap <C-Up> {
 imap <C-Up> <ESC>{i
+vmap <C-Down> }
 nmap <C-Down> }
 imap <C-Down> <ESC>}i
+vmap <PageUp> 32k
 nmap <PageUp> 32k
 imap <PageUp> <ESC>32ki
+vmap <PageDown> 32j
 nmap <PageDown> 32j
 imap <PageDown> <ESC>32ji
 
