@@ -71,12 +71,12 @@ vmap <C-x> d<ESC>li
 map <C-v> pi
 imap <C-v> <ESC>pi
 
-vmap <C-Left> ge
-nmap <C-Left> ge
-imap <C-Left> <ESC>gei
-vmap <C-Right> e
-nmap <C-Right> e
-imap <C-Right> <ESC>lei
+vmap <C-Left> b
+nmap <C-Left> b
+imap <C-Left> <ESC>bi
+vmap <C-Right> w
+nmap <C-Right> w
+imap <C-Right> <ESC>wi
 vmap <C-Up> {
 nmap <C-Up> {
 imap <C-Up> <ESC>{i
