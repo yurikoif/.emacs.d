@@ -2,18 +2,13 @@
 
 set number
 set cursorline
-syntax enable
-
-hi Statement cterm=bold
-hi Type cterm=bold
-
+sy enable
 set tabstop=2
 set expandtab
 set shiftwidth=2
 set autoindent
 set smartindent
 set cindent
-
 set tags=~/TAGS
 
 nmap <TAB> =
