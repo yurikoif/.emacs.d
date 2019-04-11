@@ -68,7 +68,7 @@ vmap <BS> "_di
 vmap <DEL> "_di
 vmap <C-c> y<ESC>li
 vmap <C-x> d<ESC>li
-map <C-v> pi
+vmap <C-v> pi
 imap <C-v> <ESC>pi
 
 vmap <C-Left> b
