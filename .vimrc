@@ -76,7 +76,7 @@ nmap <C-Left> b
 imap <C-Left> <ESC>bi
 vmap <C-Right> w
 nmap <C-Right> w
-imap <C-Right> <ESC>wi
+imap <C-Right> <ESC>lwi
 vmap <C-Up> {
 nmap <C-Up> {
 imap <C-Up> <ESC>{i
