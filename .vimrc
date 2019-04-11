@@ -1,6 +1,7 @@
 " EMACS style VI/VIM environment
 
 set number
+set cursorline
 syntax enable
 
 hi Statement cterm=bold
