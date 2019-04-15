@@ -85,8 +85,8 @@ vmap <C-z> <ESC>:undo<CR>i
 
 vmap <BS> "_d<ESC>i
 vmap <DEL> "_di
-vmap <C-c> y<ESC>li
-vmap <C-x> d<ESC>li
+vmap <C-c> y<ESC>a
+vmap <C-x> d<ESC>a
 vmap <C-v> pi
 imap <C-v> <ESC>pi
 
