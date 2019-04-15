@@ -9,7 +9,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set cindent
-set tags=~/TAGS
+set tags=~/Desktop/tags
 
 nmap <TAB> =
 vmap <TAB> =i
@@ -34,6 +34,9 @@ imap <silent> <C-x><Up> <ESC>:wincmd k<CR>i
 imap <silent> <C-x><Down> <ESC>:wincmd j<CR>i
 imap <silent> <C-x><Left> <ESC>:wincmd h<CR>i
 imap <silent> <C-x><Right> <ESC>:wincmd l<CR>i
+
+nmap <C-T> :! cd ~/Desktop && ctags -R . 
+imap <C-T> <ESC>:! cd ~/Desktop && ctags -R .
 
 nnoremap <C-]> :split<CR><C-]>
 inoremap <C-]> <ESC>:split<CR><C-]>
