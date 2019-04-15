@@ -38,8 +38,16 @@ imap <silent> <C-x><Right> <ESC>:wincmd l<CR>i
 nmap <C-T> :! cd ~/Desktop && ctags -R . 
 imap <C-T> <ESC>:! cd ~/Desktop && ctags -R .
 
-nnoremap <C-]> :split<CR><C-]>
-inoremap <C-]> <ESC>:split<CR><C-]>
+fu! MySplit()
+  if winwidth('%') < winheight('%') * 3
+    :split
+  else
+    :vsplit
+  end
+endf
+
+nnoremap <C-]> :call MySplit()<CR><C-]>
+inoremap <C-]> <ESC>:call MySplit()<CR><C-]>
 
 nmap <C-f> /
 imap <C-f> <ESC>/
