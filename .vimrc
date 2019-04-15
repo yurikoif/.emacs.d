@@ -83,7 +83,7 @@ nmap <C-z> :undo<CR>
 imap <C-z> <ESC>:undo<CR>i
 vmap <C-z> <ESC>:undo<CR>i
 
-vmap <BS> "_d<ESC>li
+vmap <BS> "_d<ESC>i
 vmap <DEL> "_di
 vmap <C-c> y<ESC>li
 vmap <C-x> d<ESC>li
