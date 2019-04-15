@@ -26,14 +26,19 @@ imap <C-x>2 <ESC>:split<CR>i
 nmap <C-x>3 :vsplit<CR>
 imap <C-x>3 <ESC>:vsplit<CR>i
 
-nmap <silent> <C-x><Up> :wincmd k<CR>
-nmap <silent> <C-x><Down> :wincmd j<CR>
-nmap <silent> <C-x><Left> :wincmd h<CR>
-nmap <silent> <C-x><Right> :wincmd l<CR>
-imap <silent> <C-x><Up> <ESC>:wincmd k<CR>i
-imap <silent> <C-x><Down> <ESC>:wincmd j<CR>i
-imap <silent> <C-x><Left> <ESC>:wincmd h<CR>i
-imap <silent> <C-x><Right> <ESC>:wincmd l<CR>i
+nmap <C-x><Left> :bp<CR>
+imap <C-x><left> <ESC>:bp<CR>i
+nmap <C-x><Right> :bn<CR>
+imap <C-x><Right> <ESC>:bn<CR>i
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+imap <silent> <A-Up> <ESC>:wincmd k<CR>i
+imap <silent> <A-Down> <ESC>:wincmd j<CR>i
+imap <silent> <A-Left> <ESC>:wincmd h<CR>i
+imap <silent> <A-Right> <ESC>:wincmd l<CR>i
 
 nmap <C-T> :! cd ~/Desktop && ctags -R . 
 imap <C-T> <ESC>:! cd ~/Desktop && ctags -R .
@@ -78,7 +83,7 @@ nmap <C-z> :undo<CR>
 imap <C-z> <ESC>:undo<CR>i
 vmap <C-z> <ESC>:undo<CR>i
 
-vmap <BS> "_di<Right>
+vmap <BS> "_d<ESC>li
 vmap <DEL> "_di
 vmap <C-c> y<ESC>li
 vmap <C-x> d<ESC>li
