@@ -35,6 +35,9 @@ imap <silent> <C-x><Down> <ESC>:wincmd j<CR>i
 imap <silent> <C-x><Left> <ESC>:wincmd h<CR>i
 imap <silent> <C-x><Right> <ESC>:wincmd l<CR>i
 
+nnoremap <C-]> :split<CR><C-]>
+inoremap <C-]> <ESC>:split<CR><C-]>
+
 nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
@@ -55,7 +58,7 @@ nmap <C-w> :q<CR>
 imap <C-w> <ESC>:q<CR>
 
 nmap <C-s> :update<CR>
-imap <C-s> <ESC>:update<CR>li
+imap <C-s> <ESC>:update<CR><ESC>i<Right>
 
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
@@ -64,7 +67,7 @@ nmap <C-z> :undo<CR>
 imap <C-z> <ESC>:undo<CR>i
 vmap <C-z> <ESC>:undo<CR>i
 
-vmap <BS> "_di
+vmap <BS> "_di<Right>
 vmap <DEL> "_di
 vmap <C-c> y<ESC>li
 vmap <C-x> d<ESC>li
