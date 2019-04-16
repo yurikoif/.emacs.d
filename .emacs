@@ -54,8 +54,8 @@
   (setq init-toggled-maximized t)
   )
 ;; custom surface
-(set-background-color "gray3")
-;(set-background-color "black")
+;(set-background-color "gray3")
+(set-background-color "black")
 ;(set-foreground-color "wheat")
 (set-foreground-color "cornsilk")
 (fset 'yes-or-no-p 'y-or-n-p)
