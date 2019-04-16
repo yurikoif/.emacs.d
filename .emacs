@@ -51,8 +51,9 @@
 ;(ac-set-trigger-key "TAB")
 (toggle-frame-maximized)
 ;; custom surface
-(set-background-color "gray9")
-(set-foreground-color "wheat")
+(set-background-color "gray3")
+;(set-background-color "black")
+(set-foreground-color "wheat13")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
