@@ -49,11 +49,15 @@
 ;(global-auto-complete-mode t)
 ;(setq ac-auto-start nil)
 ;(ac-set-trigger-key "TAB")
-(toggle-frame-maximized)
+(when (null init-toggled-maximized)
+  (toggle-frame-maximized)
+  (setq init-toggled-maximized t)
+  )
 ;; custom surface
 (set-background-color "gray3")
 ;(set-background-color "black")
-(set-foreground-color "wheat13")
+;(set-foreground-color "wheat")
+(set-foreground-color "cornsilk")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
