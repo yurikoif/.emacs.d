@@ -49,7 +49,7 @@
 ;(global-auto-complete-mode t)
 ;(setq ac-auto-start nil)
 ;(ac-set-trigger-key "TAB")
-(when (null init-toggled-maximized)
+(when (null (boundp 'init-toggled-maximized))
   (toggle-frame-maximized)
   (setq init-toggled-maximized t)
   )
