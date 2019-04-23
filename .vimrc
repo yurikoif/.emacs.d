@@ -9,7 +9,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set cindent
-set tags=~/Desktop/tags
+set tags=~/TAGS
 
 nmap <TAB> =
 vmap <TAB> =i
@@ -39,9 +39,6 @@ imap <silent> <A-Up> <ESC>:wincmd k<CR>i
 imap <silent> <A-Down> <ESC>:wincmd j<CR>i
 imap <silent> <A-Left> <ESC>:wincmd h<CR>i
 imap <silent> <A-Right> <ESC>:wincmd l<CR>i
-
-nmap <C-T> :! cd ~/Desktop && ctags -R . 
-imap <C-T> <ESC>:! cd ~/Desktop && ctags -R .
 
 fu! MySplit()
   if winwidth('%') < winheight('%') * 3

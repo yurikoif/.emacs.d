@@ -124,20 +124,24 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
-(defun my-create-tags (dir-name)
+(defun my-create-tags (dir-path)
   "Create tags file."
   (interactive "DCreate TAGS file from: ")
-  (let ((save-dir-name
+  (let ((save-dir-path
          (completing-read "Save TAGS file to: "
                           tags-table-list nil t (car tags-table-list)
                           )
          )
         )
-    (eshell-command (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags - &&
-                             mv ./TAGS %s"
-                            dir-name
-                            save-dir-name)
-                    )
+    (eshell-command
+     (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | ctags -f %s/TAGS -e -L -"
+             dir-path save-dir-path)
+     )
+    ;; (eshell-command (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags - &&
+    ;;                          mv ./TAGS %s"
+    ;;                         dir-path
+    ;;                         save-dir-path)
+    ;;                 )
     )
   )
 
