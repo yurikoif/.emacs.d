@@ -67,8 +67,8 @@ imap <C-Home> <ESC>:tabprevious<CR>i
 nmap <C-End> :tabnext<CR>
 imap <C-End> <ESC>:tabnext<CR>i
 
-nmap <C-w> :q<CR>
-imap <C-w> <ESC>:q<CR>
+" nmap <C-w> :q<CR>
+" imap <C-w> <ESC>:q<CR>
 
 nmap <C-s> :update<CR>
 imap <C-s> <ESC>:update<CR><ESC>a
