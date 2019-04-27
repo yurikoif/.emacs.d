@@ -27,8 +27,9 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
- '(prog-mode-hook (quote (auto-complete-mode highlight-indent-guides-mode)))
+    (eyebrowse highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+ '(prog-mode-hook (quote (auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
+ '(eyebrowse-mode-line-style (quote smart))
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
@@ -44,11 +45,6 @@
  ;; If there is more than one, they won't work right.
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
-;(ac-config-default)
-;; initialize auto-complete-mode
-;(global-auto-complete-mode t)
-;(setq ac-auto-start nil)
-;(ac-set-trigger-key "TAB")
 (when (null (boundp 'init-toggled-maximized))
   (toggle-frame-maximized)
   (setq init-toggled-maximized t)
@@ -115,8 +111,12 @@
 (global-set-key (kbd "C-t") 'my-create-tags)
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-S-iso-lefttab] 'other-window---1)
-(global-set-key (kbd "C-<prior>") 'previous-buffer)
-(global-set-key (kbd "C-<next>") 'next-buffer)
+;; (global-set-key (kbd "C-<prior>") 'previous-buffer)
+;; (global-set-key (kbd "C-<next>") 'next-buffer)
+(global-set-key (kbd "C-n") 'eyebrowse-create-window-config)
+(global-set-key (kbd "C-'") 'eyebrowse-close-window-config)
+(global-set-key (kbd "C-<prior>") 'eyebrowse-prev-window-config)
+(global-set-key (kbd "C-<next>") 'eyebrowse-next-window-config)
 (global-set-key [M-f4] 'kill-emacs)
 (global-set-key [f7] 'gdb)
 (global-set-key [C-f7] 'jdb)
