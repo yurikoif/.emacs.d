@@ -16,6 +16,8 @@
      ((tool-bar-lines . 0)
       (menu-bar-lines . 1)
       (alpha . 90))))
+ '(eyebrowse-mode-line-style (quote smart))
+ '(eyebrowse-switch-back-and-forth nil)
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(highlight-indent-guides-auto-character-face-perc 25)
@@ -28,8 +30,9 @@
  '(package-selected-packages
    (quote
     (eyebrowse highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
- '(prog-mode-hook (quote (auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
- '(eyebrowse-mode-line-style (quote smart))
+ '(prog-mode-hook
+   (quote
+    (auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
