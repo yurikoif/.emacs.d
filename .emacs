@@ -117,7 +117,8 @@
 (global-set-key [C-S-iso-lefttab] 'other-window---1)
 (global-set-key (kbd "C-<prior>") 'previous-buffer)
 (global-set-key (kbd "C-<next>") 'next-buffer)
-(global-set-key (kbd "C-n") 'eyebrowse-create-window-config)
+;; (global-set-key (kbd "C-n") 'eyebrowse-create-window-config)
+(global-set-key (kbd "C-n") 'my-create-window-config)
 (global-set-key (kbd "C-'") 'eyebrowse-close-window-config)
 (global-set-key (kbd "C-<home>") 'eyebrowse-prev-window-config)
 (global-set-key (kbd "C-<end>") 'eyebrowse-next-window-config)
@@ -128,6 +129,14 @@
 (global-set-key [C-f9] 'my-run)
 
 ;; custom functions
+(defun my-create-window-config (file-path)
+  "Create tags file."
+  (interactive "FNew window config: ")
+  (eyebrowse-create-window-config)
+  (delete-other-windows)
+  (find-file file-path)
+  )
+
 (defun my-create-tags (dir-path)
   "Create tags file."
   (interactive "DCreate TAGS file from: ")
