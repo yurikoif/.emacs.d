@@ -1,15 +1,9 @@
-/home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/landcover_base_modeling.cpp
-/home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/#landcover_base_modeling.cpp#
-/home/richard/Desktop/ecopia-landcover-adv/cpp/math/shape_representation.cpp
-/home/richard/Desktop/ecopia-landcover-adv/cpp/math/#shape_representation.cpp#
 /home/richard/Desktop/ecopia-landcover-adv/natural_surface/test/test_connector.cpp
 /home/richard/Desktop/ecopia-landcover-adv/natural_surface/test/#test_connector.cpp#
 /home/richard/Desktop/ecopia-landcover-adv/cpp/math/advanced_kernel_connector.cpp
 /home/richard/Desktop/ecopia-landcover-adv/cpp/math/#advanced_kernel_connector.cpp#
-/home/richard/Desktop/ecopia-landcover-adv/cpp/modeling/utils/geometry_kernel_converter.cpp
-/home/richard/Desktop/ecopia-landcover-adv/cpp/modeling/utils/#geometry_kernel_converter.cpp#
-/home/richard/Desktop/ecopia-landcover-adv/natural_surface/include/kernel_snap.h
-/home/richard/Desktop/ecopia-landcover-adv/natural_surface/include/#kernel_snap.h#
+/home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/landcover_base_modeling.cpp
+/home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/#landcover_base_modeling.cpp#
 /home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/artificial_area_modeling.cpp
 /home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/#artificial_area_modeling.cpp#
 /home/richard/Desktop/ecopia-landcover-adv/natural_surface/src/compound_artificial_area_modeling.cpp
