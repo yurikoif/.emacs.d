@@ -15,7 +15,7 @@
     (quote
      ((tool-bar-lines . 0)
       (menu-bar-lines . 1)
-      (alpha . 90))))
+      (alpha . 81))))
  '(electric-pair-mode t)
  '(eyebrowse-mode-line-style (quote smart))
  '(eyebrowse-switch-back-and-forth t)
