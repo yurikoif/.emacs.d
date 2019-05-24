@@ -53,9 +53,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "#99968b" :slant italic))))
- '(font-lock-keyword-face ((t (:foreground "#9587DD" :weight bold))))
- '(font-lock-type-face ((t (:foreground "#0D9C94" :weight bold))))
+ '(font-lock-comment-face ((t (:slant italic))))
+ '(font-lock-keyword-face ((t (:weight bold))))
+ '(font-lock-type-face ((t (:weight bold))))
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
 (when (null (boundp 'init-toggled-maximized))
