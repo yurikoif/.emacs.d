@@ -72,9 +72,9 @@
 
 (load-theme 'kaolin-galaxy)
 ;(set-background-color "gray3")
-;(set-background-color "black")
+(set-background-color "black")
 ;(set-foreground-color "wheat")
-;(set-foreground-color "cornsilk")
+(set-foreground-color "cornsilk")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
