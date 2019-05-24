@@ -7,10 +7,15 @@
  '(ac-trigger-key nil)
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(c-basic-offset 4)
  '(c-default-style "linux")
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (wombat)))
+ '(custom-safe-themes
+   (quote
+    ("f07729f5245b3c8b3c9bd1780cbe6f3028a9e1ed45cad7a15dd1a7323492b717" "9f08dacc5b23d5eaec9cccb6b3d342bd4fdb05faf144bdcd9c4b5859ac173538" default)))
  '(default-frame-alist
     (quote
      ((tool-bar-lines . 0)
@@ -31,7 +36,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (eyebrowse highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (kaolin-themes eyebrowse highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook
    (quote
     (auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
