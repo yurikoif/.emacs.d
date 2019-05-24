@@ -50,8 +50,8 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-face ((t (:foreground "#99968b" :slant italic))))
  '(font-lock-function-name-face ((t (:foreground "coral"))))
- '(font-lock-string-face ((t (:foreground "plum"))))
- '(font-lock-type-face ((t (:foreground "dark sea green" :weight bold))))
+ '(font-lock-string-face ((t (:foreground "thistle"))))
+ '(font-lock-type-face ((t (:foreground "aquamarine" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "khaki"))))
  '(highlight-indentation-face ((t (:inherit fringe)))))
 
