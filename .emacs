@@ -15,12 +15,12 @@
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
-	("51043b04c31d7a62ae10466da95a37725638310a38c471cc2e9772891146ee52" default)))
+    ("ef07cb337554ffebfccff8052827c4a9d55dc2d0bc7f08804470451385d41c5c" "51043b04c31d7a62ae10466da95a37725638310a38c471cc2e9772891146ee52" default)))
  '(default-frame-alist
-	(quote
-	 ((tool-bar-lines . 0)
-	  (menu-bar-lines . 1)
-	  (alpha . 90))))
+    (quote
+     ((tool-bar-lines . 0)
+      (menu-bar-lines . 1)
+      (alpha . 90))))
  '(electric-pair-mode t)
  '(eyebrowse-mode-line-style (quote smart))
  '(eyebrowse-switch-back-and-forth t)
@@ -36,10 +36,10 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-	(kaolin-themes eyebrowse highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
+    (kaolin-themes eyebrowse highlight-indent-guides csharp-mode auto-complete-c-headers ac-math auto-correct markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook
    (quote
-	(auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
+    (auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
@@ -70,11 +70,11 @@
   (setq init-toggled-maximized t)
   )
 
-(load-theme 'kaolin-bubblegum)
+(load-theme 'kaolin-galaxy)
 ;(set-background-color "gray3")
-(set-background-color "black")
+;(set-background-color "black")
 ;(set-foreground-color "wheat")
-(set-foreground-color "cornsilk")
+;(set-foreground-color "cornsilk")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
