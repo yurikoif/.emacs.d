@@ -12,10 +12,22 @@
  '(c-basic-offset 4)
  '(c-default-style "linux")
  '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (wombat)))
+ '(custom-enabled-themes (quote (kaolin-aurora)))
  '(custom-safe-themes
    (quote
-    ("ef07cb337554ffebfccff8052827c4a9d55dc2d0bc7f08804470451385d41c5c" "51043b04c31d7a62ae10466da95a37725638310a38c471cc2e9772891146ee52" default)))
+    ("571a762840562ec5b31b6a9d4b45cfb1156ce52339e188a8b66749ed9b3b22a2"
+     "0f1733ad53138ddd381267b4033bcb07f5e75cd7f22089c7e650f1bb28fc67f4"
+     "fa477d10f10aa808a2d8165a4f7e6cee1ab7f902b6853fbee911a9e27cf346bc"
+     "b13f76a2eb776abe9c17379d6d90f36cdac716678cd8b9138ba4b6c2a8fca378"
+     "6e38567da69b5110c8e19564b7b2792add8e78a31dfb270168509e7ae0147a8d"
+     "bee55ba5e878d0584db9b2fb33f75c348a3008fcfe8e05ab8cae897ca604fd95"
+     "f07729f5245b3c8b3c9bd1780cbe6f3028a9e1ed45cad7a15dd1a7323492b717"
+     "9f08dacc5b23d5eaec9cccb6b3d342bd4fdb05faf144bdcd9c4b5859ac173538"
+     "030346c2470ddfdaca479610c56a9c2aa3e93d5de3a9696f335fd46417d8d3e4"
+     "886fe9a7e4f5194f1c9b1438955a9776ff849f9e2f2bbb4fa7ed8879cdca0631"
+     "ef07cb337554ffebfccff8052827c4a9d55dc2d0bc7f08804470451385d41c5c"
+     "51043b04c31d7a62ae10466da95a37725638310a38c471cc2e9772891146ee52"
+     default)))
  '(default-frame-alist
     (quote
      ((tool-bar-lines . 0)
@@ -32,7 +44,6 @@
  '(indent-tabs-mode t)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(nav-width 25)
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
@@ -74,7 +85,7 @@
 ;(set-background-color "gray3")
 (set-background-color "black")
 ;(set-foreground-color "wheat")
-(set-foreground-color "cornsilk")
+;(set-foreground-color "cornsilk")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'c-mode-common-hook 'my-cc-style)
