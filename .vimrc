@@ -55,8 +55,8 @@ nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
 
-nmap <C-o> :tabnew<Space>
-imap <C-o> <ESC>:tabnew<Space>
+nmap <C-o> :edit<Space>
+imap <C-o> <ESC>:edit<Space>
 
 " nmap <C-o> :vsplit<Space>
 " imap <C-o> <ESC>:vsplit<Space>
