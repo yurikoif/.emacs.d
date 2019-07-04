@@ -13,6 +13,7 @@ set tags=~/TAGS
 
 nmap <TAB> =
 vmap <TAB> =i
+imap <TAB> <C-p>
 
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
