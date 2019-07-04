@@ -22,6 +22,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^org\\.gnu\\.Emacs$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyper$",
@@ -50,6 +51,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^org\\.gnu\\.Emacs$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyper$",
@@ -1176,6 +1178,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^org\\.gnu\\.Emacs$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^co\\.zeit\\.hyper$",
