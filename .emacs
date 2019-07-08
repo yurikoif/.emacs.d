@@ -37,7 +37,7 @@
     (kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook
    (quote
-    (auto-complete-mode highlight-indent-guides-mode eyebrowse-mode)))
+    (auto-complete-mode eyebrowse-mode)))
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
