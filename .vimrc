@@ -1,19 +1,36 @@
 " EMACS style VI/VIM environment
 
+sy enable
+
 set number
 set cursorline
-sy enable
-set tabstop=2
 set expandtab
-set shiftwidth=2
 set autoindent
 set smartindent
-set cindent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set tags=~/TAGS
 
+au Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+au Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
 nmap <TAB> =
-vmap <TAB> =i
-imap <TAB> <C-p>
+vmap <TAB> =
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
