@@ -11,6 +11,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set tags=~/TAGS
+set autochdir                   " Changes the cwd to the directory of the current
+                                " buffer whenever you switch buffers.
+set browsedir=current           " Make the file browser always open the current
+                                " directory.
 
 au Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
@@ -73,8 +77,8 @@ nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
 
-nmap <C-o> :ex<Space>%:p:h/
-imap <C-o> <ESC>:ex<Space>%:p:h/
+nmap <C-o> :ex<Space><C-d>
+imap <C-o> <ESC>:ex<Space><C-d>
 
 " nmap <C-o> :vsplit<Space>
 " imap <C-o> <ESC>:vsplit<Space>

@@ -84,7 +84,6 @@
 (add-hook 'python-mode-hook 'my-script-indent)
 (add-hook 'lisp-mode-hook 'my-script-indent)
 (add-hook 'emacs-lisp-mode-hook 'my-script-indent)
-(add-hook 'lisp-interaction-mode-hook '(lambda () (local-set-key (kbd "RET") 'eval-print-last-sexp)))
 ;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
 
