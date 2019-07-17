@@ -21,6 +21,7 @@
      ((tool-bar-lines . 0)
       (menu-bar-lines . 1)
       (alpha . 81))))
+ '(desktop-save-mode nil)
  '(electric-pair-mode t)
  '(eyebrowse-mode-line-style (quote smart))
  '(eyebrowse-switch-back-and-forth t)
@@ -35,9 +36,7 @@
  '(package-selected-packages
    (quote
     (kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
- '(prog-mode-hook
-   (quote
-    (auto-complete-mode eyebrowse-mode)))
+ '(prog-mode-hook (quote (auto-complete-mode eyebrowse-mode)))
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)

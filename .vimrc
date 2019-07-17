@@ -77,11 +77,8 @@ nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
 
-nmap <C-o> :ex<Space><C-d>
-imap <C-o> <ESC>:ex<Space><C-d>
-
-" nmap <C-o> :vsplit<Space>
-" imap <C-o> <ESC>:vsplit<Space>
+nmap <C-o> :call MySplit()<CR>:ex<Space><C-d>
+imap <C-o> <ESC>:call MySplit()<CR>:ex<Space><C-d>
 
 nmap <C-Home> :tabprevious<CR>
 imap <C-Home> <ESC>:tabprevious<CR>i
@@ -98,16 +95,8 @@ imap <C-s> <ESC>:update<CR><ESC>a
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
 
-nmap <C-z> :undo<CR>
-imap <C-z> <ESC>:undo<CR>i
-vmap <C-z> <ESC>:undo<CR>i
-
-vmap <BS> "_d<ESC>i
-vmap <DEL> "_di
-vmap <C-c> y<ESC>a
-vmap <C-x> d<ESC>a
-vmap <C-v> pi
-imap <C-v> <ESC>pi
+vmap <BS> "_d<ESC>
+vmap <DEL> "_d
 
 vmap <C-Left> b
 nmap <C-Left> b
