@@ -7,6 +7,6 @@ syn match cCustomFunc  "\w\+\s*(\@=" contains=cCustomParen
 syn match cCustomScope "::"
 syn match cCustomClass "\w\+\s*::" contains=cCustomScope
 
-hi def cCustomScope ctermfg=Blue
 hi def cCustomClass ctermfg=Blue
 hi def cCustomFunc ctermfg=Blue
+hi def cCustomScope ctermfg=Red
