@@ -10,7 +10,7 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set tags=~/TAGS
+set tags=~/tags
 set autochdir                   " Changes the cwd to the directory of the current
                                 " buffer whenever you switch buffers.
 set browsedir=current           " Make the file browser always open the current
@@ -76,6 +76,8 @@ inoremap <C-]> <ESC>:call MySplit()<CR><C-]>
 nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
+
+nmap <C-_> *
 
 nmap <C-o> :call MySplit()<CR>:ex<Space><C-d>
 imap <C-o> <ESC>:call MySplit()<CR>:ex<Space><C-d>
