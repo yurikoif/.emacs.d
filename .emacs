@@ -157,14 +157,9 @@
          )
         )
     (eshell-command
-     (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | ctags -f %s/TAGS -e -L -"
+     (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e -L -"
              dir-path save-dir-path)
      )
-    ;; (eshell-command (format "find %s -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" | etags - &&
-    ;;                          mv ./TAGS %s"
-    ;;                         dir-path
-    ;;                         save-dir-path)
-    ;;                 )
     )
   )
 

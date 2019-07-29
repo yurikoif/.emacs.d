@@ -80,8 +80,8 @@ nmap <C-f> /
 imap <C-f> <ESC>/
 " use n N * to navigate
 
-nmap <C-_> *``
-imap <C-_> <ESC>*``
+"nmap <C-_> *``
+"imap <C-_> <ESC>*``
 
 nmap <C-o> :call MySplit()<CR>:ex<Space><C-d>
 imap <C-o> <ESC>:call MySplit()<CR>:ex<Space><C-d>
