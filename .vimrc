@@ -1,6 +1,7 @@
 " EMACS style VI/VIM environment
 
-sy enable
+sy on
+filetype on
 
 set nocompatible 
 set hlsearch
