@@ -20,7 +20,7 @@
     (quote
      ((tool-bar-lines . 0)
       (menu-bar-lines . 1)
-      (alpha . 81))))
+      (alpha . 90))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
  '(eyebrowse-mode-line-style (quote smart))
@@ -68,7 +68,7 @@
   (setq init-toggled-maximized t)
   )
 
-(load-theme 'kaolin-galaxy)
+(load-theme 'kaolin-aurora)
 ;(set-background-color "gray3")
 (set-background-color "black")
 ;(set-foreground-color "wheat")
