@@ -190,7 +190,8 @@
 (defun my-open-file (file-path)
   "Open file in proper new window."
   (interactive "FOpen file: ")
-  (my-split-window)
+  (if (buffer-file-name (current-buffer))
+      (my-split-window))
   (find-file file-path))
 
 (defun my-close-file ()
