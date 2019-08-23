@@ -108,9 +108,11 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-o") 'find-file)
-(global-set-key (kbd "C-S-o") 'find-name-dired)
-(global-set-key (kbd "C-w") 'kill-this-buffer)
+;; (global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-o") 'my-open-file)
+;; (global-set-key (kbd "C-S-o") 'find-name-dired)
+;; (global-set-key (kbd "C-w") 'kill-this-buffer)
+(global-set-key (kbd "C-w") 'my-close-file)
 (global-set-key (kbd "C-k") 'kill-emacs)
 (global-set-key (kbd "C-q") 'replace-string)
 (global-set-key (kbd "C-f") 'isearch-forward)
@@ -147,6 +149,26 @@
   (delete-other-windows)
   (find-file file-path)
   )
+
+(defun my-split-window ()
+  "Split window properly."
+  (interactive)
+  ;; (message "%d %d" (window-pixel-height) (window-pixel-width))
+  (if (> (window-pixel-height) (window-pixel-width))
+      (split-window-vertically)
+    (split-window-horizontally)))
+
+(defun my-open-file (file-path)
+  "Open file in proper new window."
+  (interactive "FOpen file: ")
+  (my-split-window)
+  (find-file file-path))
+
+(defun my-close-file ()
+  "Open file in proper new window."
+  (interactive)
+  (kill-this-buffer)
+  (delete-window))
 
 (defun my-create-tags (dir-path)
   "Create tags file."
