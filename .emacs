@@ -38,7 +38,11 @@
     (kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook (quote (auto-complete-mode eyebrowse-mode)))
  '(save-place-mode t)
+ '(redisplay-dont-pause t)
  '(scroll-step 1)
+ '(scroll-margin 1)
+ '(scroll-conservatively 10000)
+ '(scroll-preserve-screen-position 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
@@ -85,7 +89,6 @@
 (add-hook 'lisp-mode-hook 'my-script-indent)
 (add-hook 'emacs-lisp-mode-hook 'my-script-indent)
 ;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
-
 
 
 (when (eq system-type 'darwin)
@@ -198,7 +201,8 @@
   "Open file in proper new window."
   (interactive)
   (kill-this-buffer)
-  (delete-window))
+  (if (> (count-windows) 1)
+      (delete-window)))
 
 (defun my-create-tags (dir-path)
   "Create tags file."
