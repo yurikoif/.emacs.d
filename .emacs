@@ -35,14 +35,14 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
+    (cmake-mode kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook (quote (auto-complete-mode eyebrowse-mode)))
+ '(redisplay-dont-pause t t)
  '(save-place-mode t)
- '(redisplay-dont-pause t)
- '(scroll-step 1)
- '(scroll-margin 1)
  '(scroll-conservatively 10000)
+ '(scroll-margin 1)
  '(scroll-preserve-screen-position 1)
+ '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
  '(tab-always-indent t)
@@ -201,7 +201,8 @@
   "Open file in proper new window."
   (interactive)
   (kill-this-buffer)
-  (if (> (count-windows) 1)
+  (if (and (> (count-windows) 1)
+           (buffer-file-name (current-buffer)))
       (delete-window)))
 
 (defun my-create-tags (dir-path)
@@ -357,3 +358,4 @@
       )
     )
   )
+(put 'upcase-region 'disabled nil)
