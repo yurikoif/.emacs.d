@@ -201,8 +201,8 @@
   "Open file in proper new window."
   (interactive)
   (kill-this-buffer)
-  (if (and (> (count-windows) 1)
-           (buffer-file-name (current-buffer)))
+  (message (buffer-file-name (current-buffer)))
+  (if (> (count-windows) 1)
       (delete-window)))
 
 (defun my-create-tags (dir-path)
