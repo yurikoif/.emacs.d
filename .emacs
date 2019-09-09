@@ -26,6 +26,7 @@
  '(eyebrowse-mode-line-style (quote smart))
  '(eyebrowse-switch-back-and-forth t)
  '(eyebrowse-wrap-around t)
+ '(fringe-mode 0 nil (fringe))
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
