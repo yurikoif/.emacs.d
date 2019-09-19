@@ -197,10 +197,13 @@
 (defun my-close-file ()
   "Open file in proper new window."
   (interactive)
-  (kill-this-buffer)
-  (message (buffer-file-name (current-buffer)))
-  (if (> (count-windows) 1)
-      (delete-window)))
+  (if (> (length (get-buffer-window-list)) 1)
+      (previous-buffer)
+    (progn
+      (kill-this-buffer)
+      (message (buffer-file-name (current-buffer)))
+      (if (> (count-windows) 1)
+          (delete-window)))))
 
 (defun my-create-tags (dir-path)
   "Create tags file."
