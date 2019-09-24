@@ -44,13 +44,13 @@
   :init (ac-config-default))
 (use-package ivy
   :ensure t
+  :init :custom (ivy-mode 1)
   :init (if (< emacs-major-version 27)
             (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
           (setq xref-show-definitions-function #'ivy-xref-show-defs))
   :bind ("C-]" . xref-find-definitions-other-window))
 (use-package ivy-xref
-  :ensure t
-  :init :custom (ivy-mode 1))
+  :ensure t)
 (use-package swiper
   :ensure t
   :bind ("C-f" . swiper-isearch)
@@ -173,11 +173,42 @@
   (setq where-to-grep (read-directory-name "Grep in: " default-directory))
   (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      where-to-grep what-to-grep)))
+
 (defun my-grep-find-read-from-minibuffer ()
   "setting up grep-command using sentence read from minibuffer"
   (interactive)
   (my-grep-find (read-string "Grep: ")))
+
 (defun my-grep-find-at-point ()
   "setting up grep-command using current word under cursor as a search string"
   (interactive)
   (my-grep-find (symbol-at-point)))
+
+(defun duplicate-line (arg)
+  "Duplicate current line, leaving point in lower line."
+  (interactive "*p")
+  ;; save the point for undo
+  (setq buffer-undo-list (cons (point) buffer-undo-list))
+  ;; local variables for start and end of line
+  (let ((bol (save-excursion (beginning-of-line) (point)))
+        eol)
+    (save-excursion
+      ;; don't use forward-line for this, because you would have
+      ;; to check whether you are at the end of the buffer
+      (end-of-line)
+      (setq eol (point))
+      ;; store the line and disable the recording of undo information
+      (let ((line (buffer-substring bol eol))
+            (buffer-undo-list t)
+            (count arg))
+        ;; insert the line arg times
+        (while (> count 0)
+          (newline)         ;; because there is no newline in 'line'
+          (insert line)
+          (setq count (1- count)))
+        )
+      ;; create the undo information
+      (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))
+    ) ; end-of-let
+  ;; put the point in the lowest line and return
+  (next-line arg))
