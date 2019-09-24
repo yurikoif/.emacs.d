@@ -37,7 +37,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (org-starter-swiper counsel ivy-xref cmake-mode kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
+    (org-starter-swiper counsel ivy-xref ivy cmake-mode kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook (quote (auto-complete-mode eyebrowse-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
@@ -92,7 +92,6 @@
 (add-hook 'emacs-lisp-mode-hook 'my-script-indent)
 ;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
-(require 'ivy-xref)
 ;; XRef initialization is different in Emacs 27
 (if (< emacs-major-version 27)
     ;; Necessary in Emacs <27. In Emacs 27 it will affect all xref-based
@@ -130,7 +129,7 @@
 ;; (global-set-key (kbd "C-.") 'isearch-repeat-forward)
 ;; (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-]") 'xref-find-definitions-other-window)
-(global-set-key (kbd "C-/") 'swiper-all-thing-at-point)
+(global-set-key (kbd "C-/") 'swiper-thing-at-point)
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-l") 'goto-line)
