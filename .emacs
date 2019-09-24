@@ -100,7 +100,7 @@
     ;; (e.g. project-find-regexp):
     (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
     ;; Emacs 27 only:
-    (setq xref-show-definitions-function #'ivy-xref-show-defs))
+  (setq xref-show-definitions-function #'ivy-xref-show-defs))
 
 (when (eq system-type 'darwin)
   ;(setq mac-command-modifier 'meta)
@@ -209,14 +209,12 @@
   (interactive)
   (if (> (length (get-buffer-window-list)) 1)
       (previous-buffer)
-    (if (or (buffer-file-name (current-buffer))
-            (> (count-windows) 1))
-        (progn
-          (kill-this-buffer)
-          ;; (message (buffer-file-name (current-buffer)))
-          (if (> (count-windows) 1)
-              (delete-window)))
-      (kill-emacs))))
+    (progn
+      (kill-this-buffer)
+      ;; (message (buffer-file-name (current-buffer)))
+      (message "%d" (length (buffer-list)))
+      (if (> (count-windows) 1)
+          (delete-window)))))
 
 (defun my-create-tags (dir-path)
   "Create tags file."
