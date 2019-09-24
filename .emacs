@@ -31,6 +31,7 @@
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(ivy-mode t)
  '(line-number-mode nil)
  '(make-backup-files nil)
  '(org-support-shift-select (quote always))
