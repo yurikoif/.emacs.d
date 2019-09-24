@@ -194,7 +194,7 @@
   (find-file file-path))
 
 (defun my-close ()
-  "Open file in proper new window."
+  "Close file/window."
   (interactive)
   (if (> (length (get-buffer-window-list)) 1)
       (previous-buffer)
