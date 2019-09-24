@@ -113,10 +113,9 @@
 (global-set-key (kbd "C-y") 'duplicate-line)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-o") 'my-open-file)
-(global-set-key (kbd "C-w") 'my-close-file)
-(global-set-key (kbd "C-k") 'kill-emacs)
-(global-set-key (kbd "C-q") 'replace-string)
+(global-set-key (kbd "C-o") 'my-open)
+(global-set-key (kbd "C-w") 'my-close)
+(global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-.") 'isearch-repeat-forward)
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
@@ -187,23 +186,25 @@
       (split-window-vertically)
     (split-window-horizontally)))
 
-(defun my-open-file (file-path)
+(defun my-open (file-path)
   "Open file in proper new window."
   (interactive "FOpen file: ")
   (if (buffer-file-name (current-buffer))
       (my-split-window))
   (find-file file-path))
 
-(defun my-close-file ()
+(defun my-close ()
   "Open file in proper new window."
   (interactive)
   (if (> (length (get-buffer-window-list)) 1)
       (previous-buffer)
-    (progn
-      (kill-this-buffer)
-      (message (buffer-file-name (current-buffer)))
-      (if (> (count-windows) 1)
-          (delete-window)))))
+    (if (buffer-file-name (current-buffer))
+        (progn
+          (kill-this-buffer)
+          (message (buffer-file-name (current-buffer)))
+          (if (> (count-windows) 1)
+              (delete-window)))
+      (kill-emacs))))
 
 (defun my-create-tags (dir-path)
   "Create tags file."
