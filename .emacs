@@ -23,11 +23,14 @@
 (package-initialize)
 
 ;; use package
-(use-package ivy-xref
+(use-package ivy
   :ensure t
   :init (if (< emacs-major-version 27)
             (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
           (setq xref-show-definitions-function #'ivy-xref-show-defs)))
-
-(load-theme 'zenburn t)
-(ivy-mode 1)
+(use-package ivy-xref
+  :ensure t
+  :init (ivy-mode 1))
+(use-package zenburn-theme
+  :ensure t
+  :init (load-theme 'zenburn t))
