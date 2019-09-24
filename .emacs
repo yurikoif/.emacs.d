@@ -36,7 +36,7 @@
  '(org-support-shift-select (quote always))
  '(package-selected-packages
    (quote
-    (cmake-mode kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
+    (org-starter-swiper counsel ivy-xref cmake-mode kaolin-themes eyebrowse markdown-mode ## auto-complete auto-complete-clang)))
  '(prog-mode-hook (quote (auto-complete-mode eyebrowse-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
@@ -91,6 +91,15 @@
 (add-hook 'emacs-lisp-mode-hook 'my-script-indent)
 ;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
+(require 'ivy-xref)
+;; XRef initialization is different in Emacs 27
+(if (< emacs-major-version 27)
+    ;; Necessary in Emacs <27. In Emacs 27 it will affect all xref-based
+    ;; commands other than xref-find-definitions
+    ;; (e.g. project-find-regexp):
+    (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
+    ;; Emacs 27 only:
+    (setq xref-show-definitions-function #'ivy-xref-show-defs))
 
 (when (eq system-type 'darwin)
   ;(setq mac-command-modifier 'meta)
@@ -116,11 +125,11 @@
 (global-set-key (kbd "C-o") 'my-open)
 (global-set-key (kbd "C-w") 'my-close)
 (global-set-key (kbd "C-r") 'replace-string)
-(global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "C-.") 'isearch-repeat-forward)
-(global-set-key (kbd "C-,") 'isearch-repeat-backward)
+(global-set-key (kbd "C-f") 'swiper-isearch)
+;; (global-set-key (kbd "C-.") 'isearch-repeat-forward)
+;; (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-]") 'xref-find-definitions-other-window)
-(global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
+(global-set-key (kbd "C-/") 'swiper-all-thing-at-point)
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-l") 'goto-line)
@@ -140,6 +149,7 @@
 (global-set-key [C-f7] 'jdb)
 (global-set-key [f9] 'my-compile)
 (global-set-key [C-f9] 'my-run)
+
 
 ;; custom functions
 (defun duplicate-line (arg)
