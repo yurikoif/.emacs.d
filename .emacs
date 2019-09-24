@@ -71,6 +71,7 @@
 (global-set-key (kbd "C-:") 'goto-line)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-b") 'buffer-menu)
+(global-set-key (kbd "C-k") 'my-open-terminal)
 (global-set-key (kbd "C-o") 'my-open)
 (global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-s") 'save-buffer)
@@ -139,11 +140,20 @@
       (my-split-window))
   (find-file file-path))
 
+(defun my-open-terminal ()
+  "Open terminal in proper new window."
+  (interactive)
+  (if (buffer-file-name (current-buffer))
+      (my-split-window))
+  (term "/bin/bash"))
+
 (defun my-close ()
   "Close file/window."
   (interactive)
   (if (> (length (get-buffer-window-list)) 1)
-      (previous-buffer)
+      (if (buffer-file-name (previous-buffer))
+          ()
+        (delete-window))
     (progn
       (kill-this-buffer)
       ;; (message (buffer-file-name (current-buffer)))
