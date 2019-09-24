@@ -198,10 +198,11 @@
   (interactive)
   (if (> (length (get-buffer-window-list)) 1)
       (previous-buffer)
-    (if (buffer-file-name (current-buffer))
+    (if (or (buffer-file-name (current-buffer))
+            (> (count-windows) 1))
         (progn
           (kill-this-buffer)
-          (message (buffer-file-name (current-buffer)))
+          ;; (message (buffer-file-name (current-buffer)))
           (if (> (count-windows) 1)
               (delete-window)))
       (kill-emacs))))
