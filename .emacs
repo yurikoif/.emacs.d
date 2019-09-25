@@ -13,7 +13,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (eyebrowse zenburn-theme use-package swiper ivy-xref cmake-mode auto-complete)))
+    (dracula-theme eyebrowse use-package swiper ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -37,9 +37,9 @@
 (package-initialize)
 
 ;; use package
-(use-package zenburn-theme
+(use-package dracula-theme
   :ensure t
-  :init :custom (load-theme 'zenburn t))
+  :init :custom (load-theme 'dracula t))
 (use-package auto-complete
   :ensure t
   :init (ac-config-default))
