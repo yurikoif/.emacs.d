@@ -48,7 +48,8 @@
   :init :custom (load-theme 'tangotango t))
 (use-package auto-complete
   :ensure t
-  :init (ac-config-default))
+  :init (ac-config-default)
+  :init :custom (ac-auto-show-menu 0.01))
 (use-package ivy
   :ensure t
   :init :custom (ivy-mode 1)
