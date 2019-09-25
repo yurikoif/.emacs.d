@@ -3,15 +3,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cua-mode t nil (cua-base))
+ '(default-frame-alist (quote ((alpha . 90))))
+ '(desktop-save-mode nil)
+ '(electric-pair-mode t)
+ '(global-auto-revert-mode t)
+ '(global-linum-mode t)
+ '(inhibit-startup-screen t)
+ '(make-backup-files nil)
  '(package-selected-packages
    (quote
     (eyebrowse zenburn-theme use-package swiper ivy-xref cmake-mode auto-complete)))
- '(cua-mode t nil (cua-base))
- '(global-linum-mode t)
- '(show-paren-mode t)
- '(tags-table-list (quote ("~/")))
- '(tool-bar-mode nil)
- '(tooltip-mode nil)
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -19,11 +21,10 @@
  '(scroll-preserve-screen-position 1)
  '(scroll-step 1)
  '(select-enable-clipboard t)
- '(global-auto-revert-mode t)
- '(make-backup-files nil)
- '(inhibit-startup-screen t)
- '(desktop-save-mode nil)
- '(electric-pair-mode t))
+ '(show-paren-mode t)
+ '(tags-table-list (quote ("~/")))
+ '(tool-bar-mode nil)
+ '(tooltip-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
