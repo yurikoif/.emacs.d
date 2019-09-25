@@ -1,5 +1,4 @@
 " EMACS style VI/VIM environment
-
 sy on
 filetype on
 
@@ -27,6 +26,8 @@ au BufWinEnter * silent loadview
 
 nmap <TAB> =
 vmap <TAB> =
+
+call plug#begin()
 
 function! InsertTabWrapper()
     let col = col('.') - 1
