@@ -77,7 +77,7 @@
 (global-set-key (kbd "C-;") 'comment-line)
 (global-set-key (kbd "C-:") 'goto-line)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-b") 'ivy-switch-buffer)
+;; (global-set-key (kbd "C-b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-k") 'my-open-terminal)
 (global-set-key (kbd "C-o") 'my-open)
 (global-set-key (kbd "C-r") 'replace-string)
@@ -86,10 +86,13 @@
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-w") 'my-close)
 (global-set-key (kbd "C-y") 'duplicate-line)
-(global-set-key [C-tab] 'other-window)
-(global-set-key [C-S-iso-lefttab] 'other-window---1)
-(global-set-key (kbd "C-<prior>") 'previous-buffer)
-(global-set-key (kbd "C-<next>") 'next-buffer)
+;; (global-set-key [C-tab] 'other-window)
+(global-set-key [C-tab] 'ivy-switch-buffer)
+;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
+;; (global-set-key (kbd "C-<prior>") 'previous-buffer)
+;; (global-set-key (kbd "C-<next>") 'next-buffer)
+(global-set-key (kbd "C-<prior>") 'other-window)
+(global-set-key (kbd "C-<next>") 'other-window---1)
 (global-set-key [M-f4] 'kill-emacs)
 
 ;; other specs
@@ -112,6 +115,10 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; custom functions
+(defun other-window---1 ()
+  (interactive)
+  (other-window -1))
+
 (defun my-script-style ()
   (setq tab-width 4)
   (setq indent-tabs-mode nil))
