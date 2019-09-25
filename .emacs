@@ -7,13 +7,19 @@
  '(default-frame-alist (quote ((alpha . 90))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
+ '(eyebrowse-mode 1)
+ '(eyebrowse-mode-line-style (quote smart))
+ '(eyebrowse-switch-back-and-forth t)
+ '(eyebrowse-wrap-around t)
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(inhibit-startup-screen t)
+ '(ivy-mode 1)
+ '(load-theme (quote alect-black) t)
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (dracula-theme eyebrowse use-package swiper ivy-xref cmake-mode auto-complete)))
+    (tangotango-theme eyebrowse use-package swiper ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -37,9 +43,9 @@
 (package-initialize)
 
 ;; use package
-(use-package dracula-theme
+(use-package tangotango-theme
   :ensure t
-  :init :custom (load-theme 'dracula t))
+  :init :custom (load-theme 'tangotango t))
 (use-package auto-complete
   :ensure t
   :init (ac-config-default))
