@@ -215,10 +215,8 @@
         (while (> count 0)
           (newline)         ;; because there is no newline in 'line'
           (insert line)
-          (setq count (1- count)))
-        )
+          (setq count (1- count))))
       ;; create the undo information
-      (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))
-    ) ; end-of-let
+      (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))) ; end-of-let
   ;; put the point in the lowest line and return
   (next-line arg))
