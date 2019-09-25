@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(compile-command "make -j4 -C")
  '(cua-mode t nil (cua-base))
  '(default-frame-alist (quote ((alpha . 90))))
  '(desktop-save-mode nil)
@@ -94,6 +95,8 @@
 ;; (global-set-key (kbd "C-<next>") 'next-buffer)
 (global-set-key (kbd "C-<prior>") 'other-window)
 (global-set-key (kbd "C-<next>") 'other-window---1)
+(global-set-key [f8] 'shell-command)
+(global-set-key [f9] 'my-compile)
 (global-set-key [M-f4] 'kill-emacs)
 
 ;; other specs
@@ -182,6 +185,12 @@
   (eyebrowse-create-window-config)
   (delete-other-windows)
   (find-file file-path))
+
+(defun my-compile (compile-path)
+  "Create tags file."
+  (interactive "FCompile in: ")
+  (cd compile-path)
+  (compile (read-string "Compile command: " "make -j4")))
 
 (defun my-create-tags (dir-path)
   "Create tags file."
