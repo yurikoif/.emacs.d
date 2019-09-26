@@ -8,19 +8,14 @@
  '(default-frame-alist (quote ((alpha . 90))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
- '(eyebrowse-mode 1)
- '(eyebrowse-mode-line-style (quote smart))
- '(eyebrowse-switch-back-and-forth t)
- '(eyebrowse-wrap-around t)
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(inhibit-startup-screen t)
  '(ivy-mode 1)
- '(load-theme (quote alect-black) t)
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (tangotango-theme eyebrowse use-package swiper ivy-xref cmake-mode auto-complete)))
+    (eyebrowse tangotango-theme use-package swiper ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -45,32 +40,33 @@
 
 ;; use package
 (use-package tangotango-theme
-  :ensure t
-  :init :custom (load-theme 'tangotango t))
+  :demand
+  :init (load-theme 'tangotango t))
 (use-package auto-complete
-  :ensure t
+  :demand
   :init (ac-config-default)
   :init :custom (ac-auto-show-menu 0.01))
 (use-package ivy
-  :ensure t
+  :demand
   :init :custom (ivy-mode 1)
   :init (if (< emacs-major-version 27)
             (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
           (setq xref-show-definitions-function #'ivy-xref-show-defs))
   :bind ("C-]" . xref-find-definitions-other-window))
 (use-package ivy-xref
-  :ensure t)
+  :demand)
 (use-package swiper
-  :ensure t
+  :demand
   :bind ("C-f" . swiper-isearch)
   :bind ("C-/" . swiper-isearch-thing-at-point))
 (use-package eyebrowse
-  :ensure t
+  :demand
   :init :custom (eyebrowse-mode 1)
   :init :custom (eyebrowse-mode-line-style 'smart)
   :init :custom (eyebrowse-switch-back-and-forth t)
   :init :custom (eyebrowse-wrap-around t)
-  :bind ("C-n" . my-create-window-config)
+  :bind ("C-'" . eyebrowse-close-window-config)
+  :bind ("C-n" . my-create-workspace)
   :bind ("C-<home>" . eyebrowse-prev-window-config)
   :bind ("C-<end>" . eyebrowse-next-window-config))
 
@@ -93,8 +89,8 @@
 ;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
 ;; (global-set-key (kbd "C-<prior>") 'previous-buffer)
 ;; (global-set-key (kbd "C-<next>") 'next-buffer)
-(global-set-key (kbd "C-<prior>") 'other-window)
-(global-set-key (kbd "C-<next>") 'other-window---1)
+(global-set-key (kbd "C-<prior>") 'other-window---1)
+(global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f8] 'shell-command)
 (global-set-key [f9] 'my-compile)
 (global-set-key [M-f4] 'kill-emacs)
@@ -179,9 +175,9 @@
       (if (> (count-windows) 1)
           (delete-window)))))
 
-(defun my-create-window-config (file-path)
+(defun my-create-workspace (file-path)
   "Create tags file."
-  (interactive "FNew window config: ")
+  (interactive "FNew workspace: ")
   (eyebrowse-create-window-config)
   (delete-other-windows)
   (find-file file-path))
