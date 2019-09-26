@@ -63,7 +63,7 @@
 (use-package swiper
   :ensure t
   :bind ("C-f" . swiper-isearch)
-  :bind ("C-/" . swiper-thing-at-point))
+  :bind ("C-/" . swiper-isearch-thing-at-point))
 (use-package eyebrowse
   :ensure t
   :init :custom (eyebrowse-mode 1)
