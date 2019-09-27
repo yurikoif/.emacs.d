@@ -57,7 +57,7 @@
   :demand)
 (use-package swiper
   :demand
-  :bind ("C-f" . swiper-isearch)
+  :bind ("C-f" . isearch-forward)
   ;; :bind ("C-/" . swiper-isearch-thing-at-point)
   )
 (use-package eyebrowse
