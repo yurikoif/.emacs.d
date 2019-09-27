@@ -58,7 +58,8 @@
 (use-package swiper
   :demand
   :bind ("C-f" . swiper-isearch)
-  :bind ("C-/" . swiper-isearch-thing-at-point))
+  ;; :bind ("C-/" . swiper-isearch-thing-at-point)
+  )
 (use-package eyebrowse
   :demand
   :init :custom (eyebrowse-mode 1)
@@ -74,6 +75,9 @@
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-;") 'comment-line)
 (global-set-key (kbd "C-:") 'goto-line)
+(global-set-key (kbd "C-.") 'isearch-repeat-forward)
+(global-set-key (kbd "C-,") 'isearch-repeat-backward)
+(global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 ;; (global-set-key (kbd "C-b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-k") 'my-open-terminal)

@@ -28,6 +28,7 @@ nmap <TAB> =
 vmap <TAB> =
 
 call plug#begin()
+Plug '~/.fzf'
 
 function! InsertTabWrapper()
     let col = col('.') - 1
