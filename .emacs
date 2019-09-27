@@ -15,7 +15,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (eyebrowse tangotango-theme use-package swiper ivy-xref cmake-mode auto-complete)))
+    (eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -55,11 +55,6 @@
   :bind ("C-]" . xref-find-definitions-other-window))
 (use-package ivy-xref
   :demand)
-(use-package swiper
-  :demand
-  :bind ("C-f" . isearch-forward)
-  ;; :bind ("C-/" . swiper-isearch-thing-at-point)
-  )
 (use-package eyebrowse
   :demand
   :init :custom (eyebrowse-mode 1)
@@ -79,7 +74,7 @@
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-;; (global-set-key (kbd "C-b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-k") 'my-open-terminal)
 (global-set-key (kbd "C-o") 'my-open)
 (global-set-key (kbd "C-r") 'replace-string)
