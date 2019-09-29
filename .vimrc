@@ -1,19 +1,23 @@
 " EMACS style VI/VIM environment
 
 call plug#begin()
-Plug 'vim-airline/vim-airline'
-Plug 'jnurmine/zenburn'
-Plug 'nanotech/jellybeans.vim'
-Plug 'junegunn/fzf'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'majutsushi/tagbar'
-Plug 'godlygeek/tabular'
+    Plug 'vim-airline/vim-airline'
+    Plug 'jnurmine/zenburn'
+    Plug 'junegunn/fzf'
+    Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/syntastic'
+    Plug 'majutsushi/tagbar'
+    Plug 'godlygeek/tabular'
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
 
 sy enable
 filetype on
 color zenburn
+hi Normal guibg=NONE ctermbg=NONE
+hi Statement cterm=bold
 
 set nocompatible 
 set hlsearch
@@ -168,3 +172,5 @@ imap <S-Home> <ESC>v<Home>
 imap <S-End> <ESC>v<End>
 imap <C-S-PageUp> <ESC>v<PageUp>
 imap <C-S-PageDown> <ESC>v<PageDown>
+
+
