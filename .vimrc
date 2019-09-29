@@ -46,7 +46,8 @@ function! InsertTabWrapper()
     endif
 endfunction
 
-" vmap <A-t> :Tabularize \
+nnoremap <C-]> g<C-]>
+
 vmap <TAB> =
 nmap <TAB> =
 inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
