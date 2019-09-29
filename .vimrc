@@ -52,6 +52,7 @@ nmap <TAB> =
 inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
 nmap <C-x>r :%s///g<Left><Left><Left>
+vmap <C-x>t :Tabularize \
 nmap <C-x>t :! ctags -f tags -R ~/devs
 
 nmap <C-x>0 :hide<CR>
