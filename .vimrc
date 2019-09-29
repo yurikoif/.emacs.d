@@ -4,6 +4,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'jnurmine/zenburn'
     Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/syntastic'
     Plug 'majutsushi/tagbar'
