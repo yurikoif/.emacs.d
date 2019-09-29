@@ -2,6 +2,7 @@
 
 call plug#begin()
 Plug 'vim-airline/vim-airline'
+Plug 'jnurmine/zenburn'
 Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -12,7 +13,7 @@ call plug#end()
 sy on
 filetype on
 
-color delek
+color zenburn
 
 set nocompatible 
 set hlsearch
@@ -29,6 +30,8 @@ set autochdir " Changes the cwd to the directory of the current buffer whenever 
 set browsedir=current " Make the file browser always open the current directory.
 
 au Filetype c cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
 
 nmap <TAB> =
 vmap <TAB> =
