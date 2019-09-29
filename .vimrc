@@ -3,16 +3,15 @@
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'jnurmine/zenburn'
+Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
-Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-sy on
+sy enable
 filetype on
-
 color zenburn
 
 set nocompatible 
@@ -81,8 +80,8 @@ fu! MySplit()
     end
 endf
 
-nnoremap <C-]> :call MySplit()<CR><C-]>
-inoremap <C-]> <ESC>:call MySplit()<CR><C-]>
+" nnoremap <C-]> :call MySplit()<CR><C-]>
+" inoremap <C-]> <ESC>:call MySplit()<CR><C-]>
 
 nmap <C-f> /
 imap <C-f> <ESC>/
@@ -91,8 +90,10 @@ imap <C-f> <ESC>/
 "nmap <C-_> *``
 "imap <C-_> <ESC>*``
 
-nmap <C-o> :call MySplit()<CR>:ex<Space><C-d>
-imap <C-o> <ESC>:call MySplit()<CR>:ex<Space><C-d>
+" nmap <C-o> :call MySplit()<CR>:ex<Space><C-d>
+" imap <C-o> <ESC>:call MySplit()<CR>:ex<Space><C-d>
+nmap <C-o> :tabnew<SPACE>
+imap <C-o> <ESC>:tabnew<SPACE>
 
 nmap <C-Home> :tabprevious<CR>
 imap <C-Home> <ESC>:tabprevious<CR>i
