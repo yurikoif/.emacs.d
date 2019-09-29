@@ -5,7 +5,6 @@ call plug#begin()
     Plug 'jnurmine/zenburn'
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
-    Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/syntastic'
     Plug 'majutsushi/tagbar'
     Plug 'godlygeek/tabular'
@@ -38,9 +37,6 @@ au Filetype c cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
 
-nmap <TAB> =
-vmap <TAB> =
-
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -50,7 +46,10 @@ function! InsertTabWrapper()
     endif
 endfunction
 
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" vmap <A-t> :Tabularize \
+vmap <TAB> =
+nmap <TAB> =
+inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
@@ -89,15 +88,16 @@ endf
 " nnoremap <C-]> :call MySplit()<CR><C-]>
 " inoremap <C-]> <ESC>:call MySplit()<CR><C-]>
 
-nmap <C-f> /
-imap <C-f> <ESC>/
-" use n N * to navigate
+vmap <F12> <ESC>:TagbarToggle<CR>
+nmap <F12> :TagbarToggle<CR>
+imap <F12> <ESC>:TagbarToggle<CR>
 
-"nmap <C-_> *``
-"imap <C-_> <ESC>*``
+nmap <C-f> :BLines<CR>
+imap <C-f> <ESC>:BLines<CR>
 
-" nmap <C-o> :call MySplit()<CR>:ex<Space><C-d>
-" imap <C-o> <ESC>:call MySplit()<CR>:ex<Space><C-d>
+nmap <C-_> *``
+imap <C-_> <ESC>*``
+
 nmap <C-o> :tabnew<SPACE>
 imap <C-o> <ESC>:tabnew<SPACE>
 
