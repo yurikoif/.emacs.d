@@ -8,6 +8,7 @@ Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 sy enable
