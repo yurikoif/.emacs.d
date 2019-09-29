@@ -33,9 +33,9 @@ set tags=~/tags
 set autochdir " Changes the cwd to the directory of the current buffer whenever you switch buffers.
 set browsedir=current " Make the file browser always open the current directory.
 
-au Filetype c cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
+au Filetype h,hpp,c,cc,cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -50,6 +50,9 @@ endfunction
 vmap <TAB> =
 nmap <TAB> =
 inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+
+nmap <C-x>r :%s///g<Left><Left><Left>
+nmap <C-x>t :! ctags -f tags -R ~/devs
 
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
