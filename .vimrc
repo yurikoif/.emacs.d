@@ -1,6 +1,18 @@
 " EMACS style VI/VIM environment
+
+call plug#begin()
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
+
 sy on
 filetype on
+
+color delek
 
 set nocompatible 
 set hlsearch
@@ -9,26 +21,17 @@ set cursorline
 set expandtab
 set autoindent
 set smartindent
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set tags=~/tags
-set autochdir                   " Changes the cwd to the directory of the current
-                                " buffer whenever you switch buffers.
-set browsedir=current           " Make the file browser always open the current
-                                " directory.
+set autochdir " Changes the cwd to the directory of the current buffer whenever you switch buffers.
+set browsedir=current " Make the file browser always open the current directory.
 
-au Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au Filetype c cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 nmap <TAB> =
 vmap <TAB> =
-
-call plug#begin()
-Plug '~/.fzf'
 
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -68,11 +71,11 @@ imap <silent> <A-Left> <ESC>:wincmd h<CR>i
 imap <silent> <A-Right> <ESC>:wincmd l<CR>i
 
 fu! MySplit()
-  if winwidth('%') < winheight('%') * 3
-    :split
-  else
-    :vsplit
-  end
+    if winwidth('%') < winheight('%') * 3
+        :split
+    else
+        :vsplit
+    end
 endf
 
 nnoremap <C-]> :call MySplit()<CR><C-]>
@@ -93,9 +96,6 @@ imap <C-Home> <ESC>:tabprevious<CR>i
 
 nmap <C-End> :tabnext<CR>
 imap <C-End> <ESC>:tabnext<CR>i
-
-" nmap <C-k> :q<CR>
-" imap <C-k> <ESC>:q<CR>
 
 nmap <C-s> :update<CR>
 imap <C-s> <ESC>:update<CR><ESC>a
@@ -163,4 +163,3 @@ imap <S-Home> <ESC>v<Home>
 imap <S-End> <ESC>v<End>
 imap <C-S-PageUp> <ESC>v<PageUp>
 imap <C-S-PageDown> <ESC>v<PageDown>
-
