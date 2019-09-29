@@ -79,7 +79,7 @@
 (global-set-key (kbd "C-o") 'my-open)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
-(global-set-key (kbd "C-w") 'my-close)
+(global-set-key (kbd "C-w") 'kill-current-buffer)
 (global-set-key (kbd "C-x r") 'replace-string)
 (global-set-key (kbd "C-x t") 'my-create-tags)
 (global-set-key (kbd "C-y") 'duplicate-line)
