@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'majutsushi/tagbar'
     Plug 'godlygeek/tabular'
     Plug 'sheerun/vim-polyglot'
+    Plug 'ervandew/supertab'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -48,13 +49,16 @@ endfunction
 
 nnoremap <C-]> g<C-]>
 
-vmap <TAB> =
-nmap <TAB> =
-inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+" vmap <TAB> =
+" nmap <TAB> =
+" inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+" cnoremap <TAB> <TAB><TAB>
 
 nmap <C-x>r :%s///g<Left><Left><Left>
 vmap <C-x>t :Tabularize \
 nmap <C-x>t :! ctags -f tags -R ~/devs
+nmap <C-x>f :Files<CR>
+imap <C-x>f <ESC>:Files<CR>
 
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
