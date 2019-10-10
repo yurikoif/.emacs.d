@@ -20,7 +20,7 @@
  '(make-backup-files nil)
  '(package-selected-packages
    (quote
-    (eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -70,6 +70,8 @@
   :bind ("C-n" . my-create-workspace)
   :bind ("C-<home>" . eyebrowse-prev-window-config)
   :bind ("C-<end>" . eyebrowse-next-window-config))
+(use-package markdown-mode
+  :demand)
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
