@@ -68,8 +68,8 @@
   :init :custom (eyebrowse-wrap-around nil)
   :bind ("C-'" . eyebrowse-close-window-config)
   :bind ("C-n" . my-create-workspace)
-  :bind ("C-<home>" . eyebrowse-prev-window-config)
-  :bind ("C-<end>" . eyebrowse-next-window-config))
+  :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
+  :bind ([C-tab] . eyebrowse-next-window-config))
 (use-package markdown-mode
   :demand)
 
@@ -93,7 +93,7 @@
 (global-set-key (kbd "C-x t") 'my-create-tags)
 (global-set-key (kbd "C-y") 'duplicate-line)
 ;; (global-set-key [C-tab] 'other-window)
-(global-set-key [C-tab] 'ivy-switch-buffer)
+;; (global-set-key [C-tab] 'ivy-switch-buffer)
 ;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
 ;; (global-set-key (kbd "C-<prior>") 'previous-buffer)
 ;; (global-set-key (kbd "C-<next>") 'next-buffer)
