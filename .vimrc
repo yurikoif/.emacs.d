@@ -60,6 +60,15 @@ nmap <C-x>t :! ctags -f ~/tags -R ~/devs
 nmap <C-x>f :Files<CR>
 imap <C-x>f <ESC>:Files<CR>
 
+nmap <C-k> <C-w><Up>
+nmap <C-j> <C-w><Down>
+nmap <C-h> <C-w><Left>
+nmap <C-l> <C-w><Right>
+imap <C-k> <ESC><C-w><Up>i
+imap <C-j> <ESC><C-w><Down>i
+imap <C-h> <ESC><C-w><Left>i
+imap <C-l> <ESC><C-w><Right>i
+
 nmap <C-x>0 :hide<CR>
 imap <C-x>0 <ESC>:hide<CR>i
 
