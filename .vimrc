@@ -56,7 +56,7 @@ nnoremap <C-]> g<C-]>
 
 nmap <C-x>r :%s///g<Left><Left><Left>
 vmap <C-x>t :Tabularize \
-nmap <C-x>t :! ctags -f tags -R ~/devs
+nmap <C-x>t :! ctags -f ~/tags -R ~/devs
 nmap <C-x>f :Files<CR>
 imap <C-x>f <ESC>:Files<CR>
 
