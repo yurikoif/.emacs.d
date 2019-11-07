@@ -34,7 +34,6 @@ set tags=~/tags
 set autochdir " Changes the cwd to the directory of the current buffer whenever you switch buffers.
 set browsedir=current " Make the file browser always open the current directory.
 set wildmode=list:longest,full
-set completeopt+=menu,longest
 
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
@@ -118,8 +117,8 @@ imap <C-f> <ESC>:BLines<CR>
 nmap <C-_> *``
 imap <C-_> <ESC>*``
 
-nmap <C-o> :tabnew<SPACE>
-imap <C-o> <ESC>:tabnew<SPACE>
+nmap <C-n> :tabnew<SPACE>
+imap <C-n> <ESC>:tabnew<SPACE>
 
 nmap <C-Home> :tabprevious<CR>
 imap <C-Home> <ESC>:tabprevious<CR>i
