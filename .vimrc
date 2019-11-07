@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'godlygeek/tabular'
     Plug 'sheerun/vim-polyglot'
     Plug 'ervandew/supertab'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
