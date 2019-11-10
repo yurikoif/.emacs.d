@@ -34,59 +34,54 @@ set softtabstop=4
 set tags=~/tags
 set autochdir " Changes the cwd to the directory of the current buffer whenever you switch buffers.
 set browsedir=current " Make the file browser always open the current directory.
-set wildmode=list:longest,full
+set wildmenu
+set wildmode=longest:full
 
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
 au Filetype h,hpp,c,cc,cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
+vmap <BS> "_d<ESC>
+vmap <DEL> "_d
+
+vmap <F12> <ESC>:TagbarToggle<CR>
+nmap <F12> :TagbarToggle<CR>
+imap <F12> <ESC>:TagbarToggle<CR>
 
 nnoremap <C-]> g<C-]>
+nmap <C-_> *``
+imap <C-_> <ESC>*``
 
-" vmap <TAB> =
-" nmap <TAB> =
-" inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
-" cnoremap <TAB> <TAB><TAB>
+nmap <C-a> ggVG
+imap <C-a> <ESC>ggVG
 
-nmap <C-x>r :%s///g<Left><Left><Left>
-vmap <C-x>t :Tabularize \
-nmap <C-x>t :! ctags -f ~/tags -R ~/devs
-nmap <C-x>f :Files<CR>
-imap <C-x>f <ESC>:Files<CR>
+nmap <C-b> :Buffers<CR>
+imap <C-b> <ESC>:Buffers<CR>
 
-nmap <C-k> <C-w><Up>
-nmap <C-j> <C-w><Down>
-nmap <C-h> <C-w><Left>
-nmap <C-l> <C-w><Right>
-imap <C-k> <ESC><C-w><Up>i
-imap <C-j> <ESC><C-w><Down>i
-imap <C-h> <ESC><C-w><Left>i
-imap <C-l> <ESC><C-w><Right>i
+nmap <C-f> :BLines<CR>
+imap <C-f> <ESC>:BLines<CR>
 
-nmap <C-x>0 :hide<CR>
-imap <C-x>0 <ESC>:hide<CR>i
+nmap <C-o> :Files<CR>
+imap <C-o> <ESC>:Files<CR>
 
-nmap <C-x>1 :only<CR>
-imap <C-x>1 <ESC>:only<CR>i
-
-nmap <C-x>2 :split<CR>
-imap <C-x>2 <ESC>:split<CR>i
-
-nmap <C-x>3 :vsplit<CR>
-imap <C-x>3 <ESC>:vsplit<CR>i
+nmap <C-s> :update<CR>
+imap <C-s> <ESC>:update<CR><ESC>a
 
 nmap <C-x><Left> :bp<CR>
 imap <C-x><left> <ESC>:bp<CR>i
 nmap <C-x><Right> :bn<CR>
 imap <C-x><Right> <ESC>:bn<CR>i
+nmap <C-x>0 :hide<CR>
+imap <C-x>0 <ESC>:hide<CR>i
+nmap <C-x>1 :only<CR>
+imap <C-x>1 <ESC>:only<CR>i
+nmap <C-x>2 :split<CR>
+imap <C-x>2 <ESC>:split<CR>i
+nmap <C-x>3 :vsplit<CR>
+imap <C-x>3 <ESC>:vsplit<CR>i
+nmap <C-x>r :%s///g<Left><Left><Left>
+vmap <C-x>t :Tabularize \
+nmap <C-x>t :! ctags -f ~/tags -R ~/devs
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -107,34 +102,6 @@ endf
 
 " nnoremap <C-]> :call MySplit()<CR><C-]>
 " inoremap <C-]> <ESC>:call MySplit()<CR><C-]>
-
-vmap <F12> <ESC>:TagbarToggle<CR>
-nmap <F12> :TagbarToggle<CR>
-imap <F12> <ESC>:TagbarToggle<CR>
-
-nmap <C-f> :BLines<CR>
-imap <C-f> <ESC>:BLines<CR>
-
-nmap <C-_> *``
-imap <C-_> <ESC>*``
-
-nmap <C-n> :tabnew<SPACE>
-imap <C-n> <ESC>:tabnew<SPACE>
-
-nmap <C-Home> :tabprevious<CR>
-imap <C-Home> <ESC>:tabprevious<CR>i
-
-nmap <C-End> :tabnext<CR>
-imap <C-End> <ESC>:tabnext<CR>i
-
-nmap <C-s> :update<CR>
-imap <C-s> <ESC>:update<CR><ESC>a
-
-nmap <C-a> ggVG
-imap <C-a> <ESC>ggVG
-
-vmap <BS> "_d<ESC>
-vmap <DEL> "_d
 
 vmap <C-Left> b
 nmap <C-Left> b

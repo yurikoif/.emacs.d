@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/richard/ecopia-3d/ceres-solver/build'
 let g:netrw_dirhist_2='/home/richard/ecopia-backend-wf/cpptools/src/building_tools'
 let g:netrw_dirhist_3='/home/richard/ecopia-backend-wf/cpptools/build'
 let g:netrw_dirhist_4='/home/richard/ecopia-backend-wf/auto_workflow/app'
 let g:netrw_dirhist_5='/home/richard/ecopia-backend-wf/prod_tools'
+let g:netrw_dirhist_6='/home/richard/ecopia-weaver'
