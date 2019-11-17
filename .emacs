@@ -72,8 +72,6 @@
   :demand
   :init :custom (global-linum-mode nil)
   :init :custom (global-nlinum-mode nil))
-(use-package fzf
-  :demand)
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
