@@ -84,11 +84,14 @@
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
+(global-set-key (kbd "C-t") 'find-tag)
 (global-set-key (kbd "C-w") 'kill-current-buffer)
-(global-set-key (kbd "C-x a") 'align)
-(global-set-key (kbd "C-x t") 'my-create-tags)
-(global-set-key (kbd "C-y") 'duplicate-line)
+(global-set-key (kbd "C-y") 'my-duplicate-line)
+(global-set-key (kbd "C-S-a") 'align)
+(global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
+(global-set-key (kbd "C-S-o") 'my-open-buffer-in-other-window)
+(global-set-key (kbd "C-S-t") 'my-create-tags)
+(global-set-key (kbd "C-S-w") 'my-close-buffer-and-window)
 ;; (global-set-key [C-tab] 'other-window)
 ;; (global-set-key [C-tab] 'ivy-switch-buffer)
 ;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
@@ -181,6 +184,18 @@
       (if (> (count-windows) 1)
           (delete-window)))))
 
+(defun my-open-buffer-in-other-window (file-path)
+  "Close file/window."
+  (interactive "FOpen file: ")
+  (my-split-window)
+  (find-file file-path))
+
+(defun my-close-buffer-and-window ()
+  "Close file/window."
+  (interactive)
+  (kill-this-buffer)
+  (delete-window))
+
 (defun my-create-workspace (file-path)
   "Create tags file."
   (interactive "FNew workspace: ")
@@ -220,7 +235,7 @@
   (interactive)
   (my-grep-find (symbol-at-point)))
 
-(defun duplicate-line (arg)
+(defun my-duplicate-line (arg)
   "Duplicate current line, leaving point in lower line."
   (interactive "*p")
   ;; save the point for undo
