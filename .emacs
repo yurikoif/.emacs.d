@@ -70,7 +70,8 @@
   :demand)
 (use-package nlinum
   :demand
-  :init :custom (global-nlinum-mode t))
+  :init :custom (global-linum-mode nil)
+  :init :custom (global-nlinum-mode nil))
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
