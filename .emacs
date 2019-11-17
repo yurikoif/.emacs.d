@@ -15,7 +15,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -72,6 +72,8 @@
   :demand
   :init :custom (global-linum-mode nil)
   :init :custom (global-nlinum-mode nil))
+(use-package fzf
+  :demand)
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
