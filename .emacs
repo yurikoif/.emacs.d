@@ -89,7 +89,7 @@
 (global-set-key (kbd "C-y") 'my-duplicate-line)
 (global-set-key (kbd "C-S-a") 'align)
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
-(global-set-key (kbd "C-S-o") 'my-open-buffer-in-other-window)
+(global-set-key (kbd "C-S-o") 'my-open)
 (global-set-key (kbd "C-S-t") 'my-create-tags)
 (global-set-key (kbd "C-S-w") 'my-close-buffer-and-window)
 ;; (global-set-key [C-tab] 'other-window)
@@ -183,12 +183,6 @@
       (message "%d" (length (buffer-list)))
       (if (> (count-windows) 1)
           (delete-window)))))
-
-(defun my-open-buffer-in-other-window (file-path)
-  "Close file/window."
-  (interactive "FOpen file: ")
-  (my-split-window)
-  (find-file file-path))
 
 (defun my-close-buffer-and-window ()
   "Close file/window."
