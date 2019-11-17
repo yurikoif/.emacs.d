@@ -83,6 +83,7 @@
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-b") 'fzf)
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-k") 'my-open-terminal)
