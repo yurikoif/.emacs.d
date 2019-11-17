@@ -25,9 +25,11 @@
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
+ '(window-divider-mode t)
  '(tags-table-list (quote ("~/")))
  '(tool-bar-mode nil)
- '(tooltip-mode nil))
+ '(tooltip-mode nil)
+ '(window-divider-default-right-width 1))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
