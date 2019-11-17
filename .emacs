@@ -9,14 +9,13 @@
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
  '(global-auto-revert-mode nil)
- '(global-linum-mode t)
  '(inhibit-startup-screen t)
  '(ivy-mode 1)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -69,6 +68,9 @@
   :bind ([C-tab] . eyebrowse-next-window-config))
 (use-package markdown-mode
   :demand)
+(use-package nlinum
+  :demand
+  :init :custom (global-nlinum-mode t))
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
