@@ -16,7 +16,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -25,11 +25,11 @@
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
- '(window-divider-mode t)
  '(tags-table-list (quote ("~/")))
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
- '(window-divider-default-right-width 1))
+ '(window-divider-default-right-width 1)
+ '(window-divider-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
