@@ -16,7 +16,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -75,6 +75,10 @@
   :demand
   :init :custom (global-linum-mode nil)
   :init :custom (global-nlinum-mode nil))
+(use-package highlight-indentation
+  :demand
+  :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
+  :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
