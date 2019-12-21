@@ -44,21 +44,25 @@
 ;; use package
 (use-package tangotango-theme
   :demand
-  :init (load-theme 'tangotango t))
+  :init (load-theme 'tangotango t)
+  )
 (use-package auto-complete
   :demand
   :init (ac-config-default)
   :init :custom (ac-auto-show-menu t)
-  :init :custom (ac-trigger-key "TAB"))
+  :init :custom (ac-trigger-key "TAB")
+  )
 (use-package ivy
   :demand
   :init :custom (ivy-mode 1)
   :init (if (< emacs-major-version 27)
             (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
           (setq xref-show-definitions-function #'ivy-xref-show-defs))
-  :bind ("C-]" . xref-find-definitions-other-window))
+  :bind ("C-]" . xref-find-definitions-other-window)
+  )
 (use-package ivy-xref
-  :demand)
+  :demand
+  )
 (use-package eyebrowse
   :demand
   :init :custom (eyebrowse-mode 1)
@@ -67,18 +71,23 @@
   :init :custom (eyebrowse-wrap-around t)
   :bind ("C-'" . eyebrowse-close-window-config)
   :bind ("C-n" . my-create-workspace)
-  :bind ("C-<prior>" . eyebrowse-prev-window-config)
-  :bind ("C-<next>" . eyebrowse-next-window-config))
+  ;; :bind ("C-<prior>" . eyebrowse-prev-window-config)
+  ;; :bind ("C-<next>" . eyebrowse-next-window-config)
+  :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
+  :bind ([C-tab] . eyebrowse-prev-window-config)
+  )
 (use-package markdown-mode
   :demand)
 (use-package nlinum
   :demand
   :init :custom (global-linum-mode nil)
-  :init :custom (global-nlinum-mode nil))
+  :init :custom (global-nlinum-mode nil)
+  )
 (use-package highlight-indentation
   :demand
   :init (add-hook 'prog-mode-hook 'highlight-indentation-current-column-mode)
-  :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
+  :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
+  )
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
@@ -102,8 +111,10 @@
 (global-set-key (kbd "C-S-o") 'my-open)
 (global-set-key (kbd "C-S-t") 'my-create-tags)
 (global-set-key (kbd "C-S-w") 'my-close-buffer-and-window)
-(global-set-key [C-S-iso-lefttab] 'other-window---1)
-(global-set-key [C-tab] 'other-window)
+;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
+;; (global-set-key [C-tab] 'other-window)
+(global-set-key (kbd "C-<prior>") 'other-window---1)
+(global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f8] 'shell-command)
 (global-set-key [f9] 'my-compile)
