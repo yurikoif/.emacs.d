@@ -85,7 +85,7 @@
   )
 (use-package highlight-indentation
   :demand
-  :init (add-hook 'prog-mode-hook 'highlight-indentation-current-column-mode)
+  :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
