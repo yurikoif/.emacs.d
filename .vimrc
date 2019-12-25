@@ -32,7 +32,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set tags=~/tags
-set autochdir " Changes the cwd to the directory of the current buffer whenever you switch buffers.
 set browsedir=current " Make the file browser always open the current directory.
 set wildmenu
 set wildmode=longest:full
