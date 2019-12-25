@@ -1,7 +1,6 @@
 " EMACS style VI/VIM environment
 
 call plug#begin()
-Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -11,15 +10,18 @@ Plug 'godlygeek/tabular'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
+Plug 'sainnhe/edge'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 
 sy enable
 filetype on
-color dracula
+set background=dark
+color edge
 hi Normal guibg=NONE ctermbg=NONE
 hi Statement cterm=bold
+hi Type cterm=bold
 
 set nocompatible 
 set hlsearch
@@ -160,5 +162,4 @@ imap <S-Home> <ESC>v<Home>
 imap <S-End> <ESC>v<End>
 imap <C-S-PageUp> <ESC>v<PageUp>
 imap <C-S-PageDown> <ESC>v<PageDown>
-
 
