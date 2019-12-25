@@ -1,23 +1,23 @@
 " EMACS style VI/VIM environment
 
 call plug#begin()
-    Plug 'vim-airline/vim-airline'
-    Plug 'jnurmine/zenburn'
-    Plug 'junegunn/fzf'
-    Plug 'junegunn/fzf.vim'
-    Plug 'scrooloose/syntastic'
-    Plug 'majutsushi/tagbar'
-    Plug 'godlygeek/tabular'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'ervandew/supertab'
-    Plug 'jiangmiao/auto-pairs'
+Plug 'dracula/vim'
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'godlygeek/tabular'
+Plug 'sheerun/vim-polyglot'
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 
 sy enable
 filetype on
-color zenburn
+color dracula
 hi Normal guibg=NONE ctermbg=NONE
 hi Statement cterm=bold
 
