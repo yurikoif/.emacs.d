@@ -117,12 +117,12 @@ imap <C-Up> <ESC>{i
 vmap <C-Down> }
 nmap <C-Down> }
 imap <C-Down> <ESC>}i
-vmap <PageUp> 32k
-nmap <PageUp> 32k
-imap <PageUp> <ESC>32ki
-vmap <PageDown> 32j
-nmap <PageDown> 32j
-imap <PageDown> <ESC>32ji
+vmap <PageUp> <C-u>
+nmap <PageUp> <C-u>
+imap <PageUp> <ESC><C-u>i
+vmap <PageDown> <C-d>
+nmap <PageDown> <C-d>
+imap <PageDown> <ESC><C-d>i
 
 vmap <S-Up> <Up>
 vmap <S-Down> <Down>
@@ -134,8 +134,8 @@ vmap <C-S-Left> <C-Left>
 vmap <C-S-Right> <C-Right>
 vmap <S-Home> <Home>
 vmap <S-End> <End>
-vmap <S-PageUp> 32k
-vmap <S-PageDown> 32j
+vmap <S-PageUp> <C-u>
+vmap <S-PageDown> <C-d>
 
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
