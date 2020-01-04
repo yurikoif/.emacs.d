@@ -107,6 +107,7 @@
                                )
                               )
               shackle-default-rule '(:select t))
+  :init (advice-add 'eshell-life-is-too-much :after 'my-close-on-exit)
  )
 (use-package markdown-mode
   :demand)
@@ -227,7 +228,9 @@
       )
     )
   )
-
+(defun my-close-on-exit ()
+  (when (not (one-window-p))
+    (delete-window)))
 (defun my-close-buffer-and-window ()
   "Close file/window."
   (interactive)
