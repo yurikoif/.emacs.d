@@ -16,7 +16,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (spacemacs-theme rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (shackle spacemacs-theme rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -46,14 +46,14 @@
 ;;   :demand
 ;;   :init (load-theme 'tangotango t)
 ;;   )
-;; (use-package rebecca-theme
-;;   :demand
-;;   :init (load-theme 'rebecca t)
-;;   )
-(use-package spacemacs-theme
-  :defer t
-  :init (load-theme 'spacemacs-dark t)
+(use-package rebecca-theme
+  :demand
+  :init (load-theme 'rebecca t)
   )
+;; (use-package spacemacs-theme
+;;   :defer t
+;;   :init (load-theme 'spacemacs-dark t)
+;;   )
 (use-package auto-complete
   :demand
   :init (ac-config-default)
@@ -65,7 +65,8 @@
   :init :custom (ivy-mode 1)
   :init (if (< emacs-major-version 27)
             (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
-          (setq xref-show-definitions-function #'ivy-xref-show-defs))
+          (setq xref-show-definitions-function #'ivy-xref-show-defs)
+          )
   :bind ("C-]" . xref-find-definitions-other-window)
   )
 (use-package ivy-xref
@@ -79,11 +80,30 @@
   :init :custom (eyebrowse-wrap-around t)
   :bind ("C-'" . eyebrowse-close-window-config)
   :bind ("C-n" . my-create-workspace)
-  ;; :bind ("C-<prior>" . eyebrowse-prev-window-config)
-  ;; :bind ("C-<next>" . eyebrowse-next-window-config)
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
   :bind ([C-tab] . eyebrowse-prev-window-config)
   )
+(use-package shackle
+  :demand
+  :init :custom (shackle-mode 1)
+  :init (setq shackle-rules '(
+                              (compilation-mode :noselect t
+                                                :align 'below
+                                                :size 0.3
+                                                :popup t
+                                                )
+                              (eshell-mode :align 'below
+                                           :size 0.3
+                                           :popup t
+                                           )
+                              (grep-mode :select t
+                                         :align 'below
+                                         :size 0.3
+                                         :popup t
+                                         )
+                              )
+              shackle-default-rule '(:select t))
+ )
 (use-package markdown-mode
   :demand)
 (use-package nlinum
@@ -107,8 +127,8 @@
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "C-k") 'my-open-terminal)
 (global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-p") 'switch-to-buffer)
 (global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-t") 'find-tag)
@@ -116,15 +136,12 @@
 (global-set-key (kbd "C-y") 'my-duplicate-line)
 (global-set-key (kbd "C-S-a") 'align)
 (global-set-key (kbd "C-S-f") 'my-grep-find-read-from-minibuffer)
-(global-set-key (kbd "C-S-o") 'my-open)
 (global-set-key (kbd "C-S-t") 'my-create-tags)
-(global-set-key (kbd "C-S-w") 'my-close-buffer-and-window)
-;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
-;; (global-set-key [C-tab] 'other-window)
+;; (global-set-key (kbd "C-S-w") 'my-close-buffer-and-window)
 (global-set-key (kbd "C-<prior>") 'other-window---1)
 (global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
-(global-set-key [f8] 'shell-command)
+(global-set-key [f8] 'eshell)
 (global-set-key [f9] 'my-compile)
 (global-set-key [M-f4] 'kill-emacs)
 
@@ -138,28 +155,33 @@
 
 (when (null (boundp 'init-toggled-maximized))
   (toggle-frame-maximized)
-  (setq init-toggled-maximized t))
+  (setq init-toggled-maximized t)
+  )
 
 ;; MacOS
 (when (eq system-type 'darwin)
   (global-set-key (kbd "<home>") 'beginning-of-line)
-  (global-set-key (kbd "<end>") 'end-of-line))
+  (global-set-key (kbd "<end>") 'end-of-line)
+  )
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; custom functions
 (defun other-window---1 ()
   (interactive)
-  (other-window -1))
+  (other-window -1)
+  )
 
 (defun my-script-style ()
   (setq tab-width 4)
-  (setq indent-tabs-mode nil))
+  (setq indent-tabs-mode nil)
+  )
 
 (defun my-working-indent ()
   (setq c-basic-offset 2)
   (setq tab-width 2)
-  (setq indent-tabs-mode nil))
+  (setq indent-tabs-mode nil)
+  )
 
 (defun my-cc-style ()
   (c-set-style "linux")
@@ -170,7 +192,8 @@
   (c-set-offset 'label '0)
   (c-set-offset 'case-label '0)
   (c-set-offset 'access-label '-)
-  (my-working-indent))
+  (my-working-indent)
+  )
 
 (defun my-split-window ()
   "Split window properly."
@@ -178,21 +201,9 @@
   ;; (message "%d %d" (window-pixel-height) (window-pixel-width))
   (if (> (window-pixel-height) (window-pixel-width))
       (split-window-vertically)
-    (split-window-horizontally)))
-
-(defun my-open (file-path)
-  "Open file in proper new window."
-  (interactive "FOpen file: ")
-  (if (buffer-file-name (current-buffer))
-      (my-split-window))
-  (find-file file-path))
-
-(defun my-open-terminal ()
-  "Open terminal in proper new window."
-  (interactive)
-  (if (buffer-file-name (current-buffer))
-      (my-split-window))
-  (term "/bin/bash"))
+    (split-window-horizontally)
+    )
+  )
 
 (defun my-close ()
   "Close file/window."
@@ -200,32 +211,41 @@
   (if (> (length (get-buffer-window-list)) 1)
       (if (buffer-file-name (previous-buffer))
           ()
-        (delete-window))
+        (delete-window)
+        )
     (progn
       (kill-this-buffer)
       ;; (message (buffer-file-name (current-buffer)))
       (message "%d" (length (buffer-list)))
       (if (> (count-windows) 1)
-          (delete-window)))))
+          (delete-window)
+        )
+      )
+    )
+  )
 
 (defun my-close-buffer-and-window ()
   "Close file/window."
   (interactive)
   (kill-this-buffer)
-  (delete-window))
+  (delete-window)
+  )
 
-(defun my-create-workspace (file-path)
+(defun my-create-workspace () ;; (file-path)
   "Create tags file."
-  (interactive "FNew workspace: ")
+  ;; (interactive "FNew workspace: ")
+  (interactive)
   (eyebrowse-create-window-config)
-  (delete-other-windows)
-  (find-file file-path))
+  (switch-to-buffer "*scratch*")
+  ;; (find-file file-path)
+  )
 
 (defun my-compile (compile-path)
   "Create tags file."
   (interactive "FCompile in: ")
   (cd compile-path)
-  (compile (read-string "Compile command: " "make -j4")))
+  (compile (read-string "Compile command: " "make -j4"))
+  )
 
 (defun my-create-tags (dir-path)
   "Create tags file."
@@ -234,24 +254,31 @@
          (completing-read "Save TAGS file to: "
                           tags-table-list nil t (car tags-table-list))))
     (eshell-command
-     (format "find %s -follow -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e -L -"
-             dir-path save-dir-path))))
+     (format "find %s -follow -type f -name \"*.[ch]\" -or \
+-name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e -L -"
+             dir-path save-dir-path))
+    )
+  )
 
 (defun my-grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-directory-name "Grep in: " default-directory))
-  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
-                     where-to-grep what-to-grep)))
+  (grep-find (format "find %s -type f -exec grep --color -nH --exclude='TAGS' \
+--include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
+                     where-to-grep what-to-grep))
+  )
 
 (defun my-grep-find-read-from-minibuffer ()
   "setting up grep-command using sentence read from minibuffer"
   (interactive)
-  (my-grep-find (read-string "Grep: ")))
+  (my-grep-find (read-string "Grep: "))
+  )
 
 (defun my-grep-find-at-point ()
   "setting up grep-command using current word under cursor as a search string"
   (interactive)
-  (my-grep-find (symbol-at-point)))
+  (my-grep-find (symbol-at-point))
+  )
 
 (defun my-duplicate-line (arg)
   "Duplicate current line, leaving point in lower line."
@@ -274,8 +301,11 @@
         (while (> count 0)
           (newline)         ;; because there is no newline in 'line'
           (insert line)
-          (setq count (1- count))))
+          (setq count (1- count))
+          )
+        )
       ;; create the undo information
       (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))) ; end-of-let
   ;; put the point in the lowest line and return
-  (next-line arg))
+  (next-line arg)
+  )
