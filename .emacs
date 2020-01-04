@@ -16,7 +16,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (spacemacs-theme rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -42,9 +42,17 @@
 (package-initialize)
 
 ;; use package
-(use-package tangotango-theme
-  :demand
-  :init (load-theme 'tangotango t)
+;; (use-package tangotango-theme
+;;   :demand
+;;   :init (load-theme 'tangotango t)
+;;   )
+;; (use-package rebecca-theme
+;;   :demand
+;;   :init (load-theme 'rebecca t)
+;;   )
+(use-package spacemacs-theme
+  :defer t
+  :init (load-theme 'spacemacs-dark t)
   )
 (use-package auto-complete
   :demand
