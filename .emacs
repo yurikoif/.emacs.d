@@ -6,6 +6,9 @@
  '(column-number-mode t)
  '(compile-command "make -j4 -C")
  '(cua-mode t nil (cua-base))
+ '(custom-safe-themes
+   (quote
+    ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
  '(default-frame-alist (quote ((alpha . 90))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
@@ -16,7 +19,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (shackle spacemacs-theme rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -50,10 +53,6 @@
   :demand
   :init (load-theme 'rebecca t)
   )
-;; (use-package spacemacs-theme
-;;   :defer t
-;;   :init (load-theme 'spacemacs-dark t)
-;;   )
 (use-package auto-complete
   :demand
   :init (ac-config-default)
