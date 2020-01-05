@@ -243,6 +243,7 @@
   (interactive)
   (eyebrowse-create-window-config)
   (switch-to-buffer "*scratch*")
+  (delete-other-windows)
   ;; (find-file file-path)
   )
 
