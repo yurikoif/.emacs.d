@@ -19,7 +19,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -108,8 +108,17 @@
               shackle-default-rule '(:select t))
   :init (advice-add 'eshell-life-is-too-much :after 'my-close-on-exit)
  )
+(use-package eshell-git-prompt
+  :demand
+  :init (eshell-git-prompt-use-theme 'powerline)
+  )
 (use-package markdown-mode
-  :demand)
+  :demand
+  )
+(use-package bash-completion
+  :demand
+  :init (bash-completion-setup)
+  )
 (use-package nlinum
   :demand
   :init :custom (global-linum-mode nil)
