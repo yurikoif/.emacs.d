@@ -85,26 +85,27 @@
 (use-package shackle
   :demand
   :init :custom (shackle-mode 1)
-  :init (setq shackle-rules '(
-                              (compilation-mode
-                               :noselect t
-                               :align 'below
-                               :size 0.3
-                               :popup t
-                               )
-                              ("\\`\\*e?shell"
-                               :regexp t
-                               :align 'below
-                               :size 0.3
-                               :popup t
-                               )
-                              (grep-mode
-                               :select t
-                               :align 'below
-                               :size 0.3
-                               :popup t
-                               )
-                              )
+  :init (setq shackle-rules
+              '(
+                (compilation-mode
+                 :noselect t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                ("\\`\\*e?shell"
+                 :regexp t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                (grep-mode
+                 :select t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                )
               shackle-default-rule '(:select t))
   :init (advice-add 'eshell-life-is-too-much :after 'my-close-on-exit)
  )
@@ -155,6 +156,7 @@
 (global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f8] 'eshell)
+;; (global-set-key [f8] 'my-open-term)
 (global-set-key [f9] 'my-compile)
 (global-set-key [M-f4] 'kill-emacs)
 
@@ -244,6 +246,10 @@
   (interactive)
   (kill-this-buffer)
   (delete-window)
+  )
+(defun my-open-term ()
+  (interactive)
+  (term "/bin/bash")
   )
 
 (defun my-create-workspace () ;; (file-path)
