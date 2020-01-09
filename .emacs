@@ -1,45 +1,3 @@
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(compile-command "make -j4 -C")
- '(cua-mode t nil (cua-base))
- '(custom-safe-themes
-   (quote
-    ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
- '(default-frame-alist (quote ((alpha . 90))))
- '(desktop-save-mode nil)
- '(electric-pair-mode t)
- '(global-auto-revert-mode nil)
- '(inhibit-startup-screen t)
- '(ivy-mode 1)
- '(make-backup-files nil)
- '(menu-bar-mode nil)
- '(package-selected-packages
-   (quote
-    (bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
- '(redisplay-dont-pause t t)
- '(save-place-mode t)
- '(scroll-conservatively 10000)
- '(scroll-margin 1)
- '(scroll-preserve-screen-position 1)
- '(scroll-step 1)
- '(select-enable-clipboard t)
- '(show-paren-mode t)
- '(tags-table-list (quote ("~/")))
- '(tool-bar-mode nil)
- '(tooltip-mode nil)
- '(window-divider-default-right-width 1)
- '(window-divider-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
@@ -53,12 +11,14 @@
   :demand
   :init (load-theme 'rebecca t)
   )
+
 (use-package auto-complete
   :demand
   :init (ac-config-default)
   :init :custom (ac-auto-show-menu t)
   :init :custom (ac-trigger-key "TAB")
   )
+
 (use-package ivy
   :demand
   :init :custom (ivy-mode 1)
@@ -68,9 +28,11 @@
           )
   :bind ("C-]" . xref-find-definitions-other-window)
   )
+
 (use-package ivy-xref
   :demand
   )
+
 (use-package eyebrowse
   :demand
   :init :custom (eyebrowse-mode 1)
@@ -82,49 +44,50 @@
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
   :bind ([C-tab] . eyebrowse-prev-window-config)
   )
+
 (use-package shackle
   :demand
   :init :custom (shackle-mode 1)
-  :init (setq shackle-rules
-              '(
-                (compilation-mode
-                 :noselect t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                ("\\`\\*e?shell"
-                 :regexp t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                (grep-mode
-                 :select t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                )
+  :init (setq shackle-rules '((compilation-mode :noselect t
+                                                :align 'below
+                                                :size 0.3
+                                                :popup t
+                                                )
+                              ("\\`\\*e?shell" :regexp t
+                                               :align 'below
+                                               :size 0.3
+                                               :popup t
+                                               )
+                              (grep-mode :select t
+                                         :align 'below
+                                         :size 0.3
+                                         :popup t
+                                         )
+                              )
               shackle-default-rule '(:select t))
   :init (advice-add 'eshell-life-is-too-much :after 'my-close-on-exit)
  )
+
 (use-package eshell-git-prompt
   :demand
   :init (eshell-git-prompt-use-theme 'powerline)
   )
+
 (use-package markdown-mode
   :demand
   )
+
 (use-package bash-completion
   :demand
   :init (bash-completion-setup)
   )
+
 (use-package nlinum
   :demand
   :init :custom (global-linum-mode nil)
   :init :custom (global-nlinum-mode nil)
   )
+
 (use-package highlight-indentation
   :demand
   :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
@@ -331,3 +294,45 @@
   ;; put the point in the lowest line and return
   (next-line arg)
   )
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(compile-command "make -j4 -C")
+ '(cua-mode t nil (cua-base))
+ '(custom-safe-themes
+   (quote
+    ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
+ '(default-frame-alist (quote ((alpha . 90))))
+ '(desktop-save-mode nil)
+ '(electric-pair-mode t)
+ '(global-auto-revert-mode nil)
+ '(inhibit-startup-screen t)
+ '(ivy-mode 1)
+ '(make-backup-files nil)
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+ '(redisplay-dont-pause t t)
+ '(save-place-mode t)
+ '(scroll-conservatively 10000)
+ '(scroll-margin 1)
+ '(scroll-preserve-screen-position 1)
+ '(scroll-step 1)
+ '(select-enable-clipboard t)
+ '(show-paren-mode t)
+ '(tags-table-list (quote ("~/")))
+ '(tool-bar-mode nil)
+ '(tooltip-mode nil)
+ '(window-divider-default-right-width 1)
+ '(window-divider-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
