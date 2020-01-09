@@ -101,6 +101,10 @@
           )
   )
 
+(use-package clang-format+
+  :demand
+ )
+
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-;") 'comment-line)
@@ -323,7 +327,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (clang-format+ evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
