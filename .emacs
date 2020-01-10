@@ -108,6 +108,13 @@
   :demand
  )
 
+(use-package projectile
+  :demand
+  :config (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
+  :config (projectile-mode +1)
+  :init (setq projectile-project-search-path '("~/devs/"))
+ )
+
 ;; key bindings
 (global-set-key (kbd "C-?") 'my-grep-find-at-point)
 (global-set-key (kbd "C-;") 'comment-line)
@@ -116,10 +123,10 @@
 (global-set-key (kbd "C-,") 'isearch-repeat-backward)
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
-(global-set-key (kbd "C-p") 'switch-to-buffer)
 (global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-t") 'find-tag)
@@ -331,7 +338,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auto-complete ivy-prescient clang-format+ bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (projectile auto-complete ivy-prescient clang-format+ bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
