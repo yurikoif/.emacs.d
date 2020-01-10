@@ -33,6 +33,11 @@
   :demand
   )
 
+(use-package ivy-prescient
+  :demand
+  :init (ivy-prescient-mode 1)
+ )
+
 (use-package eyebrowse
   :demand
   :init :custom (eyebrowse-mode 1)
@@ -58,6 +63,11 @@
                                                :size 0.3
                                                :popup t
                                                )
+                              (gud-mode :select t
+                                        :align 'below
+                                        :size 0.3
+                                        :popup t
+                                        )
                               (grep-mode :select t
                                          :align 'below
                                          :size 0.3
@@ -129,6 +139,7 @@
 (global-set-key (kbd "C-<prior>") 'other-window---1)
 (global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
+(global-set-key [f7] 'gdb)
 (global-set-key [f8] 'eshell)
 ;; (global-set-key [f8] 'my-open-term)
 (global-set-key [f9] 'my-compile)
@@ -327,7 +338,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (clang-format+ evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (ivy-prescient clang-format+ evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
