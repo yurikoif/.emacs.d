@@ -104,13 +104,6 @@
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
-(use-package evil
-  :demand
-  :init (unless window-system
-          (evil-mode t)
-          )
-  )
-
 (use-package clang-format+
   :demand
  )
@@ -338,7 +331,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auto-complete ivy-prescient clang-format+ evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (auto-complete ivy-prescient clang-format+ bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
