@@ -338,7 +338,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (ivy-prescient clang-format+ evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode auto-complete)))
+    (auto-complete ivy-prescient clang-format+ evil bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
