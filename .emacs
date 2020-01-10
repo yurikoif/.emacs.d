@@ -4,23 +4,23 @@
 
 ;; use package
 ;; (use-package tangotango-theme
-;;   :demand
+;;   :ensure t
 ;;   :init (load-theme 'tangotango t)
 ;;   )
 (use-package rebecca-theme
-  :demand
+  :ensure t
   :init (load-theme 'rebecca t)
   )
 
 (use-package auto-complete
-  :demand
+  :ensure t
   :init (ac-config-default)
   :init :custom (ac-auto-show-menu t)
   :init :custom (ac-trigger-key "TAB")
   )
 
 (use-package ivy
-  :demand
+  :ensure t
   :init :custom (ivy-mode 1)
   :init (if (< emacs-major-version 27)
             (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
@@ -30,16 +30,16 @@
   )
 
 (use-package ivy-xref
-  :demand
+  :ensure t
   )
 
 (use-package ivy-prescient
-  :demand
+  :ensure t
   :init (ivy-prescient-mode 1)
  )
 
 (use-package eyebrowse
-  :demand
+  :ensure t
   :init :custom (eyebrowse-mode 1)
   :init :custom (eyebrowse-mode-line-style 'smart)
   :init :custom (eyebrowse-switch-back-and-forth t)
@@ -51,7 +51,7 @@
   )
 
 (use-package shackle
-  :demand
+  :ensure t
   :init :custom (shackle-mode 1)
   :init (setq shackle-rules '((compilation-mode :noselect t
                                                 :align 'below
@@ -79,40 +79,45 @@
  )
 
 (use-package eshell-git-prompt
-  :demand
+  :ensure t
   :init (eshell-git-prompt-use-theme 'powerline)
   )
 
 (use-package markdown-mode
-  :demand
+  :ensure t
   )
 
 (use-package bash-completion
-  :demand
+  :ensure t
   :init (bash-completion-setup)
   )
 
 (use-package nlinum
-  :demand
+  :ensure t
   :init :custom (global-linum-mode nil)
   :init :custom (global-nlinum-mode nil)
   )
 
 (use-package highlight-indentation
-  :demand
+  :ensure t
   :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
 (use-package clang-format+
-  :demand
+  :ensure t
  )
 
 (use-package projectile
-  :demand
+  :ensure t
   :config (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
   :config (projectile-mode +1)
   :init (setq projectile-project-search-path '("~/devs/"))
+  )
+
+(use-package dashboard
+  :ensure t
+  :config (dashboard-setup-startup-hook)
  )
 
 ;; key bindings
@@ -338,7 +343,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (projectile auto-complete ivy-prescient clang-format+ bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (dashboard projectile auto-complete ivy-prescient clang-format+ bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
