@@ -118,7 +118,7 @@
   :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
-
+ 
 (use-package projectile
   :ensure t
   :config (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
