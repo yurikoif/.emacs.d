@@ -53,30 +53,45 @@
 (use-package shackle
   :ensure t
   :init :custom (shackle-mode 1)
-  :init (setq shackle-rules '((compilation-mode :noselect t
-                                                :align 'below
-                                                :size 0.3
-                                                :popup t
-                                                )
-                              ("\\`\\*e?shell" :regexp t
-                                               :align 'below
-                                               :size 0.3
-                                               :popup t
-                                               )
-                              (gud-mode :select t
-                                        :align 'below
-                                        :size 0.3
-                                        :popup t
-                                        )
-                              (grep-mode :select t
-                                         :align 'below
-                                         :size 0.3
-                                         :popup t
-                                         )
-                              )
+  :init (setq shackle-rules
+              '((compilation-mode
+                 :noselect t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                ("\\`\\*e?shell"
+                 :regexp t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                ("\\`\\*vc*"
+                 :regexp t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                (vc-annotate-mode
+                 :align 'below
+                 :size 0.8
+                 )
+                (gud-mode
+                 :select t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                (grep-mode
+                 :select t
+                 :align 'below
+                 :size 0.3
+                 :popup t
+                 )
+                )
               shackle-default-rule '(:select t))
   :init (advice-add 'eshell-life-is-too-much :after 'my-close-on-exit)
- )
+  )
 
 (use-package eshell-git-prompt
   :ensure t
