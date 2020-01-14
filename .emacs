@@ -69,7 +69,7 @@
                 ("\\`\\*vc*"
                  :regexp t
                  :align 'below
-                 :size 0.3
+                 :size 0.5
                  :popup t
                  )
                 (vc-annotate-mode
@@ -262,7 +262,7 @@
   ;; (interactive "FNew workspace: ")
   (interactive)
   (eyebrowse-create-window-config)
-  (switch-to-buffer "*scratch*")
+  ;; (switch-to-buffer "*scratch*")
   (delete-other-windows)
   ;; (find-file file-path)
   )
