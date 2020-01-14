@@ -119,10 +119,6 @@
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
-(use-package clang-format+
-  :ensure t
- )
-
 (use-package projectile
   :ensure t
   :config (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
@@ -358,7 +354,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (dashboard projectile auto-complete ivy-prescient clang-format+ bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (dashboard projectile auto-complete ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
