@@ -102,6 +102,10 @@
   :ensure t
   )
 
+(use-package protobuf-mode
+  :ensure t
+  )
+
 (use-package bash-completion
   :ensure t
   :init (bash-completion-setup)
@@ -117,13 +121,6 @@
   :ensure t
   :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
-  )
- 
-(use-package projectile
-  :ensure t
-  :config (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
-  :config (projectile-mode +1)
-  :init (setq projectile-project-search-path '("~/devs/"))
   )
 
 (use-package dashboard
@@ -360,7 +357,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auto-complete dashboard projectile ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
