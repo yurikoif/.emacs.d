@@ -340,7 +340,7 @@
  '(column-number-mode t)
  '(compile-command "make -j4 -C")
  '(cua-mode t nil (cua-base))
- '(cua-prefix-override-inhibit-delay nil)
+ '(cua-prefix-override-inhibit-delay 0.1)
  '(custom-safe-themes
    (quote
     ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
