@@ -237,22 +237,25 @@
       )
     )
   )
+
 (defun my:close-on-exit ()
   (when (not (one-window-p))
     (delete-window)))
+
 (defun my:close-buffer-and-window ()
-  "Close file/window."
+  "Close buffer/window."
   (interactive)
   (kill-this-buffer)
   (delete-window)
   )
+
 (defun my:open-term ()
   (interactive)
   (term "/bin/bash")
   )
 
 (defun my:create-workspace () ;; (file-path)
-  "Create tags file."
+  "Create new workspace."
   ;; (interactive "FNew workspace: ")
   (interactive)
   (eyebrowse-create-window-config)
@@ -262,7 +265,7 @@
   )
 
 (defun my:compile (compile-path)
-  "Create tags file."
+  "Compile."
   (interactive "FCompile in: ")
   (cd compile-path)
   (compile (read-string "Compile command: " "make -j4"))
@@ -358,6 +361,7 @@
  '(global-nlinum-mode nil)
  '(inhibit-startup-screen t)
  '(ivy-mode 1)
+ '(ivy-prescient-mode 1)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
