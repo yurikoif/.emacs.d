@@ -36,7 +36,7 @@
 (use-package ivy-prescient
   :ensure t
   :init (ivy-prescient-mode 1)
- )
+  )
 
 (use-package eyebrowse
   :ensure t
