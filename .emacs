@@ -336,6 +336,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-auto-show-menu t)
+ '(ac-delay 0.0)
  '(ac-trigger-key "TAB")
  '(column-number-mode t)
  '(compile-command "make -j4 -C")
