@@ -16,6 +16,7 @@
   :ensure t
   :init (ac-config-default)
   :init :custom (ac-auto-show-menu t)
+  :init :custom (ac-delay 0.0)
   :init :custom (ac-trigger-key "TAB")
   )
 
@@ -35,7 +36,7 @@
 
 (use-package ivy-prescient
   :ensure t
-  :init (ivy-prescient-mode 1)
+  :init :custom (ivy-prescient-mode 1)
   )
 
 (use-package eyebrowse
