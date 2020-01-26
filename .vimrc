@@ -46,9 +46,11 @@ au Filetype h,hpp,c,cc,cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop
 vmap <BS> "_d<ESC>
 vmap <DEL> "_d
 
-vmap <F12> <ESC>:TagbarToggle<CR>
-nmap <F12> :TagbarToggle<CR>
-imap <F12> <ESC>:TagbarToggle<CR>
+let mapleader = " "
+nmap <Leader>b :TagbarToggle<CR>
+nmap <Leader>r :%s///g<Left><Left><Left>
+nmap <Leader>t :! ctags -f ~/tags -R ~/devs
+vmap <Leader><tab> :Tabularize \
 
 nnoremap <C-]> g<C-]>
 nmap <C-_> *``
@@ -81,9 +83,6 @@ nmap <C-x>2 :split<CR>
 imap <C-x>2 <ESC>:split<CR>i
 nmap <C-x>3 :vsplit<CR>
 imap <C-x>3 <ESC>:vsplit<CR>i
-nmap <C-x>r :%s///g<Left><Left><Left>
-vmap <C-x>t :Tabularize \
-nmap <C-x>t :! ctags -f ~/tags -R ~/devs
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
