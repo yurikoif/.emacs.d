@@ -278,18 +278,25 @@
          (completing-read "Save TAGS file to: "
                           tags-table-list nil t (car tags-table-list))))
     (eshell-command
-     (format "find %s -follow -type f -name \"*.[ch]\" -or \
--name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e -L -"
-             dir-path save-dir-path))
+     (format "find %s -follow -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | %s -f %s/TAGS -e -L -"
+             dir-path
+             (if (eq system-type 'darwin)
+                 "/usr/local/bin/ctags"
+               "ctags")
+             save-dir-path
+             )
+     )
     )
   )
 
 (defun my:grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
-  (grep-find (format "find %s -type f -exec grep -I --color -nH --exclude=TAGS \
---include=\*.h --include=\*.cpp --include=\*.py --include=\*.c -e \"%s\" \{\} +"
-                     where-to-grep what-to-grep))
+  (grep-find (format "find %s -type f -exec grep -I --color -nH --exclude=TAGS --include=\*.h --include=\*.cpp --include=\*.py --include=\*.c -e \"%s\" \{\} +"
+                     where-to-grep
+                     what-to-grep
+                     )
+             )
   )
 
 (defun my:grep-find-read-from-minibuffer ()
