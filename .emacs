@@ -167,11 +167,6 @@
 (add-hook 'lisp-mode-hook 'my:script-style)
 (add-hook 'emacs-lisp-mode-hook 'my:script-style)
 
-(when (null (boundp 'init-toggled-maximized))
-  (toggle-frame-maximized)
-  (setq init-toggled-maximized t)
-  )
-
 ;; MacOS
 (when (eq system-type 'darwin)
   (global-set-key (kbd "<home>") 'beginning-of-line)
@@ -356,7 +351,11 @@
  '(custom-safe-themes
    (quote
     ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
- '(default-frame-alist (quote ((alpha . 90))))
+ '(default-frame-alist
+    (quote
+     ((right-divider-width . 1)
+      (alpha . 90)
+      (fullscreen . maximized))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
  '(eyebrowse-mode 1)
