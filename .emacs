@@ -34,7 +34,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -77,6 +77,25 @@
   :init :custom (ac-auto-show-menu t)
   :init :custom (ac-delay 0.0)
   :init :custom (ac-trigger-key "TAB")
+  :config
+  (use-package auto-complete-c-headers
+    :ensure t
+    :config
+    (defun my:ac-c-headers-init ()
+      (add-to-list 'ac-sources 'ac-source-c-headers)
+      )
+    (add-hook 'c-mode-hook 'my:ac-c-headers-init)
+    (add-hook 'c++-mode-hook 'my:ac-c-headers-init)
+    )
+  )
+
+(use-package yasnippet
+  :ensure t
+  :init (yas-global-mode 1)
+  :config
+  (use-package yasnippet-snippets
+    :ensure t
+    )
   )
 
 (use-package ivy
@@ -87,15 +106,15 @@
           (setq xref-show-definitions-function #'ivy-xref-show-defs)
           )
   :bind ("C-]" . xref-find-definitions-other-window)
-  )
+  :config
+  (use-package ivy-xref
+    :ensure t
+    )
 
-(use-package ivy-xref
-  :ensure t
-  )
-
-(use-package ivy-prescient
-  :ensure t
-  :init :custom (ivy-prescient-mode 1)
+  (use-package ivy-prescient
+    :ensure t
+    :init :custom (ivy-prescient-mode 1)
+    )
   )
 
 (use-package eyebrowse
