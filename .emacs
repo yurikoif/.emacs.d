@@ -34,7 +34,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -202,10 +202,23 @@
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
+(use-package projectile
+  :ensure t
+  :init (projectile-mode +1)
+  :init (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
+  )
+
 (use-package dashboard
   :ensure t
-  :config (dashboard-setup-startup-hook)
- )
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents  . 5)
+                          (projects . 5)
+                          (bookmarks . 5)
+                          (agenda . 5)
+                          (registers . 5)
+                          ))
+  )
 
 ;; key bindings
 (global-set-key (kbd "C-?") 'my:grep-find-at-point)
