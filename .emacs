@@ -239,6 +239,7 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-t") 'find-tag)
 (global-set-key (kbd "C-w") 'kill-current-buffer)
+(global-set-key (kbd "C-q") 'kill-buffer-and-window)
 (global-set-key (kbd "C-y") 'my:duplicate-line)
 (global-set-key (kbd "C-S-a") 'align)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
