@@ -30,6 +30,7 @@
  '(inhibit-startup-screen t)
  '(ivy-mode 1)
  '(ivy-prescient-mode 1)
+ '(large-file-warning-threshold 100000000)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
