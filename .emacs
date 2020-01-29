@@ -132,44 +132,45 @@
 (use-package shackle
   :ensure t
   :init :custom (shackle-mode 1)
-  :init (setq shackle-rules
-              '((compilation-mode
-                 :noselect t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                ("\\`\\*e?shell"
-                 :regexp t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                ("\\`\\*vc*"
-                 :regexp t
-                 :align 'below
-                 :size 0.5
-                 :popup t
-                 )
-                (vc-annotate-mode
-                 :align 'below
-                 :size 0.8
-                 )
-                (gud-mode
-                 :select t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                (grep-mode
-                 :select t
-                 :align 'below
-                 :size 0.3
-                 :popup t
-                 )
-                )
-              shackle-default-rule '(:select t))
-  :init (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
+  :config
+  (setq shackle-rules
+        '((compilation-mode
+           :noselect t
+           :align 'below
+           :size 0.3
+           :popup t
+           )
+          ("\\`\\*e?shell"
+           :regexp t
+           :align 'below
+           :size 0.3
+           :popup t
+           )
+          ("\\`\\*vc*"
+           :regexp t
+           :align 'below
+           :size 0.5
+           :popup t
+           )
+          (vc-annotate-mode
+           :align 'below
+           :size 0.8
+           )
+          (gud-mode
+           :select t
+           :align 'below
+           :size 0.3
+           :popup t
+           )
+          (grep-mode
+           :select t
+           :align 'below
+           :size 0.3
+           :popup t
+           )
+          )
+        shackle-default-rule '(:select t))
+  (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
   )
 
 (use-package eshell-git-prompt
@@ -217,7 +218,8 @@
                           (bookmarks . 5)
                           (agenda . 5)
                           (registers . 5)
-                          ))
+                          )
+        )
   )
 
 ;; key bindings
@@ -235,7 +237,7 @@
 (global-set-key (kbd "C-r") 'replace-string)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-t") 'find-tag)
-(global-set-key (kbd "C-w") 'kill-current-buffer)
+(global-set-key (kbd "C-w") 'kill-buffer-and-window)
 (global-set-key (kbd "C-y") 'my:duplicate-line)
 (global-set-key (kbd "C-S-a") 'align)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
