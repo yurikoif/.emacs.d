@@ -214,11 +214,11 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 3)
-                          (projects . 3)
-                          (bookmarks . 3)
-                          (agenda . 3)
-                          (registers . 3)
+  (setq dashboard-items '((recents  . 4)
+                          (projects . 4)
+                          (bookmarks . 4)
+                          (agenda . 4)
+                          (registers . 4)
                           )
         )
   )
