@@ -372,7 +372,7 @@
          (completing-read "Save TAGS file to: "
                           tags-table-list nil t (car tags-table-list))))
     (eshell-command
-     (format "find %s -follow -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e -L -"
+     (format "find %s -follow -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e --tag-relative=yes -L -"
              dir-path
              save-dir-path
              )
