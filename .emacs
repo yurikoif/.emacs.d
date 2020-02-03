@@ -208,6 +208,9 @@
   :ensure t
   :init (projectile-mode +1)
   :init (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
+  :config
+  (defadvice projectile-project-root (around ignore-remote first activate)
+    (unless (file-remote-p default-directory) ad-do-it))
   )
 
 (use-package dashboard
@@ -369,11 +372,8 @@
          (completing-read "Save TAGS file to: "
                           tags-table-list nil t (car tags-table-list))))
     (eshell-command
-     (format "find %s -follow -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | %s -f %s/TAGS -e -L -"
+     (format "find %s -follow -type f -name \"*.[ch]\" -or -name \"*.[ch]pp\" -or -name \"*.py\" | ctags -f %s/TAGS -e -L -"
              dir-path
-             (if (eq system-type 'darwin)
-                 "/usr/local/bin/ctags"
-               "ctags")
              save-dir-path
              )
      )
