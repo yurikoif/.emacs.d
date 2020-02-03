@@ -367,6 +367,9 @@
 
 (defun my:create-tags (dir-path)
   "Create tags file."
+  ;; how to browse local TAGS to remote access:
+  ;; replace whatever matches local path prefix e.g. /home/[username]/
+  ;;                      by remote path prefix e.g. /ssh:[username]/home/[username]/
   (interactive "DCreate TAGS file from: ")
   (let ((save-dir-path
          (completing-read "Save TAGS file to: "
