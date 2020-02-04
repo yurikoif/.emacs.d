@@ -118,6 +118,11 @@
     )
   )
 
+(use-package magit
+  :ensure t
+  :bind ("C-g" . magit-status)
+  )
+
 (use-package eyebrowse
   :ensure t
   :init :custom (eyebrowse-mode 1)
@@ -128,11 +133,6 @@
   :bind ("C-n" . my:create-workspace)
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
   :bind ([C-tab] . eyebrowse-prev-window-config)
-  )
-
-(use-package magit
-  :ensure t
-  :bind ("C-g" . magit-status)
   )
 
 (use-package shackle
