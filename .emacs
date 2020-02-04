@@ -178,7 +178,7 @@
 
 (use-package eshell-git-prompt
   :ensure t
-  :init (eshell-git-prompt-use-theme 'powerline)
+  :init (eshell-git-prompt-use-theme 'robbyrussell)
   )
 
 (use-package markdown-mode
