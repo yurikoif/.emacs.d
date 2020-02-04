@@ -140,40 +140,24 @@
   :init :custom (shackle-mode 1)
   :config
   (setq shackle-rules
-        '((compilation-mode
-           :noselect t
-           :align 'below
-           :size 0.3
-           :popup t
+        '((compilation-mode :noselect t
+                            :align 'below
+                            :size 0.3
+                            :popup t
            )
-          ("\\`\\*e?shell"
-           :regexp t
-           :align 'below
-           :size 0.3
-           :popup t
-           )
-          ("\\`\\*vc*"
-           :regexp t
-           :align 'below
-           :size 0.5
-           :popup t
-           )
-          (vc-annotate-mode
-           :align 'below
-           :size 0.8
-           )
-          (gud-mode
-           :select t
-           :align 'below
-           :size 0.3
-           :popup t
-           )
-          (grep-mode
-           :select t
-           :align 'below
-           :size 0.3
-           :popup t
-           )
+          (vc-annotate-mode :align 'below
+                            :size 0.8
+                            )
+          (gud-mode :select t
+                    :align 'below
+                    :size 0.3
+                    :popup t
+                    )
+          (grep-mode :select t
+                     :align 'below
+                     :size 0.3
+                     :popup t
+                     )
           )
         shackle-default-rule '(:select t))
   (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
