@@ -35,7 +35,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (magit projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -116,6 +116,10 @@
     :ensure t
     :init :custom (ivy-prescient-mode 1)
     )
+  )
+
+(use-package dired-rsync
+  :ensure t
   )
 
 (use-package magit
