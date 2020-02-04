@@ -120,6 +120,7 @@
 
 (use-package dired-rsync
   :ensure t
+  :bind ("C-S-s" . dired-rsync)
   )
 
 (use-package magit
