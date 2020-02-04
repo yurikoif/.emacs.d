@@ -35,7 +35,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (magit projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -128,6 +128,11 @@
   :bind ("C-n" . my:create-workspace)
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
   :bind ([C-tab] . eyebrowse-prev-window-config)
+  )
+
+(use-package magit
+  :ensure t
+  :bind ("C-g" . magit-status)
   )
 
 (use-package shackle
