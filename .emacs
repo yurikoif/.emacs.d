@@ -209,7 +209,7 @@
 (use-package projectile
   :ensure t
   :init (projectile-mode +1)
-  :init (define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
+  :init (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
   :config
   (defadvice projectile-project-root (around ignore-remote first activate)
     (unless (file-remote-p default-directory) ad-do-it))
