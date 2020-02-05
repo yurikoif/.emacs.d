@@ -178,7 +178,7 @@
 
 (use-package eshell-git-prompt
   :ensure t
-  :init (eshell-git-prompt-use-theme 'git-radar)
+  :init (eshell-git-prompt-use-theme 'robbyrussell)
   )
 
 (use-package markdown-mode
@@ -202,7 +202,7 @@
 
 (use-package highlight-indentation
   :ensure t
-  :init (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
+  :hook (python-mode . highlight-indentation-current-column-mode)
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
