@@ -126,7 +126,7 @@
 
 (use-package magit
   :ensure t
-  :bind ("C-g" . magit-status)
+  :bind ("M-g" . magit-status)
   )
 
 (use-package eyebrowse
