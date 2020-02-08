@@ -48,6 +48,10 @@
           (setq xref-show-definitions-function #'ivy-xref-show-defs)
           )
   :bind ("C-]" . xref-find-definitions-other-window)
+  :bind (:map ivy-minibuffer-map
+              ("C-<up>" . ivy-reverse-i-search)
+              ("C-d" . ivy-reverse-i-search-kill)
+              )
   :config
   (use-package ivy-xref
     :ensure t
@@ -178,7 +182,6 @@
 (global-set-key (kbd "C-/") 'isearch-forward-symbol-at-point)
 (global-set-key (kbd "M-<RET>") 'switch-to-buffer)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-d") 'kill-whole-line)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-r") 'replace-string)
