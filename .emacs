@@ -61,8 +61,7 @@
 
 (use-package dired-rsync
   :ensure t
-  :config
-  (add-hook 'dired-mode-hook '(lambda () (local-set-key (kbd "C-s") 'dired-rsync)))
+  :bind (:map dired-mode-map ("C-s" . 'dired-rsync))
   )
 
 (use-package magit
