@@ -196,7 +196,9 @@
               )
   :config
   (global-undo-tree-mode -1)
-  (setq evil-default-state 'emacs)
+  (when (display-graphic-p)
+    (setq evil-default-state 'emacs)
+    )
   )
 
 ;; global key bindings
