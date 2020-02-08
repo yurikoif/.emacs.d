@@ -188,7 +188,6 @@
               ("C-w" . kill-current-buffer)
               ("C-q" . kill-buffer-and-window)
               ("C-y" . my:duplicate-line)
-              ("C-S-a" . align)
               ("C-S-f" . my:grep-find-read-from-minibuffer)
               ("C-S-t" . my:create-tags)
               ("C-<prior>" . other-window---1)
