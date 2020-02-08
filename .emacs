@@ -17,7 +17,7 @@
   :ensure t
   :init (ac-config-default)
   :init :custom (ac-auto-show-menu t)
-  :init :custom (ac-delay 0.0)
+  :init :custom (ac-delay 0 . 0)
   :init :custom (ac-trigger-key "TAB")
   :config
   (use-package auto-complete-c-headers
@@ -75,10 +75,10 @@
   :init :custom (eyebrowse-mode-line-style 'smart)
   :init :custom (eyebrowse-switch-back-and-forth t)
   :init :custom (eyebrowse-wrap-around t)
-  :bind ("C--" . eyebrowse-close-window-config)
-  :bind ("C-=" . my:create-workspace)
+  :bind ("C--"             . eyebrowse-close-window-config)
+  :bind ("C-="             . my:create-workspace)
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
-  :bind ([C-tab] . eyebrowse-prev-window-config)
+  :bind ([C-tab]           . eyebrowse-prev-window-config)
   )
 
 (use-package shackle
@@ -88,20 +88,20 @@
   (setq shackle-rules
         '((compilation-mode :noselect t
                             :align 'below
-                            :size 0.3
+                            :size 0 . 3
                             :popup t
            )
           (vc-annotate-mode :align 'below
-                            :size 0.8
+                            :size 0 . 8
                             )
           (gud-mode :select t
                     :align 'below
-                    :size 0.3
+                    :size 0         . 3
                     :popup t
                     )
           (grep-mode :select t
                      :align 'below
-                     :size 0.3
+                     :size 0        . 3
                      :popup t
                      )
           )
@@ -159,10 +159,10 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 8)
-                          (projects . 8)
+  (setq dashboard-items '((recents   . 8)
+                          (projects  . 8)
                           (bookmarks . 8)
-                          (agenda . 8)
+                          (agenda    . 8)
                           (registers . 8)
                           )
         )
