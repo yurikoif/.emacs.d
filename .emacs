@@ -48,10 +48,6 @@
           (setq xref-show-definitions-function #'ivy-xref-show-defs)
           )
   :bind ("C-]" . xref-find-definitions-other-window)
-  :bind (:map ivy-minibuffer-map
-              ("C-<up>" . ivy-reverse-i-search)
-              ("C-d" . ivy-reverse-i-search-kill)
-              )
   :config
   (use-package ivy-xref
     :ensure t
