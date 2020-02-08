@@ -1,62 +1,3 @@
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ac-auto-show-menu t)
- '(ac-delay 0.0)
- '(ac-trigger-key "TAB")
- '(column-number-mode t)
- '(compile-command "make -j4 -C")
- '(cua-mode t nil (cua-base))
- '(cua-prefix-override-inhibit-delay 0.1)
- '(custom-safe-themes
-   (quote
-    ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
- '(default-frame-alist
-    (quote
-     ((right-divider-width . 1)
-      (alpha . 90)
-      (fullscreen . maximized))))
- '(desktop-save-mode nil)
- '(electric-pair-mode t)
- '(eyebrowse-mode 1)
- '(eyebrowse-mode-line-style (quote smart))
- '(eyebrowse-switch-back-and-forth t)
- '(eyebrowse-wrap-around t)
- '(global-auto-revert-mode nil)
- '(global-linum-mode nil)
- '(global-nlinum-mode nil)
- '(inhibit-startup-screen t)
- '(ivy-mode 1)
- '(ivy-prescient-mode 1)
- '(large-file-warning-threshold 100000000)
- '(make-backup-files nil)
- '(menu-bar-mode nil)
- '(package-selected-packages
-   (quote
-    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
- '(redisplay-dont-pause t t)
- '(save-place-mode t)
- '(scroll-conservatively 10000)
- '(scroll-margin 1)
- '(scroll-preserve-screen-position 1)
- '(scroll-step 1)
- '(select-enable-clipboard t)
- '(shackle-mode 1)
- '(show-paren-mode t)
- '(tags-table-list (quote ("~/")))
- '(tool-bar-mode nil)
- '(tooltip-mode nil)
- '(window-divider-default-right-width 1)
- '(window-divider-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
-
 ;; use package
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -439,3 +380,62 @@
   ;; put the point in the lowest line and return
   (next-line arg)
   )
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ac-auto-show-menu t)
+ '(ac-delay 0.0)
+ '(ac-trigger-key "TAB")
+ '(column-number-mode t)
+ '(compile-command "make -j4 -C")
+ '(cua-mode t nil (cua-base))
+ '(cua-prefix-override-inhibit-delay 0.1)
+ '(custom-safe-themes
+   (quote
+    ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
+ '(default-frame-alist
+    (quote
+     ((right-divider-width . 1)
+      (alpha . 90)
+      (fullscreen . maximized))))
+ '(desktop-save-mode nil)
+ '(electric-pair-mode t)
+ '(eyebrowse-mode 1)
+ '(eyebrowse-mode-line-style (quote smart))
+ '(eyebrowse-switch-back-and-forth t)
+ '(eyebrowse-wrap-around t)
+ '(global-auto-revert-mode nil)
+ '(global-linum-mode nil)
+ '(global-nlinum-mode nil)
+ '(inhibit-startup-screen t)
+ '(ivy-mode 1)
+ '(ivy-prescient-mode 1)
+ '(large-file-warning-threshold 100000000)
+ '(make-backup-files nil)
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+ '(redisplay-dont-pause t t)
+ '(save-place-mode t)
+ '(scroll-conservatively 10000)
+ '(scroll-margin 1)
+ '(scroll-preserve-screen-position 1)
+ '(scroll-step 1)
+ '(select-enable-clipboard t)
+ '(shackle-mode 1)
+ '(show-paren-mode t)
+ '(tags-table-list (quote ("~/")))
+ '(tool-bar-mode nil)
+ '(tooltip-mode nil)
+ '(window-divider-default-right-width 1)
+ '(window-divider-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
