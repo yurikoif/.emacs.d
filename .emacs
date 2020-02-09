@@ -61,7 +61,7 @@
 
 (use-package dired-rsync
   :ensure t
-  :bind (:map dired-mode-map ("C-s" . 'dired-rsync))
+  :bind ("C-S-s" . 'dired-rsync)
   )
 
 (use-package magit
