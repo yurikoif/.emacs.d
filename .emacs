@@ -189,10 +189,8 @@
               ("C-y" . my:duplicate-line)
               ("C-S-f" . my:grep-find-read-from-minibuffer)
               ("C-S-t" . my:create-tags)
-              ;; ("C-<prior>" . other-window---1)
-              ("M-<left>" . other-window---1)
-              ;; ("C-<next>" . other-window)
-              ("M-<right>" . other-window)
+              ("C-<prior>" . other-window---1)
+              ("C-<next>" . other-window)
               )
   :config
   (global-undo-tree-mode -1)
