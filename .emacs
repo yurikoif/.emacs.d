@@ -193,7 +193,6 @@
               ("M-<left>" . other-window---1)
               ;; ("C-<next>" . other-window)
               ("M-<right>" . other-window)
-              ("M-`" . switch-to-buffer)
               )
   :config
   (global-undo-tree-mode -1)
