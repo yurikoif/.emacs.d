@@ -2,8 +2,6 @@
 
 call plug#begin()
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'godlygeek/tabular'
@@ -52,21 +50,11 @@ nmap <Leader>r :%s///g<Left><Left><Left>
 nmap <Leader>t :! ctags -f ~/tags -R ~/devs
 vmap <Leader><tab> :Tabularize \
 
-nnoremap <C-]> g<C-]>
 nmap <C-_> *``
 imap <C-_> <ESC>*``
 
 nmap <C-a> ggVG
 imap <C-a> <ESC>ggVG
-
-nmap <C-b> :Buffers<CR>
-imap <C-b> <ESC>:Buffers<CR>
-
-nmap <C-f> :BLines<CR>
-imap <C-f> <ESC>:BLines<CR>
-
-nmap <C-o> :Files<CR>
-imap <C-o> <ESC>:Files<CR>
 
 nmap <C-s> :update<CR>
 imap <C-s> <ESC>:update<CR><ESC>a

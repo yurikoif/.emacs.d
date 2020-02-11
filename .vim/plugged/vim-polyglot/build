@@ -72,8 +72,11 @@ extract() {
       continue
     fi
 
-    [ -d "${dir}${subtree:-/}ftdetect" ] && for f in "${dir}${subtree:-/}ftdetect/"*; do
-      cat <<EOF >> tmp/polyglot.vim
+    ftdetect=("${dir}${subtree:-/}ftdetect"/*)
+    if [ "$ftdetect" ] && [ "$ftdetect" != "${dir}${subtree:-/}ftdetect/*" ]; then
+      IFS=$'\n' ftdetect=($(sort -V <<< "${ftdetect[*]}")); unset IFS
+      for f in "${ftdetect[@]}"; do
+        cat <<EOF >> tmp/polyglot.vim
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, '${pack%%:*}') == -1
   augroup filetypedetect
   " ${pack%%:*}, from ${f##*/ftdetect/} in ${pack#*:}
@@ -82,7 +85,8 @@ $(cat "${f}")
 endif
 
 EOF
-    done
+      done
+    fi
 
   done
 
@@ -233,7 +237,7 @@ PACKS="
   log:MTDL9/vim-log-highlighting
   lua:tbastos/vim-lua
   mako:sophacles/vim-bundle-mako
-  markdown:gabrielelana/vim-markdown
+  markdown:plasticboy/vim-markdown:_NOAFTER
   mathematica:voldikss/vim-mma
   mdx:jxnblk/vim-mdx-js
   meson:mesonbuild/meson:_ALL:/data/syntax-highlighting/vim/

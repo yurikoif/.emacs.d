@@ -32,22 +32,22 @@ color15 = #fafafa
 ```config
 [colors]
 foreground = #bcc4d1
-background = #262729
+background = #2c2e34
 
 color0 = #88909f
-color1 = #f07e7e
-color2 = #a3bc8d
-color3 = #d1b277
-color4 = #7ab3e1
-color5 = #d898eb
-color6 = #78b7b1
+color1 = #f27a7a
+color2 = #a1c286
+color3 = #d9b575
+color4 = #75b6e8
+color5 = #d798e9
+color6 = #70bab9
 color7 = #bcc4d1
 color8 = #88909f
-color9 = #f07e7e
-color10 = #a3bc8d
-color11 = #d1b277
-color12 = #7ab3e1
-color13 = #d898eb
-color14 = #78b7b1
+color9 = #f27a7a
+color10 = #a1c286
+color11 = #d9b575
+color12 = #75b6e8
+color13 = #d798e9
+color14 = #70bab9
 color15 = #bcc4d1
 ```

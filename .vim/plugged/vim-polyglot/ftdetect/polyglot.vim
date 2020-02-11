@@ -519,6 +519,29 @@ endif
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'graphql') == -1
   augroup filetypedetect
   " graphql, from graphql.vim in jparise/vim-graphql:_ALL
+" Copyright (c) 2016-2019 Jon Parise <jon@indelible.org>
+"
+" Permission is hereby granted, free of charge, to any person obtaining a copy
+" of this software and associated documentation files (the "Software"), to
+" deal in the Software without restriction, including without limitation the
+" rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+" sell copies of the Software, and to permit persons to whom the Software is
+" furnished to do so, subject to the following conditions:
+"
+" The above copyright notice and this permission notice shall be included in
+" all copies or substantial portions of the Software.
+"
+" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+" FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+" IN THE SOFTWARE.
+"
+" Language: GraphQL
+" Maintainer: Jon Parise <jon@indelible.org>
+
 " vint: -ProhibitAutocmdWithNoGroup
 au BufRead,BufNewFile *.graphql,*.graphqls,*.gql setfiletype graphql
   augroup end
@@ -669,11 +692,11 @@ if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'jenkins') == -1
   augroup filetypedetect
   " jenkins, from Jenkinsfile.vim in martinda/Jenkinsfile-vim-syntax
 " Jenkinsfile
-
-augroup JenkinsAUGroup
-  autocmd BufRead,BufNewFile *Jenkins* set ft=Jenkinsfile
-  autocmd BufRead,BufNewFile *jenkins* set ft=Jenkinsfile
-augroup END
+autocmd BufRead,BufNewFile Jenkinsfile set ft=Jenkinsfile
+autocmd BufRead,BufNewFile Jenkinsfile* setf Jenkinsfile
+autocmd BufRead,BufNewFile *.jenkinsfile set ft=Jenkinsfile
+autocmd BufRead,BufNewFile *.jenkinsfile setf Jenkinsfile
+autocmd BufRead,BufNewFile *.Jenkinsfile setf Jenkinsfile
   augroup end
 endif
 
@@ -746,15 +769,15 @@ endif
 
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'llvm') == -1
   augroup filetypedetect
-  " llvm, from llvm-lit.vim in rhysd/vim-llvm
-au BufRead,BufNewFile lit.*cfg set filetype=python
+  " llvm, from llvm.vim in rhysd/vim-llvm
+au BufRead,BufNewFile *.ll set filetype=llvm
   augroup end
 endif
 
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'llvm') == -1
   augroup filetypedetect
-  " llvm, from llvm.vim in rhysd/vim-llvm
-au BufRead,BufNewFile *.ll set filetype=llvm
+  " llvm, from llvm-lit.vim in rhysd/vim-llvm
+au BufRead,BufNewFile lit.*cfg set filetype=python
   augroup end
 endif
 
@@ -793,8 +816,15 @@ endif
 
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'markdown') == -1
   augroup filetypedetect
-  " markdown, from markdown.vim in gabrielelana/vim-markdown
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+  " markdown, from markdown.vim in plasticboy/vim-markdown:_NOAFTER
+if !has('patch-7.4.480')
+    " Before this patch, vim used modula2 for .md.
+    au! filetypedetect BufRead,BufNewFile *.md
+endif
+
+" markdown filetype file
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} setfiletype markdown
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} setfiletype markdown
   augroup end
 endif
 
@@ -824,6 +854,7 @@ if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'meson') == -1
   " meson, from meson.vim in mesonbuild/meson:_ALL:/data/syntax-highlighting/vim/
 au BufNewFile,BufRead meson.build set filetype=meson
 au BufNewFile,BufRead meson_options.txt set filetype=meson
+au BufNewFile,BufRead *.wrap set filetype=dosini
   augroup end
 endif
 
@@ -1266,6 +1297,9 @@ au BufNewFile,BufRead [rR]outefile		call s:setf('ruby')
 " SimpleCov
 au BufNewFile,BufRead .simplecov		call s:setf('ruby')
 
+" Sorbet RBI files
+au BufNewFile,BufRead *.rbi		        call s:setf('ruby')
+
 " Thor
 au BufNewFile,BufRead [tT]horfile,*.thor	call s:setf('ruby')
 
@@ -1390,7 +1424,7 @@ if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'terraform') == 
   augroup filetypedetect
   " terraform, from terraform.vim in hashivim/vim-terraform
 " By default, Vim associates .tf files with TinyFugue - tell it not to.
-autocmd! filetypedetect BufRead,BufNewFile *.tf
+silent! autocmd! filetypedetect BufRead,BufNewFile *.tf
 autocmd BufRead,BufNewFile *.tf set filetype=terraform
 autocmd BufRead,BufNewFile *.tfvars set filetype=terraform
 autocmd BufRead,BufNewFile *.tfstate set filetype=json
@@ -1502,17 +1536,17 @@ endif
 
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'vifm') == -1
   augroup filetypedetect
-  " vifm, from vifm-rename.vim in vifm/vifm.vim
-autocmd BufRead,BufNewFile vifm.rename* :set filetype=vifm-rename
+  " vifm, from vifm.vim in vifm/vifm.vim
+autocmd BufRead,BufNewFile vifmrc :set filetype=vifm
+autocmd BufRead,BufNewFile *vifm/colors/* :set filetype=vifm
+autocmd BufRead,BufNewFile *.vifm :set filetype=vifm
   augroup end
 endif
 
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'vifm') == -1
   augroup filetypedetect
-  " vifm, from vifm.vim in vifm/vifm.vim
-autocmd BufRead,BufNewFile vifmrc :set filetype=vifm
-autocmd BufRead,BufNewFile *vifm/colors/* :set filetype=vifm
-autocmd BufRead,BufNewFile *.vifm :set filetype=vifm
+  " vifm, from vifm-rename.vim in vifm/vifm.vim
+autocmd BufRead,BufNewFile vifm.rename* :set filetype=vifm-rename
   augroup end
 endif
 
