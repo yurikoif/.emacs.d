@@ -19,16 +19,6 @@
   :init :custom (ac-auto-show-menu t)
   :init :custom (ac-delay 0.0)
   :init :custom (ac-trigger-key "TAB")
-  :config
-  (use-package auto-complete-c-headers
-    :ensure t
-    :config
-    (defun my:ac-c-headers-init ()
-      (add-to-list 'ac-sources 'ac-source-c-headers)
-      )
-    (add-hook 'c-mode-hook 'my:ac-c-headers-init)
-    (add-hook 'c++-mode-hook 'my:ac-c-headers-init)
-    )
   )
 
 (use-package yasnippet
@@ -414,7 +404,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete-c-headers auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
