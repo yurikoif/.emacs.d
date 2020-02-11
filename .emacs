@@ -121,8 +121,7 @@
 
 (use-package nlinum
   :ensure t
-  :init :custom (global-linum-mode nil)
-  :init :custom (global-nlinum-mode nil)
+  :hook (prog-mode . nlinum-mode)
   )
 
 (use-package highlight-indentation
@@ -399,7 +398,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (nlinum exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
