@@ -398,7 +398,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (nlinum exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (projectile nlinum exec-path-from-shell dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
