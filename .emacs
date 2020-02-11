@@ -130,9 +130,9 @@
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
-(use-package projectile
+(use-package counsel-projectile
   :ensure t
-  :init (projectile-mode +1)
+  :init (counsel-projectile-mode 1)
   :init (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
   :config
   (defadvice projectile-project-root (around ignore-remote first activate)
@@ -398,7 +398,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (projectile nlinum exec-path-from-shell dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (counsel-projectile projectile nlinum exec-path-from-shell dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
