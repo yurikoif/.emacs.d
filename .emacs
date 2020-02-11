@@ -30,25 +30,6 @@
     )
   )
 
-(use-package ivy
-  :ensure t
-  :init :custom (ivy-mode 1)
-  :init (if (< emacs-major-version 27)
-            (setq xref-show-xrefs-function #'ivy-xref-show-xrefs)
-          (setq xref-show-definitions-function #'ivy-xref-show-defs)
-          )
-  :bind ("C-]" . xref-find-definitions-other-window)
-  :config
-  (use-package ivy-xref
-    :ensure t
-    )
-
-  (use-package ivy-prescient
-    :ensure t
-    :init :custom (ivy-prescient-mode 1)
-    )
-  )
-
 (use-package dired-rsync
   :ensure t
   :bind ("C-S-s" . 'dired-rsync)
@@ -130,10 +111,15 @@
   :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
+(use-package ivy-xref
+  :ensure t
+  :bind ("C-]" . xref-find-definitions-other-window)
+  )
+
 (use-package counsel-projectile
   :ensure t
   :init (counsel-projectile-mode 1)
-  :init (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
+  :bind ("M-p" . counsel-projectile)
   :config
   (defadvice projectile-project-root (around ignore-remote first activate)
     (unless (file-remote-p default-directory) ad-do-it))
@@ -398,7 +384,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (counsel-projectile projectile nlinum exec-path-from-shell dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (counsel-projectile projectile nlinum exec-path-from-shell dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
