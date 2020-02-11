@@ -119,11 +119,6 @@
   :ensure t
   )
 
-(use-package bash-completion
-  :ensure t
-  :init (bash-completion-setup)
-  )
-
 (use-package nlinum
   :ensure t
   :init :custom (global-linum-mode nil)
@@ -404,7 +399,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient bash-completion eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (exec-path-from-shell dired-rsync magit projectile yasnippet-snippets yasnippet auto-complete dashboard ivy-prescient eshell-git-prompt shackle rebecca-theme highlight-indentation protobuf-mode fzf nlinum markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
