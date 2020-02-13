@@ -162,7 +162,7 @@
 (global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
 ;; (global-set-key [f7] 'gdb)
-;; (global-set-key [f8] 'eshell)
+(global-set-key [f8] 'my:forward-out-of-bracket)
 ;; (global-set-key [f9] 'my:compile)
 (global-set-key [f12] 'switch-to-buffer)
 (global-set-key [M-f4] 'kill-emacs)
@@ -188,6 +188,12 @@
 (defun other-window---1 ()
   (interactive)
   (other-window -1)
+  )
+
+(defun my:forward-out-of-bracket ()
+  (interactive)
+  (backward-up-list)
+  (forward-list)
   )
 
 (defun my:script-style ()
