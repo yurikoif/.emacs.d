@@ -371,6 +371,7 @@
       (fullscreen . maximized))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
+ '(exec-path-from-shell-check-startup-files nil)
  '(eyebrowse-mode 1)
  '(eyebrowse-mode-line-style (quote smart))
  '(eyebrowse-switch-back-and-forth t)
