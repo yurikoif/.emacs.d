@@ -37,7 +37,7 @@
 
 (use-package magit
   :ensure t
-  :bind ("C-c g" . magit-status)
+  :bind ("M-g" . magit-status)
   )
 
 (use-package eyebrowse
@@ -115,7 +115,7 @@
   :ensure t
   :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map
-              ("C-c p" . projectile-command-map)
+              ("M-p" . projectile-command-map)
               )
   :config
   ;; (defadvice projectile-project-root (around ignore-remote first activate)
