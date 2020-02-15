@@ -80,13 +80,6 @@
   (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
   )
 
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-  )
-
 (use-package markdown-mode
   :ensure t
   )
@@ -386,7 +379,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (counsel-projectile projectile nlinum exec-path-from-shell dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (counsel-projectile projectile nlinum dired-rsync magit yasnippet-snippets yasnippet auto-complete dashboard shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
