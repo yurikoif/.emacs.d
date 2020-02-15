@@ -16,9 +16,9 @@
 (use-package auto-complete
   :ensure t
   :init (ac-config-default)
-  :init :custom (ac-auto-show-menu t)
-  :init :custom (ac-delay 0.0)
-  :init :custom (ac-trigger-key "TAB")
+  :custom (ac-auto-show-menu t)
+  :custom (ac-delay 0.0)
+  :custom (ac-trigger-key "TAB")
   )
 
 (use-package yasnippet
@@ -42,10 +42,10 @@
 
 (use-package eyebrowse
   :ensure t
-  :init :custom (eyebrowse-mode 1)
-  :init :custom (eyebrowse-mode-line-style 'smart)
-  :init :custom (eyebrowse-switch-back-and-forth t)
-  :init :custom (eyebrowse-wrap-around t)
+  :custom (eyebrowse-mode 1)
+  :custom (eyebrowse-mode-line-style 'smart)
+  :custom (eyebrowse-switch-back-and-forth t)
+  :custom (eyebrowse-wrap-around t)
   :bind ("C--" . eyebrowse-close-window-config)
   :bind ("C-=" . my:create-workspace)
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
@@ -54,7 +54,7 @@
 
 (use-package shackle
   :ensure t
-  :init :custom (shackle-mode 1)
+  :custom (shackle-mode 1)
   :config
   (setq shackle-rules
         '((compilation-mode :noselect t
@@ -103,7 +103,7 @@
 (use-package highlight-indentation
   :ensure t
   :hook (python-mode . highlight-indentation-current-column-mode)
-  :init :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
+  :custom-face (highlight-indentation-current-column-face ((t (:background "dark slate gray"))))
   )
 
 (use-package ivy-xref
