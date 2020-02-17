@@ -13,21 +13,21 @@
   :init (load-theme 'rebecca t)
   )
 
-;; (use-package auto-complete
-;;   :ensure t
-;;   :init (ac-config-default)
-;;   :custom (ac-auto-show-menu t)
-;;   :custom (ac-delay 0.0)
-;;   :custom (ac-trigger-key "TAB")
-;;   )
-
-(use-package company
+(use-package auto-complete
   :ensure t
-  :config
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 2)
-  (global-company-mode t)
+  :init (ac-config-default)
+  :custom (ac-auto-show-menu t)
+  :custom (ac-delay 0)
+  :custom (ac-trigger-key "TAB")
   )
+
+;; (use-package company
+;;   :ensure t
+;;   :config
+;;   (setq company-idle-delay 0)
+;;   (setq company-minimum-prefix-length 2)
+;;   (global-company-mode t)
+;;   )
 
 (use-package yasnippet
   :ensure t
@@ -391,7 +391,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (company counsel-projectile projectile nlinum dired-rsync magit yasnippet-snippets yasnippet dashboard shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (auto-complete counsel-projectile projectile nlinum dired-rsync magit yasnippet-snippets yasnippet dashboard shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
