@@ -3,11 +3,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; (use-package tangotango-theme
-;;   :ensure t
-;;   :init (load-theme 'tangotango t)
-;;   )
-
 (use-package rebecca-theme
   :ensure t
   :init (load-theme 'rebecca t)
@@ -20,14 +15,6 @@
   :custom (ac-delay 0)
   :custom (ac-trigger-key "TAB")
   )
-
-;; (use-package company
-;;   :ensure t
-;;   :config
-;;   (setq company-idle-delay 0)
-;;   (setq company-minimum-prefix-length 2)
-;;   (global-company-mode t)
-;;   )
 
 (use-package yasnippet
   :ensure t
@@ -43,14 +30,9 @@
   :bind ("C-c s" . 'dired-rsync)
   )
 
-(use-package magit
-  :ensure t
-  :bind ("C-c g" . magit-status)
-  )
-
 (use-package eyebrowse
   :ensure t
-  :custom (eyebrowse-mode 1)
+  :init (eyebrowse-mode 1)
   :custom (eyebrowse-mode-line-style 'smart)
   :custom (eyebrowse-switch-back-and-forth t)
   :custom (eyebrowse-wrap-around t)
@@ -62,7 +44,7 @@
 
 (use-package shackle
   :ensure t
-  :custom (shackle-mode 1)
+  :init (shackle-mode 1)
   :config
   (setq shackle-rules
         '((compilation-mode :noselect t
@@ -115,10 +97,9 @@
 
 (use-package counsel-projectile
   :ensure t
+  :init (ivy-mode 1)
   :init (counsel-projectile-mode 1)
-  :bind (:map projectile-mode-map
-              ("C-c p" . projectile-command-map)
-              )
+  :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
   :bind ("C-<SPC>" . counsel-projectile)
   :config
   ;; (defadvice projectile-project-root (around ignore-remote first activate)
@@ -363,35 +344,30 @@
  '(ac-delay 0.0)
  '(ac-trigger-key "TAB")
  '(column-number-mode t)
- '(compile-command "make -j4 -C")
  '(cua-mode t nil (cua-base))
  '(cua-prefix-override-inhibit-delay 0.1)
  '(custom-safe-themes
    (quote
-    ("ca849ae0c889eb918785cdc75452b1e11a00848a5128a95a23872e0119ccc8f4" default)))
+    ("ac2ca460db1668a48c35c4d0fd842e5d2ce2d4e8567a7903b76438f2750826cd" "b11699e28cc2f6c34fa6336e67d443be89fadb6a9b60de0b1594f31340ea87e4" "c19e5291471680e72d8bd98f8d6e84f781754a9e8fc089536cda3f0b7c3550e3" default)))
  '(default-frame-alist
     (quote
      ((right-divider-width . 1)
-      (alpha . 90)
+      (alpha . 95)
       (fullscreen . maximized))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
- '(eyebrowse-mode 1)
  '(eyebrowse-mode-line-style (quote smart))
  '(eyebrowse-switch-back-and-forth t)
  '(eyebrowse-wrap-around t)
  '(global-auto-revert-mode nil)
  '(global-linum-mode nil)
- '(global-nlinum-mode nil)
  '(inhibit-startup-screen t)
- '(ivy-mode 1)
- '(ivy-prescient-mode 1)
  '(large-file-warning-threshold 100000000)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auto-complete counsel-projectile projectile nlinum dired-rsync magit yasnippet-snippets yasnippet dashboard shackle rebecca-theme highlight-indentation protobuf-mode fzf markdown-mode eyebrowse tangotango-theme use-package ivy-xref cmake-mode)))
+    (solarized-theme spacemacs-theme poet-theme yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -399,7 +375,6 @@
  '(scroll-preserve-screen-position 1)
  '(scroll-step 1)
  '(select-enable-clipboard t)
- '(shackle-mode 1)
  '(show-paren-mode t)
  '(tags-table-list (quote ("~/")))
  '(tool-bar-mode nil)
