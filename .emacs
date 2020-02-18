@@ -367,7 +367,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (solarized-theme spacemacs-theme poet-theme yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
+    (yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
