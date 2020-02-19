@@ -39,7 +39,7 @@
   :bind ("C--" . eyebrowse-close-window-config)
   :bind ("C-=" . my:create-workspace)
   :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
-  :bind ([C-tab] . eyebrowse-prev-window-config)
+  :bind ([C-tab] . eyebrowse-next-window-config)
   )
 
 (use-package shackle
