@@ -136,6 +136,7 @@
 (global-set-key (kbd "C-w") 'kill-current-buffer)
 (global-set-key (kbd "C-q") 'kill-buffer-and-window)
 (global-set-key (kbd "C-y") 'my:duplicate-line)
+(global-set-key (kbd "C-S-a") 'vc-annotate)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-S-t") 'my:create-tags)
 (global-set-key (kbd "C-<prior>") 'other-window---1)
