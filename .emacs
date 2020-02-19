@@ -98,6 +98,7 @@
 (use-package counsel-projectile
   :ensure t
   :init (ivy-mode 1)
+  :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
   :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
   :bind ("C-<SPC>" . counsel-projectile)
