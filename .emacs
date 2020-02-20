@@ -3,9 +3,14 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-(use-package rebecca-theme
+;; (use-package rebecca-theme
+;;   :ensure t
+;;   :init (load-theme 'rebecca t)
+;;   )
+
+(use-package monokai-pro-theme
   :ensure t
-  :init (load-theme 'rebecca t)
+  :init (load-theme 'monokai-pro t)
   )
 
 (use-package auto-complete
@@ -366,7 +371,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
+    (monokai-pro-theme yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -385,4 +390,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(font-lock-keyword-face ((t (:weight bold))))
+ '(font-lock-type-face ((t (:foreground "#ae81ff" :weight bold))))
  '(highlight-indentation-current-column-face ((t (:background "dark slate gray")))))
