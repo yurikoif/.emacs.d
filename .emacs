@@ -348,13 +348,10 @@
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(cua-prefix-override-inhibit-delay 0.1)
- '(custom-safe-themes
-   (quote
-    ("ac2ca460db1668a48c35c4d0fd842e5d2ce2d4e8567a7903b76438f2750826cd" "b11699e28cc2f6c34fa6336e67d443be89fadb6a9b60de0b1594f31340ea87e4" "c19e5291471680e72d8bd98f8d6e84f781754a9e8fc089536cda3f0b7c3550e3" default)))
  '(default-frame-alist
     (quote
      ((right-divider-width . 1)
-      (alpha . 95)
+      (alpha . 90)
       (fullscreen . maximized))))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
