@@ -3,14 +3,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; (use-package rebecca-theme
-;;   :ensure t
-;;   :init (load-theme 'rebecca t)
-;;   )
-
-(use-package monokai-pro-theme
+(use-package rebecca-theme
   :ensure t
-  :init (load-theme 'monokai-pro t)
+  :init (load-theme 'rebecca t)
   )
 
 (use-package auto-complete
@@ -371,7 +366,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (monokai-pro-theme yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
+    (yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
