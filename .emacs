@@ -3,9 +3,14 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-(use-package rebecca-theme
+;; (use-package rebecca-theme
+;;   :ensure t
+;;   :init (load-theme 'rebecca t)
+;;   )
+
+(use-package gruvbox-theme
   :ensure t
-  :init (load-theme 'rebecca t)
+  :init (load-theme 'gruvbox-dark-hard t)
   )
 
 (use-package auto-complete
