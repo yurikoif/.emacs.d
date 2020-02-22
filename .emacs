@@ -13,22 +13,22 @@
   :init (load-theme 'gruvbox-dark-hard t)
   )
 
-(use-package auto-complete
-  :ensure t
-  :init (ac-config-default)
-  :custom (ac-auto-show-menu t)
-  :custom (ac-delay 0)
-  :custom (ac-trigger-key "TAB")
-  )
+;; (use-package auto-complete
+;;   :ensure t
+;;   :init (ac-config-default)
+;;   :custom (ac-auto-show-menu t)
+;;   :custom (ac-delay 0)
+;;   :custom (ac-trigger-key "TAB")
+;;   )
 
-(use-package yasnippet
-  :ensure t
-  :init (yas-global-mode 1)
-  :config
-  (use-package yasnippet-snippets
-    :ensure t
-    )
-  )
+;; (use-package yasnippet
+;;   :ensure t
+;;   :init (yas-global-mode 1)
+;;   :config
+;;   (use-package yasnippet-snippets
+;;     :ensure t
+;;     )
+;;   )
 
 (use-package dired-rsync
   :ensure t
