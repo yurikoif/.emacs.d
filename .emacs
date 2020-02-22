@@ -21,14 +21,14 @@
 ;;   :custom (ac-trigger-key "TAB")
 ;;   )
 
-;; (use-package yasnippet
-;;   :ensure t
-;;   :init (yas-global-mode 1)
-;;   :config
-;;   (use-package yasnippet-snippets
-;;     :ensure t
-;;     )
-;;   )
+(use-package company
+  :ensure t
+  :hook (prog-mode . company-mode)
+  :config
+  (setq company-idle-delay 0)
+  (setq company-dabbrev-downcase 0)
+  (setq company-minimum-prefix-length 1)
+  )
 
 (use-package dired-rsync
   :ensure t
@@ -371,7 +371,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
+    (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
