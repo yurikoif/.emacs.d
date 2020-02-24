@@ -98,7 +98,7 @@
   :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
   :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
-  :bind ("C-<SPC>" . counsel-projectile)
+  :bind ([f9] . counsel-projectile)
   :config
   ;; (defadvice projectile-project-root (around ignore-remote first activate)
   ;;   (unless (file-remote-p default-directory) ad-do-it))
