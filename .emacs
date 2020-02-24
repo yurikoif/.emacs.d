@@ -13,14 +13,6 @@
   :init (load-theme 'gruvbox-dark-hard t)
   )
 
-;; (use-package auto-complete
-;;   :ensure t
-;;   :init (ac-config-default)
-;;   :custom (ac-auto-show-menu t)
-;;   :custom (ac-delay 0)
-;;   :custom (ac-trigger-key "TAB")
-;;   )
-
 (use-package company
   :ensure t
   :hook (prog-mode . company-mode)
@@ -371,7 +363,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode auto-complete)))
+    (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
