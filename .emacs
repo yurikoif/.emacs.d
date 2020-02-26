@@ -27,18 +27,6 @@
   :bind ("C-c s" . 'dired-rsync)
   )
 
-(use-package eyebrowse
-  :ensure t
-  :init (eyebrowse-mode 1)
-  :custom (eyebrowse-mode-line-style 'smart)
-  :custom (eyebrowse-switch-back-and-forth t)
-  :custom (eyebrowse-wrap-around t)
-  :bind ("C--" . eyebrowse-close-window-config)
-  :bind ("C-=" . my:create-workspace)
-  :bind ([C-S-iso-lefttab] . eyebrowse-prev-window-config)
-  :bind ([C-tab] . eyebrowse-next-window-config)
-  )
-
 (use-package shackle
   :ensure t
   :init (shackle-mode 1)
@@ -95,6 +83,9 @@
 (use-package counsel-projectile
   :ensure t
   :init (ivy-mode 1)
+  :bind ("C--" . ivy-pop-view)
+  :bind ("C-=" . ivy-push-view)
+  :bind ([C-tab] . ivy-switch-view)
   :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
   :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
@@ -360,7 +351,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation eyebrowse dired-rsync dashboard counsel-projectile cmake-mode)))
+    (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
