@@ -85,7 +85,6 @@
   :init (ivy-mode 1)
   :bind ("C--" . ivy-pop-view)
   :bind ("C-=" . ivy-push-view)
-  :bind ([C-tab] . ivy-switch-view)
   :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
   :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
@@ -137,6 +136,8 @@
 ;; (global-set-key [f9] 'my:compile)
 (global-set-key [f12] 'switch-to-buffer)
 (global-set-key [M-f4] 'kill-emacs)
+(global-set-key [C-S-iso-lefttab] 'previous-buffer)
+(global-set-key [C-tab] 'next-buffer)
 
 ;; other specs
 (add-hook 'c-mode-common-hook 'my:cc-style)
