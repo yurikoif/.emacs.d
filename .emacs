@@ -125,6 +125,7 @@
 (global-set-key (kbd "C-q") 'kill-buffer-and-window)
 (global-set-key (kbd "C-y") 'my:duplicate-line)
 (global-set-key (kbd "C-c a") 'vc-annotate)
+(global-set-key (kbd "C-c f") 'swiper-isearch)
 (global-set-key (kbd "C-c t") 'my:create-tags)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
 (global-set-key (kbd "C-<prior>") 'other-window---1)
@@ -333,6 +334,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(company-backends
+   (quote
+    (company-bbdb company-eclim company-semantic company-xcode company-cmake company-capf company-files
+                  (company-dabbrev-code company-gtags company-etags company-keywords)
+                  company-oddmuse company-dabbrev)))
  '(cua-mode t nil (cua-base))
  '(cua-prefix-override-inhibit-delay 0.1)
  '(default-frame-alist
