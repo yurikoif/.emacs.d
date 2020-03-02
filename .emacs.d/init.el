@@ -20,6 +20,18 @@
   (setq company-idle-delay 0)
   (setq company-dabbrev-downcase 0)
   (setq company-minimum-prefix-length 1)
+  (setq company-backends '(company-bbdb
+                           company-eclim
+                           company-semantic
+                           company-xcode
+                           company-cmake
+                           company-capf
+                           company-files
+                           (company-dabbrev-code company-gtags company-etags company-keywords)
+                           company-oddmuse
+                           company-dabbrev
+                           )
+        )
   )
 
 (use-package dired-rsync
@@ -334,11 +346,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(company-backends
-   (quote
-    (company-bbdb company-eclim company-semantic company-xcode company-cmake company-capf company-files
-                  (company-dabbrev-code company-gtags company-etags company-keywords)
-                  company-oddmuse company-dabbrev)))
  '(cua-mode t nil (cua-base))
  '(cua-prefix-override-inhibit-delay 0.1)
  '(default-frame-alist
