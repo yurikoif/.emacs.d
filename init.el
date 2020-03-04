@@ -162,7 +162,7 @@
 (global-set-key [C-S-iso-lefttab] 'previous-buffer)
 (global-set-key [C-tab] 'next-buffer)
 
-;; other specs
+;; style setups
 (add-hook 'c-mode-common-hook 'my:cc-style)
 (add-hook 'csharp-mode-hook 'my:cc-style)
 (add-hook 'makefile-mode-hook 'my:script-style)
