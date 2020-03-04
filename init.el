@@ -112,12 +112,13 @@
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-items '((recents  . 8)
-                          (projects . 8)
-                          (bookmarks . 8)
                           (agenda . 8)
-                          (registers . 8)
+                          (projects . 8)
+                          ;; (bookmarks . 8)
+                          ;; (registers . 8)
                           )
         )
+  (setq show-week-agenda-p t)
   )
 
 ;; global key bindings
@@ -288,6 +289,12 @@
     )
   )
 
+(defun my:commit-and-push-current-buffer ()
+  (interactive)
+  (vc-next-action "1")
+  (vc-push)
+  )
+
 (defun my:grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
@@ -365,7 +372,10 @@
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/.agendas")))
- '(org-replace-disputed-keys t)
+ '(org-support-shift-select t)
+ '(org-todo-keywords
+   (quote
+    ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
     (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
