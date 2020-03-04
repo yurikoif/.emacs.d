@@ -39,6 +39,13 @@
   :bind ("C-c s" . 'dired-rsync)
   )
 
+(use-package git-auto-commit-mode
+  :ensure t
+  :hook (org-mode . git-auto-commit-mode)
+  :config
+  (setq gac-automatically-push-p t)
+  )
+
 (use-package shackle
   :ensure t
   :init (shackle-mode 1)
@@ -289,12 +296,6 @@
     )
   )
 
-(defun my:commit-and-push-current-buffer ()
-  (interactive)
-  (vc-next-action "1")
-  (vc-push)
-  )
-
 (defun my:grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
@@ -378,7 +379,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
