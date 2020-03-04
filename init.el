@@ -44,6 +44,7 @@
   :hook (org-mode . git-auto-commit-mode)
   :config
   (setq gac-automatically-push-p t)
+  (setq gac-automatically-add-new-files-p nil)
   )
 
 (use-package shackle
