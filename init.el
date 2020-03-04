@@ -373,7 +373,7 @@
  '(large-file-warning-threshold 100000000)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(org-agenda-files (quote ("~/.agendas/tasks.org")))
+ '(org-agenda-files (quote ("~/.agendas/")))
  '(org-support-shift-select t)
  '(org-todo-keywords
    (quote
