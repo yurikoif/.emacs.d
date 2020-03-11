@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20200308.2048
+;; Package-Version: 20200311.1152
 ;; Version: 0.13.0
 ;; Package-Requires: ((emacs "24.5") (swiper "0.13.0"))
 ;; Keywords: convenience, matching, tools
@@ -165,7 +165,7 @@ descriptions.")
                      cmd
                      (plist-put plist number str)))))
 
-(defvar counsel-async-split-string-re-alist '((t . "\n"))
+(defvar counsel-async-split-string-re-alist '((t . "[\r\n]"))
   "Store the regexp for splitting shell command output.")
 
 (defvar counsel-async-ignore-re-alist nil
@@ -2959,6 +2959,13 @@ Works for `counsel-git-grep', `counsel-ag', etc."
     (ivy-quit-and-run
       (funcall (ivy-state-caller ivy-last) input new-dir))))
 
+(defun counsel--grep-smart-case-flag ()
+  (if (ivy--case-fold-p ivy-text)
+      " -i "
+    (if (string-match-p "\\`pt" counsel-ag-base-command)
+        " -S "
+      " -s ")))
+
 (defun counsel-grep-like-occur (cmd-template)
   (unless (eq major-mode 'ivy-occur-grep-mode)
     (ivy-occur-grep-mode)
@@ -2973,9 +2980,7 @@ Works for `counsel-git-grep', `counsel-ag', etc."
                    (regex (counsel--grep-regex (cdr command-args)))
                    (switches (concat (car command-args)
                                      (counsel--ag-extra-switches regex)
-                                     (if (ivy--case-fold-p ivy-text)
-                                         " -i "
-                                       " -s "))))
+                                     (counsel--grep-smart-case-flag))))
               (format cmd-template
                       (concat
                        switches
@@ -3035,8 +3040,8 @@ This uses `counsel-ag' with `counsel-ack-base-command' replacing
 ;;** `counsel-rg'
 (defcustom counsel-rg-base-command
   (if (memq system-type '(ms-dos windows-nt))
-      "rg --with-filename --no-heading --line-number --path-separator / --color never %s ."
-    "rg --with-filename --no-heading --line-number --color never %s")
+      "rg -M 120 --with-filename --no-heading --line-number --color never %s --path-separator /."
+    "rg -M 120 --with-filename --no-heading --line-number --color never %s")
   "Alternative to `counsel-ag-base-command' using ripgrep.
 
 Note: don't use single quotes for the regex."
