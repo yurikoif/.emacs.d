@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20200311.1152
+;; Package-Version: 20200311.1550
 ;; Version: 0.13.0
 ;; Package-Requires: ((emacs "24.5") (swiper "0.13.0"))
 ;; Keywords: convenience, matching, tools
@@ -3080,7 +3080,7 @@ Example input with inclusion and exclusion file patterns:
         (counsel--grep-tool-look-around
          (let ((rg (car (split-string counsel-rg-base-command)))
                (switch "--pcre2"))
-           (and (eq 0 (call-process rg nil nil nil switch "--version"))
+           (and (eq 0 (call-process rg nil nil nil switch "--pcre2-version"))
                 switch))))
     (counsel-ag initial-input initial-directory extra-rg-args rg-prompt
                 :caller 'counsel-rg)))
