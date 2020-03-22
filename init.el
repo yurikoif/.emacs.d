@@ -20,18 +20,18 @@
   (setq company-idle-delay 0)
   (setq company-dabbrev-downcase 0)
   (setq company-minimum-prefix-length 1)
-  (setq company-backends '(company-bbdb
-                           company-eclim
-                           company-semantic
-                           company-xcode
-                           company-cmake
-                           company-capf
-                           company-files
-                           company-yasnippet
-                           (company-dabbrev-code company-gtags company-etags company-keywords)
-                           company-oddmuse
-                           company-dabbrev
-                           )
+  (setq company-backends
+        '(company-bbdb
+          company-eclim
+          company-semantic
+          company-xcode
+          company-cmake
+          company-capf
+          company-files
+          (company-dabbrev-code company-gtags company-etags company-keywords company-yasnippet)
+          company-oddmuse
+          company-dabbrev
+          )
         )
   )
 
@@ -44,11 +44,12 @@
   (yas-global-mode 1)
   )
 
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
+(when (eq system-type 'darwin)
+  (use-package exec-path-from-shell
+    :ensure t
+    :config
+    (exec-path-from-shell-initialize)
+    )
   )
 
 (use-package dired-rsync
