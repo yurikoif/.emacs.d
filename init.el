@@ -27,11 +27,21 @@
                            company-cmake
                            company-capf
                            company-files
+                           company-yasnippet
                            (company-dabbrev-code company-gtags company-etags company-keywords)
                            company-oddmuse
                            company-dabbrev
                            )
         )
+  )
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (use-package yasnippet-snippets
+    :ensure t
+    )
+  (yas-global-mode 1)
   )
 
 (use-package dired-rsync
@@ -380,7 +390,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (yasnippet-snippets git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
