@@ -21,14 +21,14 @@
   (setq company-dabbrev-downcase 0)
   (setq company-minimum-prefix-length 1)
   (setq company-backends
-        '(company-bbdb
+        '((company-dabbrev-code company-gtags company-etags company-keywords company-yasnippet)
+          company-bbdb
           company-eclim
           company-semantic
           company-xcode
           company-cmake
           company-capf
           company-files
-          (company-dabbrev-code company-gtags company-etags company-keywords company-yasnippet)
           company-oddmuse
           company-dabbrev
           )
