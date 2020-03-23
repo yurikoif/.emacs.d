@@ -319,7 +319,7 @@
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
   (grep-find (format "find %s -type f -exec grep -I --color -nH --exclude=TAGS --include=\*.h --include=\*.cpp --include=\*.py --include=\*.c -e \"%s\" \{\} +"
-                     where-to-grep
+                     (file-relative-name where-to-grep)
                      what-to-grep
                      )
              )
