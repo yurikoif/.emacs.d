@@ -137,7 +137,7 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 8)
+  (setq dashboard-items '((recents  . 16)
                           (agenda . 8)
                           (projects . 8)
                           ;; (bookmarks . 8)
