@@ -410,6 +410,7 @@
  '(tags-table-list (quote ("~/")))
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
+ '(truncate-lines t)
  '(window-divider-default-right-width 1)
  '(window-divider-mode t))
 (custom-set-faces
