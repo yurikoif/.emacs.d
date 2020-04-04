@@ -44,13 +44,16 @@
   (yas-global-mode 1)
   )
 
-(when (eq system-type 'darwin)
-  (use-package exec-path-from-shell
-    :ensure t
-    :config
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (eq system-type 'darwin)
     (exec-path-from-shell-initialize)
     )
   )
+
+(use-package docker-tramp
+  :ensure t)
 
 (use-package dired-rsync
   :ensure t
@@ -398,7 +401,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (yasnippet-snippets git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (docker-tramp yasnippet-snippets git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
