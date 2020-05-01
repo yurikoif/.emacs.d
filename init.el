@@ -126,7 +126,7 @@
   :init (ivy-mode 1)
   :bind ("C--" . ivy-pop-view)
   :bind ("C-=" . ivy-push-view)
-  :bind ([f8] . ivy-switch-view)
+  :bind ([f8] . counsel-semantic-or-imenu)
   :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
   :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
@@ -401,7 +401,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (docker-tramp yasnippet-snippets git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
