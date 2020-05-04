@@ -124,12 +124,11 @@
 (use-package counsel-projectile
   :ensure t
   :init (ivy-mode 1)
+  :init (counsel-projectile-mode 1)
   :bind ("C--" . ivy-pop-view)
   :bind ("C-=" . ivy-push-view)
   :bind ([f7] . ivy-switch-view)
   :bind ([f8] . counsel-semantic-or-imenu)
-  :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
-  :init (counsel-projectile-mode 1)
   :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
   :bind ([f9] . counsel-projectile)
   :config
