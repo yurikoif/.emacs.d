@@ -126,6 +126,7 @@
   :init (ivy-mode 1)
   :bind ("C--" . ivy-pop-view)
   :bind ("C-=" . ivy-push-view)
+  :bind ([f7] . ivy-switch-view)
   :bind ([f8] . counsel-semantic-or-imenu)
   :bind (:map projectile-mode-map ("C-c i" . counsel-semantic-or-imenu))
   :init (counsel-projectile-mode 1)
