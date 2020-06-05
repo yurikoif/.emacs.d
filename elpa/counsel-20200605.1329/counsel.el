@@ -4,8 +4,8 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20200525.1632
-;; Package-Commit: 387390b1026b7087bbb4df2e6b778ebe5d9e1b8d
+;; Package-Version: 20200605.1329
+;; Package-Commit: 8d840b2e8680e2768edb794c9ccecf975f6ba4cf
 ;; Version: 0.13.0
 ;; Package-Requires: ((emacs "24.5") (swiper "0.13.0"))
 ;; Keywords: convenience, matching, tools
@@ -2146,10 +2146,11 @@ See variable `counsel-up-directory-level'."
 (defun counsel-find-file-undo ()
   (interactive)
   (if (string= ivy-text "")
-      (progn
-        (ivy-backward-delete-char)
-        (ivy--exhibit)
-        (ivy-insert-current))
+      (let ((dir (progn
+                   (pop ivy--directory-hist)
+                   (pop ivy--directory-hist))))
+        (when dir
+          (ivy--cd dir)))
     (undo)))
 
 (defun counsel-at-git-issue-p ()

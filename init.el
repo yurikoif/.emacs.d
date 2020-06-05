@@ -3,14 +3,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; (use-package rebecca-theme
-;;   :ensure t
-;;   :init (load-theme 'rebecca t)
-;;   )
-
-(use-package gruvbox-theme
+(use-package flatland-theme
   :ensure t
-  :init (load-theme 'gruvbox-dark-hard t)
+  :init (load-theme 'flatland t)
   )
 
 (use-package company
@@ -401,7 +396,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company gruvbox-theme use-package shackle rebecca-theme protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (flatland-theme exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
