@@ -165,9 +165,8 @@
 (global-set-key (kbd "C-c f") 'swiper-isearch)
 (global-set-key (kbd "C-c t") 'my:create-tags)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
-;; C-<prior>/<next> are kept for tabs
-;; (global-set-key (kbd "C-<prior>") 'other-window---1)
-;; (global-set-key (kbd "C-<next>") 'other-window)
+(global-set-key (kbd "C-<prior>") 'other-window---1)
+(global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
 ;; (global-set-key [f7] 'gdb)
 ;; (global-set-key [f6] 'backward-sexp)
@@ -176,8 +175,9 @@
 ;; (global-set-key [f9] 'my:compile)
 (global-set-key [f12] 'switch-to-buffer)
 (global-set-key [M-f4] 'kill-emacs)
-(global-set-key [C-S-iso-lefttab] 'other-window---1)
-(global-set-key [C-tab] 'other-window)
+;; [C-tab] kept for tabs
+;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
+;; (global-set-key [C-tab] 'other-window)
 
 ;; style setups
 (add-hook 'c-mode-common-hook 'my:cc-style)
