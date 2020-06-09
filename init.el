@@ -3,9 +3,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-(use-package flatland-theme
+(use-package color-theme-sanityinc-tomorrow
   :ensure t
-  :init (load-theme 'flatland t)
+  :init (load-theme 'sanityinc-tomorrow-night t)
   )
 
 (use-package company
@@ -165,8 +165,9 @@
 (global-set-key (kbd "C-c f") 'swiper-isearch)
 (global-set-key (kbd "C-c t") 'my:create-tags)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
-(global-set-key (kbd "C-<prior>") 'other-window---1)
-(global-set-key (kbd "C-<next>") 'other-window)
+;; C-<prior>/<next> are kept for tabs
+;; (global-set-key (kbd "C-<prior>") 'other-window---1)
+;; (global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
 ;; (global-set-key [f7] 'gdb)
 ;; (global-set-key [f6] 'backward-sexp)
@@ -175,8 +176,8 @@
 ;; (global-set-key [f9] 'my:compile)
 (global-set-key [f12] 'switch-to-buffer)
 (global-set-key [M-f4] 'kill-emacs)
-(global-set-key [C-S-iso-lefttab] 'previous-buffer)
-(global-set-key [C-tab] 'next-buffer)
+(global-set-key [C-S-iso-lefttab] 'other-window---1)
+(global-set-key [C-tab] 'other-window)
 
 ;; style setups
 (add-hook 'c-mode-common-hook 'my:cc-style)
@@ -373,6 +374,9 @@
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(cua-prefix-override-inhibit-delay 0.1)
+ '(custom-safe-themes
+   (quote
+    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "7575474658c34b905bcec30a725653b2138c2f2d3deef0587e3abfae08c5b276" "f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "4af38f1ae483eb9335402775b02e93a69f31558f73c869af0d2403f1c72d1d33" default)))
  '(default-frame-alist
     (quote
      ((right-divider-width . 1)
@@ -396,7 +400,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (flatland-theme exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
