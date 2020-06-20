@@ -8,6 +8,10 @@
   :init (load-theme 'sanityinc-tomorrow-night t)
   )
 
+(use-package format-all
+  :ensure t
+  )
+
 (use-package company
   :ensure t
   :config
@@ -400,7 +404,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (format-all color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
