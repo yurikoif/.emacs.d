@@ -16,7 +16,7 @@
 (use-package company-lsp
   :ensure t
   :commands company-lsp
-  :config (push 'company-lsp company-backends)
+  ;; :config (push 'company-lsp company-backends)
   )
 
 (use-package ccls
@@ -43,7 +43,8 @@
   (setq company-dabbrev-downcase 0)
   (setq company-minimum-prefix-length 1)
   (setq company-backends
-        '((company-dabbrev-code company-gtags company-etags company-keywords company-yasnippet)
+        '((company-lsp company-dabbrev-code company-keywords company-yasnippet)
+          (company-gtags company-etags)
           company-bbdb
           company-eclim
           company-semantic
