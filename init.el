@@ -6,6 +6,8 @@
 (use-package lsp-mode
   :commands lsp
   :ensure t
+  :config
+  (setq lsp-file-watch-threshold 10000)
   )
 
 (use-package lsp-ui
