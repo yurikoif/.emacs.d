@@ -3,13 +3,36 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+(use-package lsp-mode
+  :commands lsp
+  :ensure t
+  )
+
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :ensure t
+  )
+
+(use-package company-lsp
+  :ensure t
+  :commands company-lsp
+  :config (push 'company-lsp company-backends)
+  )
+
+(use-package ccls
+  :ensure t
+  :config
+  (setq ccls-executable "ccls")
+  (setq lsp-prefer-flymake nil)
+  (setq-default flycheck-disabled-checkers '(c/c++-clang
+                                             c/c++-cppcheck
+                                             c/c++-gcc))
+  :hook ((c-mode c++-mode objc-mode) . (lambda () (require 'ccls) (lsp)))
+  )
+
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
   :init (load-theme 'sanityinc-tomorrow-night t)
-  )
-
-(use-package format-all
-  :ensure t
   )
 
 (use-package company
@@ -404,7 +427,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (format-all color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
