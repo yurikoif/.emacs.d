@@ -178,6 +178,7 @@
                           )
         )
   (setq show-week-agenda-p t)
+  (setq projectile-completion-system 'ivy)
   )
 
 ;; global key bindings
