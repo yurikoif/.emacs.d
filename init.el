@@ -83,7 +83,8 @@
   )
 
 (use-package docker-tramp
-  :ensure t)
+  :ensure t
+  )
 
 (use-package dired-rsync
   :ensure t
