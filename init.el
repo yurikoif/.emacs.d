@@ -298,7 +298,9 @@
 
 (defun my:close-on-exit ()
   (when (not (one-window-p))
-    (delete-window)))
+    (delete-window)
+    )
+  )
 
 (defun my:close-buffer-and-window ()
   "Close buffer/window."
