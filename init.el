@@ -436,7 +436,7 @@
     ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
  '(package-selected-packages
    (quote
-    (lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+    (zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package shackle protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -450,7 +450,7 @@
  '(tooltip-mode nil)
  '(truncate-lines t)
  '(window-divider-default-right-width 1)
- '(window-divider-mode t))
+ '(window-divider-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
