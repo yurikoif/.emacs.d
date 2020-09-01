@@ -99,33 +99,35 @@
   (setq gac-automatically-add-new-files-p nil)
   )
 
-;; (use-package shackle
-;;   :ensure t
-;;   :init (shackle-mode 1)
-;;   :config
-;;   (setq shackle-rules
-;;         '((compilation-mode :noselect t
-;;                             :align 'below
-;;                             :size 0.3
-;;                             :popup t
-;;            )
-;;           (vc-annotate-mode :align 'below
-;;                             :size 0.8
-;;                             )
-;;           (gud-mode :select t
-;;                     :align 'below
-;;                     :size 0.3
-;;                     :popup t
-;;                     )
-;;           (grep-mode :select t
-;;                      :align 'below
-;;                      :size 0.3
-;;                      :popup t
-;;                      )
-;;           )
-;;         shackle-default-rule '(:select t))
-;;   (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
-;;   )
+(use-package shackle
+  :ensure t
+  :init (shackle-mode 1)
+  :config
+  (add-to-list 'shackle-rules
+               '(help-mode :align below))
+  ;; (setq 
+  ;;       '((compilation-mode :noselect t
+  ;;                           :align 'below
+  ;;                           :size 0.3
+  ;;                           :popup t
+  ;;          )
+  ;;         (vc-annotate-mode :align 'below
+  ;;                           :size 0.8
+  ;;                           )
+  ;;         (gud-mode :select t
+  ;;                   :align 'below
+  ;;                   :size 0.3
+  ;;                   :popup t
+  ;;                   )
+  ;;         (grep-mode :select t
+  ;;                    :align 'below
+  ;;                    :size 0.3
+  ;;                    :popup t
+  ;;                    )
+  ;;         )
+  ;;       shackle-default-rule '(:select t))
+  (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
+  )
 
 (use-package markdown-mode
   :ensure t
