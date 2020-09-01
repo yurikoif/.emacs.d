@@ -99,33 +99,33 @@
   (setq gac-automatically-add-new-files-p nil)
   )
 
-(use-package shackle
-  :ensure t
-  :init (shackle-mode 1)
-  :config
-  (setq shackle-rules
-        '((compilation-mode :noselect t
-                            :align 'below
-                            :size 0.3
-                            :popup t
-           )
-          (vc-annotate-mode :align 'below
-                            :size 0.8
-                            )
-          (gud-mode :select t
-                    :align 'below
-                    :size 0.3
-                    :popup t
-                    )
-          (grep-mode :select t
-                     :align 'below
-                     :size 0.3
-                     :popup t
-                     )
-          )
-        shackle-default-rule '(:select t))
-  (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
-  )
+;; (use-package shackle
+;;   :ensure t
+;;   :init (shackle-mode 1)
+;;   :config
+;;   (setq shackle-rules
+;;         '((compilation-mode :noselect t
+;;                             :align 'below
+;;                             :size 0.3
+;;                             :popup t
+;;            )
+;;           (vc-annotate-mode :align 'below
+;;                             :size 0.8
+;;                             )
+;;           (gud-mode :select t
+;;                     :align 'below
+;;                     :size 0.3
+;;                     :popup t
+;;                     )
+;;           (grep-mode :select t
+;;                      :align 'below
+;;                      :size 0.3
+;;                      :popup t
+;;                      )
+;;           )
+;;         shackle-default-rule '(:select t))
+;;   (advice-add 'eshell-life-is-too-much :after 'my:close-on-exit)
+;;   )
 
 (use-package markdown-mode
   :ensure t
@@ -199,6 +199,7 @@
 (global-set-key (kbd "C-q") 'kill-buffer-and-window)
 (global-set-key (kbd "C-y") 'my:duplicate-line)
 (global-set-key (kbd "C-c a") 'vc-annotate)
+(global-set-key (kbd "C-c c") 'my:create-compile_commands.json)
 (global-set-key (kbd "C-c f") 'swiper-isearch)
 (global-set-key (kbd "C-c t") 'my:create-tags)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
@@ -403,6 +404,19 @@
       (setq buffer-undo-list (cons (cons eol (point)) buffer-undo-list)))) ; end-of-let
   ;; put the point in the lowest line and return
   (next-line arg)
+  )
+
+(defun my:create-compile_commands.json (dir-path)
+  (interactive "DCreate compile_commands.json in: ")
+  (eshell-command (format "cmake -H%s -BDebug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
+                          dir-path
+                          )
+                  )
+  (eshell-command (format "ln -s %s/Debug/compile_commands.json %s"
+                          dir-path
+                          dir-path
+                          )
+                  )
   )
 
 (custom-set-variables
