@@ -217,8 +217,8 @@
 (global-set-key [f12] 'switch-to-buffer)
 (global-set-key [M-f4] 'kill-emacs)
 ;; [C-tab] kept for tabs
-;; (global-set-key [C-S-iso-lefttab] 'other-window---1)
-;; (global-set-key [C-tab] 'other-window)
+(global-set-key [C-S-iso-lefttab] 'other-window---1)
+(global-set-key [C-tab] 'other-window)
 
 ;; style setups
 (add-hook 'c-mode-common-hook 'my:cc-style)
@@ -360,7 +360,7 @@
 (defun my:grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
-  (grep-find (format "find %s -type f -exec grep -I --color -nH --exclude=TAGS --include=\*.h --include=\*.cpp --include=\*.py --include=\*.c -e \"%s\" \{\} +"
+  (grep-find (format "find %s -type f -exec grep -I --color -nH --exclude=TAGS --include='*.h' --include='*.cpp' --include='*.py' --include='*.c' -e \"%s\" \{\} +"
                      (file-relative-name where-to-grep)
                      what-to-grep
                      )
