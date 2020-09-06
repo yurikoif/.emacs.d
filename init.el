@@ -159,12 +159,12 @@
   :ensure t
   :init (ivy-mode 1)
   :init (counsel-projectile-mode 1)
-  :bind ("C--" . ivy-pop-view)
-  :bind ("C-=" . ivy-push-view)
-  :bind ([f7] . ivy-switch-view)
+  ;; :bind ("C--" . ivy-pop-view)
+  ;; :bind ("C-=" . ivy-push-view)
+  ;; :bind ([f7] . ivy-switch-view)
   :bind ([f8] . counsel-semantic-or-imenu)
-  :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
   :bind ([f9] . counsel-projectile)
+  :bind (:map projectile-mode-map ("C-c p" . projectile-command-map))
   :config
   ;; (defadvice projectile-project-root (around ignore-remote first activate)
   ;;   (unless (file-remote-p default-directory) ad-do-it))
@@ -233,6 +233,14 @@
   (global-set-key (kbd "<home>") 'beginning-of-line)
   (global-set-key (kbd "<end>") 'end-of-line)
   )
+
+;; emacs 27: tab-bar-mode
+(unless (version< emacs-version "27.1")
+  (global-set-key (kbd "C--") 'tab-bar-switch-to-prev-tab)
+  (global-set-key (kbd "C-=") 'tab-bar-switch-to-next-tab)
+  (global-set-key (kbd "C-_") 'tab-bar-close-tab)
+  (global-set-key (kbd "C-+") 'tab-bar-new-tab)
+ )
 
 ;; yes-no -> y-n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -431,16 +439,14 @@
  '(cua-mode t nil (cua-base))
  '(cua-prefix-override-inhibit-delay 0.1)
  '(custom-safe-themes
-   (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "7575474658c34b905bcec30a725653b2138c2f2d3deef0587e3abfae08c5b276" "f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "4af38f1ae483eb9335402775b02e93a69f31558f73c869af0d2403f1c72d1d33" default)))
+   '("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "7575474658c34b905bcec30a725653b2138c2f2d3deef0587e3abfae08c5b276" "f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "4af38f1ae483eb9335402775b02e93a69f31558f73c869af0d2403f1c72d1d33" default))
  '(default-frame-alist
-    (quote
-     ((right-divider-width . 1)
+    '((right-divider-width . 1)
       (alpha . 90)
-      (fullscreen . maximized))))
+      (fullscreen . maximized)))
  '(desktop-save-mode nil)
  '(electric-pair-mode t)
- '(eyebrowse-mode-line-style (quote smart))
+ '(eyebrowse-mode-line-style 'smart)
  '(eyebrowse-switch-back-and-forth t)
  '(eyebrowse-wrap-around t)
  '(global-auto-revert-mode nil)
@@ -449,14 +455,11 @@
  '(large-file-warning-threshold 100000000)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(org-agenda-files (quote ("~/.agendas/")))
+ '(org-agenda-files '("~/.agendas/"))
  '(org-support-shift-select t)
- '(org-todo-keywords
-   (quote
-    ((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED"))))
+ '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED")))
  '(package-selected-packages
-   (quote
-    (lsp-ui company-lsp ccls lsp-python-ms zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode)))
+   '(lsp-ui company-lsp ccls lsp-python-ms zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
@@ -465,7 +468,8 @@
  '(scroll-step 1)
  '(select-enable-clipboard t)
  '(show-paren-mode t)
- '(tags-table-list (quote ("~/")))
+ '(tab-bar-show 1)
+ '(tags-table-list '("~/"))
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
  '(truncate-lines t)
