@@ -459,7 +459,7 @@
  '(org-support-shift-select t)
  '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED")))
  '(package-selected-packages
-   '(lsp-ui company-lsp ccls lsp-python-ms zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode))
+   '(shackle lsp-ui company-lsp ccls lsp-python-ms zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
