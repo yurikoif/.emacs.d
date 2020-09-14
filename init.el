@@ -216,9 +216,6 @@
 ;; (global-set-key [f9] 'my:compile)
 (global-set-key [f12] 'switch-to-buffer)
 (global-set-key [M-f4] 'kill-emacs)
-;; [C-tab] kept for tabs
-(global-set-key [C-S-iso-lefttab] 'other-window---1)
-(global-set-key [C-tab] 'other-window)
 
 ;; style setups
 (add-hook 'c-mode-common-hook 'my:cc-style)
