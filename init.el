@@ -86,17 +86,17 @@
   :ensure t
   )
 
-(use-package dired-rsync
-  :ensure t
-  :bind ("C-c s" . 'dired-rsync)
-  )
-
 (use-package git-auto-commit-mode
   :ensure t
   :hook (org-mode . git-auto-commit-mode)
   :config
   (setq gac-automatically-push-p t)
   (setq gac-automatically-add-new-files-p nil)
+  )
+
+(use-package ace-window
+  :ensure t
+  :bind ("M-w" . 'ace-window)
   )
 
 (use-package shackle
@@ -206,8 +206,8 @@
 (global-set-key (kbd "C-c f") 'swiper-isearch)
 (global-set-key (kbd "C-c t") 'my:create-tags)
 (global-set-key (kbd "C-S-f") 'my:grep-find-read-from-minibuffer)
-(global-set-key (kbd "C-<prior>") 'other-window---1)
-(global-set-key (kbd "C-<next>") 'other-window)
+;; (global-set-key (kbd "C-<prior>") 'other-window---1)
+;; (global-set-key (kbd "C-<next>") 'other-window)
 (global-set-key [f5] 'revert-buffer)
 ;; (global-set-key [f7] 'gdb)
 ;; (global-set-key [f6] 'backward-sexp)
@@ -233,10 +233,8 @@
 
 ;; emacs 27: tab-bar-mode
 (unless (version< emacs-version "27.1")
-  (global-set-key (kbd "C--") 'tab-bar-switch-to-prev-tab)
-  (global-set-key (kbd "C-=") 'tab-bar-switch-to-next-tab)
-  (global-set-key (kbd "C-_") 'tab-bar-close-tab)
-  (global-set-key (kbd "C-+") 'tab-bar-new-tab)
+  (global-set-key (kbd "C--") 'tab-bar-close-tab)
+  (global-set-key (kbd "C-=") 'tab-bar-new-tab)
  )
 
 ;; yes-no -> y-n
@@ -456,7 +454,7 @@
  '(org-support-shift-select t)
  '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "|" "DONE" "CANCELED")))
  '(package-selected-packages
-   '(shackle lsp-ui company-lsp ccls lsp-python-ms zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dired-rsync dashboard counsel-projectile cmake-mode))
+   '(ace-window shackle lsp-ui company-lsp ccls lsp-python-ms zones lsp-mode color-theme-sanityinc-tomorrow exec-path-from-shell docker-tramp yasnippet-snippets git-auto-commit-mode company use-package protobuf-mode nlinum markdown-mode ivy-xref highlight-indentation dashboard counsel-projectile cmake-mode))
  '(redisplay-dont-pause t t)
  '(save-place-mode t)
  '(scroll-conservatively 10000)
