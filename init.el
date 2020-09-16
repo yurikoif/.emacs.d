@@ -96,7 +96,7 @@
 
 (use-package ace-window
   :ensure t
-  :bind ("M-w" . 'ace-window)
+  :bind ("C-e" . 'ace-window)
   )
 
 (use-package shackle
