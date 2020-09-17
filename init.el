@@ -186,6 +186,7 @@
   (add-to-list 'recentf-exclude (format "%s/\\.agendas/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude (format "%s/\\.emacs\\.d/elpa/.*" (getenv "HOME")))
   (add-to-list 'recentf-exclude (format "%s/TAGS" (getenv "HOME")))
+  (add-to-list 'dashboard-org-agenda-categories "tasks")
   )
 
 ;; global key bindings
@@ -366,9 +367,9 @@
 (defun my:grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
-  (grep-find (format "find %s -type f -exec grep -rI --color -nH --exclude-dir=\'.ccls-cache\' -e \"%s\" \{\} +"
-                     (file-relative-name where-to-grep)
+  (grep-find (format "grep %s -R \"%s\" -rI --color --exclude-dir='*.ccls-cache' -nH"
                      what-to-grep
+                     (file-relative-name where-to-grep)
                      )
              )
   )
