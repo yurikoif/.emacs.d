@@ -367,7 +367,10 @@
 (defun my:grep-find (what-to-grep)
   (interactive)
   (setq where-to-grep (read-file-name "Grep in: " default-directory))
-  (grep-find (format "grep %s -R \"%s\" -rI --color --exclude-dir='*.ccls-cache' -nH"
+  (grep-find (format "grep '%s' -R \"%s\" -rI --color -nH \
+--exclude-dir='.ccls-cache' \
+--exclude-dir='build' \
+"
                      what-to-grep
                      (file-relative-name where-to-grep)
                      )
@@ -418,7 +421,8 @@
 
 (defun my:create-compile_commands.json (dir-path)
   (interactive "DCreate compile_commands.json in: ")
-  (eshell-command (format "cmake -H%s -BDebug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
+  (eshell-command (format "cmake -H%s -B%s/Debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
+                          dir-path
                           dir-path
                           )
                   )
