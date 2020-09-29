@@ -370,6 +370,7 @@
   (grep-find (format "grep '%s' -R \"%s\" -rI --color -nH \
 --exclude-dir='.ccls-cache' \
 --exclude-dir='build' \
+--exclude-dir='Debug' \
 "
                      what-to-grep
                      (file-relative-name where-to-grep)
